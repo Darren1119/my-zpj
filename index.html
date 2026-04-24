@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xie Songlun | Product Designer</title>
+    <meta
+      name="description"
+      content="Xie Songlun is a bilingual product designer focused on enterprise systems, global products, and clear interaction design."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Sans+SC:wght@400;500;700&family=Sora:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header reveal">
+        <a class="brand-link" href="#top" aria-label="Back to top">Xie Songlun</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#work" data-i18n="nav.work">作品</a>
+          <a href="#approach" data-i18n="nav.approach">方法</a>
+          <a href="#about" data-i18n="nav.about">关于</a>
+          <a href="#contact" data-i18n="nav.contact">联系</a>
+        </nav>
+        <button class="language-toggle" type="button" data-language-toggle aria-label="Switch language">
+          EN
+        </button>
+      </header>
+
+      <main id="top">
+        <section class="hero reveal" aria-labelledby="hero-title">
+          <div class="hero__intro">
+            <p class="eyebrow" data-i18n="hero.role">产品设计师 / Product Designer</p>
+            <h1 id="hero-title">
+              <span data-i18n="hero.titleA">把复杂业务</span>
+              <span data-i18n="hero.titleB">设计得清晰、可信、好用。</span>
+            </h1>
+          </div>
+          <div class="hero__copy">
+            <p data-i18n="hero.lede">
+              我关注企业级系统、全球化产品和桌面端工作流，擅长把模糊需求整理成可落地的产品体验。
+            </p>
+            <div class="hero__actions" aria-label="Primary actions">
+              <a class="button-link button-link--primary" href="#work" data-i18n="hero.viewWork">查看作品</a>
+              <a class="button-link" href="./personal-info.pdf" target="_blank" rel="noreferrer" data-i18n="hero.resume">打开简历 PDF</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="signal-strip reveal" aria-label="Design strengths">
+          <p>
+            <span data-i18n="signals.ia.title">信息架构</span>
+            <strong data-i18n="signals.ia.body">让复杂页面有明确层级</strong>
+          </p>
+          <p>
+            <span data-i18n="signals.system.title">设计系统</span>
+            <strong data-i18n="signals.system.body">沉淀可复用的产品模式</strong>
+          </p>
+          <p>
+            <span data-i18n="signals.global.title">全球化体验</span>
+            <strong data-i18n="signals.global.body">兼顾多语言和跨区域使用</strong>
+          </p>
+        </section>
+
+        <section class="work-section reveal" id="work" aria-label="Selected work">
+          <div class="section-kicker">
+            <p data-i18n="work.kicker">精选项目</p>
+            <p data-i18n="work.note">适合放 2-3 个完整案例，后续可替换成真实项目截图与链接。</p>
+          </div>
+
+          <div class="work-list" role="tablist" aria-label="Projects">
+            <button class="work-item is-active" type="button" role="tab" aria-selected="true" data-project="0">
+              <span>01</span>
+              <strong data-i18n="projects.0.name">企业决策看板</strong>
+              <em data-i18n="projects.0.meta">B 端工作流</em>
+            </button>
+            <button class="work-item" type="button" role="tab" aria-selected="false" data-project="1">
+              <span>02</span>
+              <strong data-i18n="projects.1.name">智能化新手引导</strong>
+              <em data-i18n="projects.1.meta">移动端体验</em>
+            </button>
+            <button class="work-item" type="button" role="tab" aria-selected="false" data-project="2">
+              <span>03</span>
+              <strong data-i18n="projects.2.name">多角色服务平台</strong>
+              <em data-i18n="projects.2.meta">服务设计</em>
+            </button>
+          </div>
+
+          <article class="project-stage" data-project-stage>
+            <div class="project-stage__copy">
+              <p class="eyebrow" data-project-type>B2B SaaS / Enterprise Workflow</p>
+              <h2 data-project-title>把分散的数据看板重构成决策系统</h2>
+              <p data-project-summary>
+                从指标堆叠转向任务导向的信息结构，帮助团队更快发现问题、判断优先级并采取行动。
+              </p>
+              <dl class="project-stage__facts">
+                <div>
+                  <dt data-i18n="work.challenge">挑战</dt>
+                  <dd data-project-challenge>信息很多，但用户很难判断下一步该做什么。</dd>
+                </div>
+                <div>
+                  <dt data-i18n="work.outcome">结果</dt>
+                  <dd data-project-outcome>建立从监控、诊断到行动的清晰操作路径。</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="project-board" aria-hidden="true" data-project-visual="0">
+              <div class="board-frame">
+                <div class="board-topline"></div>
+                <div class="board-row board-row--wide"></div>
+                <div class="board-row"></div>
+                <div class="board-row board-row--short"></div>
+              </div>
+              <div class="board-card board-card--main">
+                <span data-board-label-a>Decision flow</span>
+                <strong data-board-title-a>Signal to action</strong>
+              </div>
+              <div class="board-card board-card--side">
+                <span data-board-label-b>Design focus</span>
+                <strong data-board-title-b>Reduce cognitive load</strong>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="approach reveal" id="approach">
+          <div class="section-kicker">
+            <p data-i18n="approach.kicker">设计方法</p>
+            <p data-i18n="approach.note">招聘方和客户通常想快速看到你的思考方式。</p>
+          </div>
+          <div class="approach-grid">
+            <article>
+              <span>01</span>
+              <h3 data-i18n="approach.0.title">先定义问题边界</h3>
+              <p data-i18n="approach.0.body">梳理角色、场景、业务限制和成功标准，避免一开始就陷入界面细节。</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3 data-i18n="approach.1.title">用结构降低复杂度</h3>
+              <p data-i18n="approach.1.body">通过信息架构、任务流和组件模式，让高密度系统仍然可理解。</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3 data-i18n="approach.2.title">验证真实使用</h3>
+              <p data-i18n="approach.2.body">用原型、走查和反馈闭环检查设计是否真的帮助用户完成工作。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="about reveal" id="about">
+          <div class="section-kicker">
+            <p data-i18n="about.kicker">关于我</p>
+            <p data-i18n="about.note">简洁介绍，后续可继续补充经历、奖项或真实案例。</p>
+          </div>
+          <div class="about__content">
+            <p data-i18n="about.bodyA">
+              我是一名关注产品逻辑与体验质量的设计师，长期围绕 B 端产品、国际化体验、可复用设计模式和 0 到 1 项目展开工作。
+            </p>
+            <p data-i18n="about.bodyB">
+              我希望作品集给人的第一印象是：清楚、有判断力、能把复杂问题讲明白，也能把设计推进到真实落地。
+            </p>
+          </div>
+        </section>
+
+        <section class="contact reveal" id="contact">
+          <div class="contact__headline">
+            <p class="eyebrow" data-i18n="contact.kicker">联系</p>
+            <h2 data-i18n="contact.title">欢迎聊聊设计机会、项目合作或作品集反馈。</h2>
+          </div>
+          <div class="contact__links">
+            <a href="mailto:songlundesgin@outlook.com">songlundesgin@outlook.com</a>
+            <a href="tel:13683301659">13683301659</a>
+            <span>WeChat: opposite_way</span>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
