@@ -873,7 +873,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
         <text id="campScrTxt" x="0" y="0" opacity="0" font-size="1">off</text>
         <rect id="campScreen" class="camp-hit" x="34" y="348" width="288" height="224" rx="14"><title>影像 · FILM</title></rect>
         <rect id="campMap" class="camp-hit" x="488" y="116" width="424" height="288" rx="14"><title>探索 · EXPLORE</title></rect>
-        <rect id="campTent" x="0" y="0" width="0" height="0" style="display:none"/>
         <rect class="camp-hit hit-window" x="1076" y="20" width="280" height="492" rx="16" onclick="document.getElementById('campMode').click()"><title>开关灯 · DAY/NIGHT</title></rect>
         <rect class="camp-hit hit-window" x="1232" y="216" width="196" height="556" rx="20" onclick="document.getElementById('campMode').click()"><title>开关灯 · DAY/NIGHT</title></rect>
         <g class="camp-tagline">
@@ -885,7 +884,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
         </g>
         <text class="camp-tag" x="36" y="44">HUMAN ROOM</text>
         <text class="camp-tag" x="36" y="68" opacity="0.55">Click the useful things, not the decoration.</text>
-        <text id="campWhisper" class="camp-tag" x="36" y="990" style="opacity:0;transition:opacity .4s">被压下去，会弹回来。</text>
       </svg>
       <button id="campFire" class="camp-prop camp-hot camp-food-button" type="button" aria-label="点击餐盘查看美食照片">
         <span class="camp-prop-inner">
@@ -1031,8 +1029,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
     <div class="camp-panel" id="panel-resilience">
       <h3 data-zh="韧性" data-en="Resilience">韧性</h3>
-      <p class="camp-quote" data-zh="我不太怕失败。从西北的一座小城出发，学校不算好，起点也不算高——没有哪一步是顺理成章的，就<mark>一步一步</mark>走到了现在。所以《士兵突击》和《阿甘正传》我重看了那么多遍：我喜欢不聪明、但一直走的人。沙发垫被压下去，<mark>会弹回来</mark>。" data-en="I'm not much afraid of failing. I set out from a small city in the northwest — an average school, a low starting point. No step was handed to me; I walked here <mark>one step at a time</mark>. That's why I keep rewatching Soldiers Sortie and Forrest Gump: I like people who aren't brilliant but keep walking. A cushion gets pressed down — <mark>then springs back</mark>.">我不太怕失败。从西北的一座小城出发，学校不算好，起点也不算高——没有哪一步是顺理成章的，就<mark>一步一步</mark>走到了现在。所以《士兵突击》和《阿甘正传》我重看了那么多遍：我喜欢不聪明、但一直走的人。沙发垫被压下去，<mark>会弹回来</mark>。</p>
-      <p class="camp-hint" data-zh="试试按住场景里的沙发，再松手。" data-en="Try pressing and holding the sofa in the scene, then let go.">试试按住场景里的沙发，再松手。</p>
+      <p class="camp-quote" data-zh="我不太相信一夜之间的改变，更相信长期做一件事时形成的稳定性。从西北的一座小城出发，很多路都不是提前铺好的，只能自己判断、自己补课、自己往前走。《士兵突击》和《阿甘正传》我重看了很多遍，大概也是因为我喜欢那种<mark>慢一点但不停下来</mark>的人。" data-en="I don't really believe in overnight transformation. I trust the steadiness that comes from staying with something for a long time. I started from a small city in the northwest, and many roads were not paved in advance. I had to judge, learn, and keep moving. I rewatch Soldiers Sortie and Forrest Gump because I like people who are <mark>slower, but do not stop</mark>.">我不太相信一夜之间的改变，更相信长期做一件事时形成的稳定性。从西北的一座小城出发，很多路都不是提前铺好的，只能自己判断、自己补课、自己往前走。《士兵突击》和《阿甘正传》我重看了很多遍，大概也是因为我喜欢那种<mark>慢一点但不停下来</mark>的人。</p>
     </div>
 
   </div>
@@ -1651,7 +1648,7 @@ navToggle.addEventListener('click', () => {
   navToggle.textContent = open ? '✕' : '☰';
 });
 
-// HUMAN · BASE CAMP 交互：日夜、面板、帐篷长按（韧性）
+// HUMAN · BASE CAMP 交互：日夜、面板、照片展开
 (function(){
   var stage = document.getElementById('campStage');
   if (!stage) return;
@@ -1740,18 +1737,18 @@ navToggle.addEventListener('click', () => {
       ]
     },
     resilience:{
-      kicker:{zh:'RESILIENCE · 从沙发垫里弹回来',en:'RESILIENCE · sprung from the cushion'},
+      kicker:{zh:'RESILIENCE · 长期主义',en:'RESILIENCE · long game'},
       title:{zh:'韧性',en:'Resilience'},
-      text:{zh:'起点不高，也没有哪一步顺理成章。一步一步走，压下去也会弹回来。',en:'A low starting point, no step handed over. One step at a time; pressed down, then back up.'},
+      text:{zh:'起点不高，很多路也不是提前铺好的。比起突然爆发，我更相信稳定地补课、判断和往前走。',en:'The starting point was not high, and many roads were not paved ahead of time. I trust steady learning, judgment, and forward motion more than sudden breakthroughs.'},
       items:[
         {note:{zh:'一步一步',en:'One step at a time'},x:-210,y:-98,r:-5},
-        {note:{zh:'不抛弃，不放弃',en:'Never abandon, never give up'},x:10,y:-126,r:5},
-        {note:{zh:'被压下去，会弹回来',en:'Pressed down. Springs back.'},x:214,y:-84,r:-3}
+        {note:{zh:'慢一点，但不停下来',en:'Slower, but not stopped'},x:10,y:-126,r:5},
+        {note:{zh:'持续补课，持续判断',en:'Keep learning, keep judging'},x:214,y:-84,r:-3}
       ]
     }
   };
   var night = false;
-  var sourceByPanel = {food:'campFire', cocktail:'campShaker', film:'campScreen', explore:'campMap', resilience:'campTent'};
+  var sourceByPanel = {food:'campFire', cocktail:'campShaker', film:'campScreen', explore:'campMap', resilience:'campStage'};
   function roomSafe(value){
     return String(value || '').replace(/[&<>"']/g, function(ch){
       return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
@@ -1963,30 +1960,6 @@ navToggle.addEventListener('click', () => {
       }
     }, 260);
   }
-  // 沙发：按住蓄压，松手回弹——韧性
-  var tent = document.getElementById('campTent'), whisper = document.getElementById('campWhisper');
-  var press = null, squish = 1;
-  tent.style.transition = 'transform .12s';
-  tent.addEventListener('pointerdown', function(e){
-    e.preventDefault();
-    press = setInterval(function(){ squish = Math.max(0.5, squish - 0.028); tent.style.transform = 'scaleY(' + squish + ')'; }, 30);
-  });
-  function campRelease(){
-    if (!press) return;
-    clearInterval(press); press = null;
-    var held = squish < 0.9;
-    tent.style.transition = 'transform .55s cubic-bezier(.2,2.6,.4,1)';
-    tent.style.transform = 'scaleY(1)'; squish = 1;
-    setTimeout(function(){ tent.style.transition = 'transform .12s'; }, 570);
-    if (held) {
-      whisper.textContent = isEN ? 'Pressed down. Springs back.' : '被压下去，会弹回来。';
-      whisper.style.opacity = '0.9';
-      roomOpen('resilience', tent);
-      setTimeout(function(){ whisper.style.opacity = '0'; }, 3200);
-    }
-  }
-  window.addEventListener('pointerup', campRelease);
-  tent.addEventListener('pointerleave', campRelease);
 })();
 
 // 触屏引导：无 hover 的设备上进入 HUMAN 时，词牌集体浮现片刻再退场
