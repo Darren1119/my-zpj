@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Paige Agent Cover</title>
+  <desc id="desc">A bold schematic cover for Paige, an AI-native design delivery pipeline.</desc>
+  <rect width="1600" height="900" fill="#f7f1e8"/>
+  <rect x="80" y="80" width="1440" height="740" fill="#fff" stroke="#14110d" stroke-width="8"/>
+  <text x="140" y="190" font-family="Arial, sans-serif" font-size="88" font-weight="900" fill="#14110d">PAIGE</text>
+  <text x="140" y="255" font-family="Arial, sans-serif" font-size="30" fill="#5f5a54">PRD → PageModel → Prototype · Spec · Code · MasterGo</text>
+  <g fill="none" stroke="#14110d" stroke-width="7">
+    <rect x="150" y="380" width="250" height="145"/>
+    <rect x="530" y="335" width="330" height="235"/>
+    <rect x="990" y="380" width="250" height="145"/>
+    <path d="M425 452h78"/>
+    <path d="M885 452h78"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-weight="800" font-size="34">
+    <text x="207" y="467" fill="#ff3b16">PRD</text>
+    <text x="585" y="455" fill="#14110d">PageModel</text>
+    <text x="1034" y="467" fill="#1a22ff">Deliver</text>
+  </g>
+  <rect x="140" y="665" width="620" height="58" fill="#ff3b16"/>
+  <text x="168" y="704" font-family="Arial, sans-serif" font-size="24" font-weight="800" fill="#fff">AI-native design delivery harness</text>
+</svg>
