@@ -1,0 +1,14 @@
+.git
+.github
+.impeccable.md
+.nojekyll
+.DS_Store
+Thumbs.db
+
+social-card-agent-harness-xhs/
+social-card-ai-input-cover/
+social-card-system-visibility-cover/
+xie_songlun_portfolio_redesign.html
+
+assets/preview_*.png
+assets/scan_*.png
