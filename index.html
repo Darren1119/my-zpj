@@ -78,11 +78,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .about-bio{margin-bottom:2.5rem}
 .about-bio p{font-family:var(--disp);font-weight:600;font-size:1.15rem;line-height:1.5;color:var(--ink);margin-bottom:1rem}
 .about-bio p+p{font-family:var(--sans);font-weight:400;font-size:0.95rem;color:var(--mute);line-height:1.7}
-.contact-list{display:flex;flex-direction:column;gap:0;margin-bottom:3rem;border-top:2px solid var(--faint)}
-.contact-item{display:flex;align-items:center;gap:0.9rem;font-family:var(--sans);font-size:0.85rem;color:var(--ink);border-bottom:2px solid var(--faint);padding:0.85rem 0}
-.contact-icon{width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;color:var(--accent);border:1.8px solid var(--faint);border-radius:50%;background:color-mix(in srgb,var(--paper) 94%,#f7efe6);flex-shrink:0}
-.contact-icon svg{width:17px;height:17px;display:block;stroke:currentColor;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.contact-list{display:flex;flex-direction:column;gap:0;margin-bottom:3rem;border:2.5px solid var(--ink);box-shadow:5px 5px 0 var(--ink);background:var(--paper)}
+.contact-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.62rem 0.85rem;border-bottom:2px solid var(--faint);font-family:var(--sans);font-size:0.62rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink)}
+.contact-head span:last-child{color:var(--accent)}
+.contact-item{display:grid;grid-template-columns:38px 1fr;align-items:center;gap:0.85rem;font-family:var(--sans);font-size:0.86rem;color:var(--ink);border-bottom:2px solid var(--faint);padding:0.75rem 0.85rem}
+.contact-item:last-child{border-bottom:none}
+.contact-icon{width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;color:var(--paper);border:2px solid var(--ink);border-radius:0;background:var(--accent);box-shadow:3px 3px 0 var(--ink);flex-shrink:0}
+.contact-icon svg{width:17px;height:17px;display:block;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .contact-icon.wechat{font-family:var(--sans);font-size:0.66rem;font-style:normal;font-weight:800;letter-spacing:-0.02em}
+.contact-copy{min-width:0}
+.contact-copy b{display:block;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--mute);font-weight:800;margin-bottom:0.12rem}
+.contact-copy span{display:block;overflow-wrap:anywhere}
+.contact-copy a{color:var(--ink);text-decoration:none;overflow-wrap:anywhere}
+.contact-copy a:hover{color:var(--accent)}
 .section-eyebrow{font-family:var(--sans);font-weight:700;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);margin-bottom:1.6rem;display:flex;align-items:center;gap:0.6rem}
 .section-eyebrow::before{content:'✳';color:var(--accent)}
 .right-divider{display:none}
@@ -99,7 +107,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .section-cards{display:grid;grid-template-columns:1.3fr 1fr;gap:1.4rem}
 .section-card{background:var(--paper);border:2.5px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:1.8rem 1.8rem;cursor:pointer;transition:transform 0.15s,box-shadow 0.15s;position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:130px;text-decoration:none}
 .section-card:hover{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--accent)}
-.sc-featured{grid-row:span 3;min-height:340px;padding:2.2rem}
+.sc-featured{grid-row:span 3;min-height:340px;padding:2.2rem;overflow:hidden}
+.sc-featured::before{content:'TASK · TOOL · EVAL · FEEDBACK';position:absolute;left:2.05rem;right:2.05rem;top:38%;font-family:var(--disp);font-weight:800;font-size:clamp(2.1rem,4.5vw,4.1rem);line-height:0.95;letter-spacing:0;color:color-mix(in srgb,var(--ink) 7%,transparent);z-index:0;pointer-events:none}
+.sc-featured>*{position:relative;z-index:1}
+.sc-map{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:0.35rem;margin-bottom:auto}
+.sc-map-step{border:1.5px solid var(--faint);padding:0.75rem 0.72rem;background:color-mix(in srgb,var(--paper) 96%,#f7efe6);min-width:0}
+.sc-map-k{font-family:var(--sans);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:0.36rem}
+.sc-map-v{font-family:var(--sans);font-size:0.74rem;line-height:1.45;color:var(--ink);font-weight:800}
+.sc-map-arrow{display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:800;color:var(--ink);font-size:1rem}
+.sc-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0.5rem;margin:1rem 0 1.4rem}
+.sc-proof span{display:block;border-left:3px solid var(--accent);background:color-mix(in srgb,var(--paper) 96%,#f7efe6);padding:0.55rem 0.65rem;font-family:var(--sans);font-size:0.68rem;line-height:1.45;color:var(--ink);font-weight:800}
 .sc-num{font-family:var(--disp);font-weight:800;font-size:1rem;color:var(--accent);margin-bottom:0.6rem}
 .sc-name{font-family:var(--disp);font-weight:800;font-size:1.5rem;color:var(--ink);margin-bottom:0.5rem;line-height:1.05;text-transform:uppercase;letter-spacing:-0.02em}
 .sc-featured .sc-name{font-size:2.8rem}
@@ -524,6 +541,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   .fit-note{margin-top:0.55rem}
   .fit-grid{grid-template-columns:1fr}
   .sc-featured{grid-row:auto;min-height:160px}
+  .sc-featured::before{display:none}
+  .sc-map{grid-template-columns:1fr;margin-bottom:1.4rem}
+  .sc-map-arrow{display:none}
+  .sc-proof{grid-template-columns:1fr}
   .archive-grid{grid-template-columns:1fr}
   .detail-toc{display:none}
   .detail-toc-inline{display:block}
@@ -625,9 +646,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       <div class="section-cards">
         <div class="section-card sc-featured reveal" onclick="showPage('next')">
           <span class="sc-arrow">↗</span>
+          <div class="sc-map" aria-hidden="true">
+            <div class="sc-map-step"><div class="sc-map-k">Input</div><div class="sc-map-v" data-zh="业务需求" data-en="Requirement">业务需求</div></div>
+            <div class="sc-map-arrow">→</div>
+            <div class="sc-map-step"><div class="sc-map-k">Harness</div><div class="sc-map-v" data-zh="工具 · 评价器" data-en="Tools · Evals">工具 · 评价器</div></div>
+            <div class="sc-map-arrow">→</div>
+            <div class="sc-map-step"><div class="sc-map-k">Output</div><div class="sc-map-v" data-zh="可编辑页面" data-en="Editable UI">可编辑页面</div></div>
+          </div>
+          <div class="sc-proof">
+            <span data-zh="Paige：需求到界面" data-en="Paige: requirement to UI">Paige：需求到界面</span>
+            <span data-zh="Metrics：任务是否有用" data-en="Metrics: task usefulness">Metrics：任务是否有用</span>
+            <span data-zh="Evals：失败如何暴露" data-en="Evals: exposing failures">Evals：失败如何暴露</span>
+          </div>
           <p class="sc-num">01</p>
           <h2 class="sc-name">Next</h2>
-          <p class="sc-desc" data-zh="AI 原生的设计实验。探索页面生成、设计规范与业务流程如何在 AI 时代被重新定义。" data-en="AI-native design experiments. Exploring how page generation, design specs, and workflows are redefined.">AI 原生的设计实验。探索页面生成、设计规范与业务流程如何在 AI 时代被重新定义。</p>
+          <p class="sc-desc" data-zh="围绕 Agent Harness 的实践：页面生成、工具约束、评价指标与失败日志。" data-en="Agent Harness practice: page generation, tool constraints, evaluation metrics, and failure logs.">围绕 Agent Harness 的实践：页面生成、工具约束、评价指标与失败日志。</p>
           <span class="sc-label" data-zh="AI 作品" data-en="AI Work">AI 作品</span>
         </div>
         <div class="section-card reveal" onclick="showPage('archive')">
@@ -666,9 +699,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
           </p>
         </div>
         <div class="contact-list reveal">
-          <div class="contact-item"><i class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.5 6.5h15v11h-15z"/><path d="m5.2 7.2 6.8 5.3 6.8-5.3"/></svg></i><span>songlundesign@outlook.com</span></div>
-          <div class="contact-item"><i class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.3 5.2 5.7 6.7c-.9.9-.7 3.4 1.2 6.4 1.8 2.9 4.1 5.2 7 6.1 1.5.5 2.7.4 3.3-.2l1.6-1.6-3.1-3.1-1.8 1.5c-1.7-.7-3.4-2.4-4.6-4.5l1.5-1.8z"/></svg></i><span>13683301659</span></div>
-          <div class="contact-item"><i class="contact-icon wechat" aria-hidden="true">We</i><span>opposite_way</span></div>
+          <div class="contact-head"><span data-zh="联系" data-en="Contact">联系</span><span>Available</span></div>
+          <div class="contact-item"><i class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.5 6.5h15v11h-15z"/><path d="m5.2 7.2 6.8 5.3 6.8-5.3"/></svg></i><span class="contact-copy"><b>Email</b><a href="mailto:songlundesign@outlook.com">songlundesign@outlook.com</a></span></div>
+          <div class="contact-item"><i class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.3 5.2 5.7 6.7c-.9.9-.7 3.4 1.2 6.4 1.8 2.9 4.1 5.2 7 6.1 1.5.5 2.7.4 3.3-.2l1.6-1.6-3.1-3.1-1.8 1.5c-1.7-.7-3.4-2.4-4.6-4.5l1.5-1.8z"/></svg></i><span class="contact-copy"><b>Phone</b><a href="tel:+8613683301659">13683301659</a></span></div>
+          <div class="contact-item"><i class="contact-icon wechat" aria-hidden="true">We</i><span class="contact-copy"><b>Wechat</b><span>opposite_way</span></span></div>
         </div>
         <div class="right-divider"></div>
         <p class="section-eyebrow reveal" data-zh="工作经历" data-en="Experience">工作经历</p>
