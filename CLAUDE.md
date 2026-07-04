@@ -87,6 +87,11 @@ Important current positioning:
 
 ## Important Asset Notes
 
+- Paige archive package provided by the user: `/Users/xiesonglun/Downloads/Paige历史包整理/`
+  - Current runnable version: `/Users/xiesonglun/Downloads/Paige历史包整理/03-当前最新版可运行/Paige最新版可运行/`
+  - Design/spec materials: `/Users/xiesonglun/Downloads/Paige历史包整理/05-演示与说明材料/`
+  - Skill package/source: `/Users/xiesonglun/Downloads/Paige历史包整理/04-Skill与接入包/`
+  - Use this package as evidence for Paige's history, runnable core, specs, and integration materials. Do not copy secrets, large installers, `.git`, or cache folders into the portfolio.
 - Paige videos live in: `/Users/xiesonglun/Documents/New project 5/assets/videos/paige/`
 - Correct Human page music lives in: `/Users/xiesonglun/Documents/New project 5/assets/audio/音乐修正/`
 - Paige images should use Paige-specific assets under: `/Users/xiesonglun/Documents/New project 5/assets/images/projects/paige/`
