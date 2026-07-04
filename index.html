@@ -113,6 +113,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .page-eyebrow::before{content:'✳';color:var(--accent)}
 .page-heading{font-family:var(--disp);font-weight:800;font-size:clamp(2.6rem,6vw,4.5rem);color:var(--ink);margin-bottom:0.8rem;text-transform:uppercase;letter-spacing:-0.02em}
 .page-sub{font-family:var(--disp);font-weight:600;font-size:clamp(1.1rem,2vw,1.5rem);color:var(--ink);margin-bottom:3.5rem;max-width:30em;line-height:1.4}
+.fit-panel{margin:-1.3rem 0 3rem;border:2.5px solid var(--ink);box-shadow:6px 6px 0 var(--ink);background:var(--paper);padding:1.2rem}
+.fit-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+.fit-title{font-family:var(--disp);font-weight:800;font-size:1.2rem;line-height:1.25;color:var(--ink);letter-spacing:-0.01em}
+.fit-note{font-family:var(--sans);font-size:0.78rem;line-height:1.65;color:var(--mute);max-width:34rem}
+.fit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0.75rem}
+.fit-card{border:1.5px solid var(--faint);border-radius:6px;padding:0.9rem;background:color-mix(in srgb,var(--paper) 96%,#f7efe6)}
+.fit-label{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:0.48rem}
+.fit-card-title{font-size:0.9rem;line-height:1.5;color:var(--ink);font-weight:800}
+.fit-card-text{font-size:0.74rem;line-height:1.68;color:var(--mute);margin-top:0.42rem}
 .coming-soon{border:2.5px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:4rem 2.5rem;text-align:center;background:var(--paper)}
 .coming-label{font-family:var(--sans);font-weight:700;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--paper);background:var(--accent);padding:0.3rem 0.8rem;display:inline-block;margin-bottom:1.4rem}
 .coming-soon p{font-family:var(--sans);font-size:0.92rem;color:var(--mute);max-width:440px;margin:0 auto;line-height:1.8}
@@ -509,6 +518,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 }
 @media(max-width:920px){
   .section-cards{grid-template-columns:1fr}
+  .fit-head{display:block}
+  .fit-note{margin-top:0.55rem}
+  .fit-grid{grid-template-columns:1fr}
   .sc-featured{grid-row:auto;min-height:160px}
   .archive-grid{grid-template-columns:1fr}
   .detail-toc{display:none}
@@ -573,19 +585,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
       <!-- LEFT: identity + stats -->
       <div class="hero-left">
-        <div class="hero-eyebrow reveal"><span><i>✳</i> Product Designer</span><span><i>✳</i> AI New Paradigms</span><span><i>✳</i> Est. 2014</span></div>
+        <div class="hero-eyebrow reveal"><span><i>✳</i> Product Designer</span><span><i>✳</i> Agent Harness</span><span><i>✳</i> Est. 2014</span></div>
         <h1 class="hero-name reveal">谢松伦<br><em>Xie Songlun</em></h1>
         <p class="hero-desc reveal"
-           data-zh="十年复杂系统设计，现在探索<mark>AI 新范式下的产品与未来工作流</mark>。"
-           data-en="Ten years designing complex systems. Now exploring <mark>AI-native products and future workflows</mark>.">
-          十年复杂系统设计，现在探索<mark>AI 新范式下的产品与未来工作流</mark>。
+           data-zh="十年复杂系统设计，现在转向<mark>Agent Harness 产品与 AI 工作流</mark>。"
+           data-en="Ten years designing complex systems. Now moving toward <mark>Agent Harness products and AI workflows</mark>.">
+          十年复杂系统设计，现在转向<mark>Agent Harness 产品与 AI 工作流</mark>。
         </p>
         <div class="hero-tags reveal">
-          <span class="tag">AI New Paradigms</span>
-          <span class="tag">Future Workflows</span>
+          <span class="tag">Agent Harness</span>
+          <span class="tag">Context Engineering</span>
           <span class="tag">Evaluation</span>
+          <span class="tag">Tool Use</span>
           <span class="tag">Enterprise B2B</span>
-          <span class="tag">Design Systems</span>
         </div>
         <div class="hero-cta reveal">
           <a href="#" onclick="showPage('next');return false" class="btn-primary" data-zh="查看 AI 作品" data-en="View AI Work">查看 AI 作品</a>
@@ -646,9 +658,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
              data-en="10 years of desktop enterprise product design. Led core product builds at DiDi International, ByteDance Volcano Engine, and Kuaishou from 0 to 1.">
             10 年专注于桌面端企业级产品设计。曾主导滴滴国际、字节跳动火山引擎、快手等一线大厂的核心产品从 0 到 1 构建与重构。
           </p>
-          <p data-zh="擅长从用户研究出发，结合数据洞察推动设计决策，在视觉、交互与业务目标之间找到最优解。持续关注 AI 前沿，推动团队将 AI 能力融入产品设计。"
-             data-en="Skilled in user research-driven design, combining data insights to balance visual, interaction, and business goals. Continuously tracking AI frontiers and driving AI capability integration into product design.">
-            擅长从用户研究出发，结合数据洞察推动设计决策，在视觉、交互与业务目标之间找到最优解。持续关注 AI 前沿，推动团队将 AI 能力融入产品设计。
+          <p data-zh="最近的重心放在 Agent Harness：模型如何通过工具、上下文、评价器和用户反馈进入真实任务；以及如何用指标判断它是否真的帮到人。"
+             data-en="Recently focused on Agent Harness: how models enter real tasks through tools, context, evaluators, and user feedback, and how to measure whether they actually help.">
+            最近的重心放在 Agent Harness：模型如何通过工具、上下文、评价器和用户反馈进入真实任务；以及如何用指标判断它是否真的帮到人。
           </p>
         </div>
         <div class="contact-list reveal">
@@ -706,17 +718,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
   <div class="page-wrap">
     <p class="page-eyebrow" data-zh="AI 作品" data-en="AI Work">AI 作品</p>
     <h2 class="page-heading">Next</h2>
-    <p class="page-sub" data-zh="用单一可执行模型，把 PRD → 设计 → 前端这条充满损耗的链路，变成可理解、可编辑、可协作、可代码化的生产流水线。" data-en="Driven by one executable model — turning the lossy PRD → design → frontend chain into an understandable, editable, collaborative, codeable production pipeline.">用单一可执行模型，把 PRD → 设计 → 前端这条充满损耗的链路，变成可理解、可编辑、可协作、可代码化的生产流水线。</p>
+    <p class="page-sub" data-zh="围绕 Agent Harness 的个人实践：从页面生成、工具约束、评价指标到失败日志，观察模型如何进入真实工作流。" data-en="Personal practice around Agent Harness: page generation, tool constraints, evaluation metrics, and failure logs — observing how models enter real workflows.">围绕 Agent Harness 的个人实践：从页面生成、工具约束、评价指标到失败日志，观察模型如何进入真实工作流。</p>
+    <section class="fit-panel reveal">
+      <div class="fit-head">
+        <h3 class="fit-title" data-zh="为什么是 Agent Harness" data-en="Why Agent Harness">为什么是 Agent Harness</h3>
+        <p class="fit-note" data-zh="这不是一组完成态产品，而是我把复杂系统设计经验转向 Agent 产品的过程：用 AI 工具真实构建，用评测暴露问题，用产品判断决定哪些环节应该自动化、哪些必须交还给人。" data-en="This is not a finished product suite. It is my transition from complex-system design into agent products: building with AI tools, using evals to expose problems, and deciding which steps should be automated versus handed back to humans.">这不是一组完成态产品，而是我把复杂系统设计经验转向 Agent 产品的过程：用 AI 工具真实构建，用评测暴露问题，用产品判断决定哪些环节应该自动化、哪些必须交还给人。</p>
+      </div>
+      <div class="fit-grid">
+        <div class="fit-card"><div class="fit-label">Harness</div><div class="fit-card-title" data-zh="把模型放进可控任务环境" data-en="Putting models into controlled task environments">把模型放进可控任务环境</div><div class="fit-card-text" data-zh="Paige 不是追求全自动，而是围绕需求到界面这个任务，设计输入、操作词表、执行层校验、评价器和失败日志。" data-en="Paige does not chase full autonomy. Around the task of requirement-to-interface, it designs inputs, operation vocabulary, execution validation, evaluators, and failure logs.">Paige 不是追求全自动，而是围绕需求到界面这个任务，设计输入、操作词表、执行层校验、评价器和失败日志。</div></div>
+        <div class="fit-card"><div class="fit-label">Measure</div><div class="fit-card-title" data-zh="先量代理指标，再补真实用户层" data-en="Proxy metrics first, real user value next">先量代理指标，再补真实用户层</div><div class="fit-card-text" data-zh="目前能量的是产出率、覆盖率、一致性、幻觉和人工修改线索；真实用户价值仍需要灰度、访谈、任务日志继续验证。" data-en="Current metrics cover produced rate, coverage, consistency, hallucination, and human-edit signals; real user value still needs rollout, interviews, and task logs.">目前能量的是产出率、覆盖率、一致性、幻觉和人工修改线索；真实用户价值仍需要灰度、访谈、任务日志继续验证。</div></div>
+        <div class="fit-card"><div class="fit-label">Practice</div><div class="fit-card-title" data-zh="高强度使用 Agent 工具" data-en="Heavy use of agent tools">高强度使用 Agent 工具</div><div class="fit-card-text" data-zh="我在 Paige 开发中持续使用并对比 Claude Code、Codex、Cursor 等工具，观察它们如何理解任务、调用工具、处理失败和证明完成。" data-en="While building Paige I use and compare tools such as Claude Code, Codex, and Cursor, watching how they understand tasks, call tools, handle failure, and prove completion.">我在 Paige 开发中持续使用并对比 Claude Code、Codex、Cursor 等工具，观察它们如何理解任务、调用工具、处理失败和证明完成。</div></div>
+      </div>
+    </section>
     <div class="archive-grid">
       <div class="project-card featured" onclick="showDetail('paige')">
         <div class="project-img"><img src="assets/images/projects/paige/from-app/paige-editor-canvas.jpg" alt="Paige 正在生成多页 B 端后台"></div>
-        <span class="project-tag" data-zh="AI 原生设计 · 个人项目" data-en="AI-Native Design · Solo Build">AI 原生设计 · 个人项目</span>
-        <h3 class="project-title" data-zh="Paige —— 重写 B 端的交付工作流" data-en="Paige — From Screens to a Delivery Pipeline">Paige —— 重写 B 端的交付工作流</h3>
-        <p class="project-desc" data-zh="我独立设计并构建的设计生产系统：以单一可执行模型为真相，把 PRD→设计→前端的损耗链路变成可控流水线——同一模型投影出原型、流程、规格、代码与 MasterGo 图层。核心是把会胡说的模型工程化：闭合 op 词表、不静默成功、400+ 断言安全网。" data-en="A design-production system I designed and built solo: one executable model as the source of truth, turning the lossy PRD→design→frontend chain into a controllable pipeline — the same model projects into prototype, flow, spec, code and MasterGo layers. At its core, an unreliable model engineered into a reliable one: a closed op vocabulary, no silent success, a 400+-assertion safety net.">我独立设计并构建的设计生产系统：以单一可执行模型为真相，把 PRD→设计→前端的损耗链路变成可控流水线——同一模型投影出原型、流程、规格、代码与 MasterGo 图层。核心是把会胡说的模型工程化：闭合 op 词表、不静默成功、400+ 断言安全网。</p>
+        <span class="project-tag" data-zh="Agent Harness · 个人项目" data-en="Agent Harness · Solo Build">Agent Harness · 个人项目</span>
+        <h3 class="project-title" data-zh="Paige —— 用一句话生成可编辑的 B 端页面" data-en="Paige — Turning Requirements into Editable Interfaces">Paige —— 用一句话生成可编辑的 B 端页面</h3>
+        <p class="project-desc" data-zh="一个 AI 辅助的业务界面生成与编辑环境。它还不是完整自主 Agent，更接近 Agent Harness 的局部实验：围绕“需求到界面”这个任务，组织输入、约束工具、检查结果、记录失败，并让人继续校准。" data-en="An AI-assisted generation and editing environment for business interfaces. It is not a fully autonomous agent yet; it is closer to a focused Agent Harness experiment around requirement-to-interface: organizing input, constraining tools, checking outputs, logging failures, and keeping humans in the loop.">一个 AI 辅助的业务界面生成与编辑环境。它还不是完整自主 Agent，更接近 Agent Harness 的局部实验：围绕“需求到界面”这个任务，组织输入、约束工具、检查结果、记录失败，并让人继续校准。</p>
         <div class="project-meta">
           <span class="meta-item"><span class="meta-dot"></span><span data-zh="0→1 自研" data-en="0→1 Solo">0→1 自研</span></span>
-          <span class="meta-item"><span class="meta-dot"></span><span data-zh="AI 生成引擎" data-en="Generation Engine">AI 生成引擎</span></span>
-          <span class="meta-item"><span class="meta-dot"></span><span data-zh="模型可控性" data-en="Agent Reliability">模型可控性</span></span>
+          <span class="meta-item"><span class="meta-dot"></span><span data-zh="PageModel" data-en="PageModel">PageModel</span></span>
+          <span class="meta-item"><span class="meta-dot"></span><span data-zh="Evaluator" data-en="Evaluator">Evaluator</span></span>
         </div>
         <span class="card-arrow">↗</span>
       </div>
@@ -1199,6 +1222,7 @@ const projects = {
 <figure class="detail-img"><img src="assets/images/projects/paige/from-app/paige-editor-canvas.jpg" loading="lazy" alt="Paige 从自然语言生成多页后台并在画布中实时展示"><figcaption>真实运行中的 Paige：左侧输入完整需求，系统拆出页面首稿，右侧画布同步渲染，并在底部显示不变量自检结果。</figcaption></figure>
 <figure class="detail-summary"><div class="detail-summary-head"><b>项目概览：它解决什么、什么时候用、怎么用</b><span class="detail-summary-tag">WHAT / WHEN / HOW</span></div><div class="detail-summary-body"><div class="summary-grid three"><div class="summary-card"><div class="summary-label">解决什么</div><div class="summary-title">把业务需求变成页面草稿</div><div class="summary-text">不用先画线框图或写很细的表格配置，先让 AI 生成一个可看的后台页面起点。</div></div><div class="summary-card"><div class="summary-label">什么时候用</div><div class="summary-title">需求还在早期、但需要尽快看见形状</div><div class="summary-text">适合司机管理、审核后台、配置中心、订单列表这类 B 端页面，帮助产品、设计、研发更早对齐。</div></div><div class="summary-card"><div class="summary-label">怎么使用</div><div class="summary-title">描述需求，再继续修改</div><div class="summary-text">先输入一句或一段业务描述，生成页面后，再用自然语言要求它改字段、改布局、改交互。</div></div></div><div class="summary-caption">它还不是一个完全自主替人完成整套系统的 Agent，更准确地说，是 AI 辅助的业务界面生成与编辑环境。</div></div></figure>
 <p>这也是我后来重新校准 Paige 定位的地方。它不是聊天机器人，也不是纯自动化 workflow；它更像一个 AI 版的界面生成助手，解决的是从业务需求到页面结构的第一步。真正的产品判断仍然由人负责，AI 负责把重复的拆页、布字段、做首稿和暴露遗漏往前推。</p>
+<p>从 Agent Harness 的角度看，Paige 的重点不是“生成一个页面”，而是搭一套让模型可靠参与真实任务的环境：输入如何组织，模型能调用哪些操作，执行结果如何检查，失败如何记录，用户反馈如何进入下一轮。它目前只覆盖“需求到界面”这个局部任务，但这个局部已经包含了 Harness 产品最核心的一些问题。</p>
 <div class="detail-video-grid"><figure class="detail-video-card"><video controls preload="metadata" playsinline poster="assets/videos/paige/natural-language-generation.mp4.png" src="assets/videos/paige/natural-language-generation.mp4"></video><figcaption><span class="detail-video-title">1. 自然语言生成页面</span><span class="detail-video-note">输入“做一个表格”等口语化需求后，Paige 生成可预览的后台页面。</span></figcaption></figure><figure class="detail-video-card"><video controls preload="metadata" playsinline poster="assets/videos/paige/page-interaction.mp4.png" src="assets/videos/paige/page-interaction.mp4"></video><figcaption><span class="detail-video-title">2. 页面可以继续交互</span><span class="detail-video-note">生成结果不是静态图片，可以在画布里查看、切换、演示和继续调整。</span></figcaption></figure><figure class="detail-video-card"><video controls preload="metadata" playsinline poster="assets/videos/paige/field-editing.mp4.png" src="assets/videos/paige/field-editing.mp4"></video><figcaption><span class="detail-video-title">3. 字段和结构可编辑</span><span class="detail-video-note">用户可以继续修改字段、筛选项和页面结构，让 AI 生成结果进入真实协作。</span></figcaption></figure></div>
 <p>我从 2026 年初开始独立设计和构建 Paige。它解决的不是“让 AI 画一张更像设计稿的图”，而是 B 端产品从 PRD 到设计、规格、前端和 MasterGo 图层之间反复转译、反复损耗的问题。我的目标是把这条链路收进一个可执行的 PageModel：同一份结构化事实，可以投影成可点原型、流程图、字段规格、前端代码和可编辑图层。</p>
 <p>所以这篇文章会分成两层读：前半部分先回答外行最关心的三个问题——它解决什么问题、在什么情况下使用、如何使用；后半部分再展开我在构建过程中对 Agent、workflow、评价器、失败处理和产品边界的理解。</p>
@@ -1273,6 +1297,7 @@ const projects = {
 <figure class="detail-img"><img src="assets/images/projects/paige/from-app/paige-editor-canvas.jpg" loading="lazy" alt="Paige generating multi-page admin interfaces from natural language"><figcaption>Paige running in the browser: the requirement is entered on the left, generated screens appear on the canvas, and invariant checks run at the bottom.</figcaption></figure>
 <figure class="detail-summary"><div class="detail-summary-head"><b>Project overview: what it solves, when to use it, and how it works</b><span class="detail-summary-tag">WHAT / WHEN / HOW</span></div><div class="detail-summary-body"><div class="summary-grid three"><div class="summary-card"><div class="summary-label">What it solves</div><div class="summary-title">Turns requirements into interface drafts</div><div class="summary-text">Instead of starting from a blank canvas, teams can get a usable admin-screen draft from a business description.</div></div><div class="summary-card"><div class="summary-label">When to use it</div><div class="summary-title">When the requirement needs shape fast</div><div class="summary-text">Driver management, approval flows, config centers, order lists: B2B pages where PM, design, and engineering need early alignment.</div></div><div class="summary-card"><div class="summary-label">How it works</div><div class="summary-title">Describe, generate, then edit</div><div class="summary-text">A user enters the need, reviews the generated screen, and keeps adjusting fields, layout, and interactions in natural language.</div></div></div><div class="summary-caption">It is not a fully autonomous agent yet. More precisely, it is an AI-assisted generation and editing environment for business interfaces.</div></div></figure>
 <p>That distinction matters. Paige is not a chatbot, and it is not just a workflow automation tool. It sits before full autonomy: the human still owns product judgment, while AI helps push forward the repetitive work of translating requirements into screen structure, surfacing omissions, and producing a first draft that people can discuss.</p>
+<p>From an Agent Harness perspective, Paige is not mainly about generating a screen. It is about building an environment where a model can participate in a real task with boundaries: how input is organized, which operations the model can use, how execution is checked, how failures are logged, and how user feedback should enter the next iteration. It currently covers one focused task, requirement-to-interface, but that task already contains several core Harness problems.</p>
 <div class="detail-video-grid"><figure class="detail-video-card"><video controls preload="metadata" playsinline poster="assets/videos/paige/natural-language-generation.mp4.png" src="assets/videos/paige/natural-language-generation.mp4"></video><figcaption><span class="detail-video-title">1. Generate from natural language</span><span class="detail-video-note">A plain prompt like “make a table page” becomes a previewable admin interface.</span></figcaption></figure><figure class="detail-video-card"><video controls preload="metadata" playsinline poster="assets/videos/paige/page-interaction.mp4.png" src="assets/videos/paige/page-interaction.mp4"></video><figcaption><span class="detail-video-title">2. Interact with the generated page</span><span class="detail-video-note">The output is not a static image. It can be viewed, switched, demoed, and refined on the canvas.</span></figcaption></figure><figure class="detail-video-card"><video controls preload="metadata" playsinline poster="assets/videos/paige/field-editing.mp4.png" src="assets/videos/paige/field-editing.mp4"></video><figcaption><span class="detail-video-title">3. Edit fields and structure</span><span class="detail-video-note">Users can continue changing fields, filters, and page structure so the result can enter real collaboration.</span></figcaption></figure></div>
 <p>I started designing and building Paige independently in early 2026. The problem is not “making AI draw a prettier mockup.” The real problem is the lossy delivery chain from PRD to design, specs, frontend, and MasterGo layers in B2B products. My bet is to pull that chain onto one executable PageModel: a structured source of truth that can project into a clickable prototype, a flow map, a field-and-action spec, frontend code, and editable design layers.</p>
 <h3 id="pg-en-01" data-toc="The Problem"><i>01</i>The Problem</h3><p>I drew B2B screens for ten years, and the longer I did it the more certain I became that design delivery doesn't scale. A request comes in, PMs, designers, and engineers each produce different artifacts, and every handoff loses some fields, states, actions, edge cases, or business meaning. Teams compensate with more annotations, more reviews, and more repeated explanation, but the underlying gap is still there. Paige started as my attempt to turn that gap into a system problem instead of a communication tax.</p>
