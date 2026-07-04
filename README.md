@@ -1,34 +1,44 @@
 # Xie Songlun Portfolio
 
-这是谢松伦的个人作品集网站。当前项目是静态网站，不需要写代码或安装复杂工具就可以通过 GitHub Pages 上线。
+这是谢松伦的个人作品集网站。当前项目是静态网站，代码托管在 GitHub，正式投递使用 Vercel 域名。
 
 ## 文件说明
 
-- `index.html`：网站首页内容
-- `styles.css`：网站样式
-- `script.js`：语言切换、项目切换和页面动效
+- `index.html`：网站主体内容、样式和交互
+- `assets/`：图片、音频、视频等素材
 - `personal-info.pdf`：简历 PDF
+- `CLAUDE.md`：给 Claude Code / 其他 AI 编码工具的项目交接说明
+
+## 当前线上地址
+
+- Vercel 正式地址：`https://xiesonglun-portfolio.vercel.app`
+- GitHub 仓库：`https://github.com/Darren1119/my-zpj`
+- GitHub 远端：`git@github.com:Darren1119/my-zpj.git`
+- 生产分支：`main`
 
 ## 更新网站的简单流程
 
 1. 修改本地文件。
-2. 在浏览器里预览 `index.html`，确认内容正常。
-3. 把改动提交到 GitHub。
-4. GitHub Pages 会自动更新线上网站。
+2. 本地预览，确认内容和图片正常。
+3. 提交并推送到 GitHub。
+4. 用 Vercel CLI 发布到正式地址。
 
-## GitHub Pages 设置
+常用命令：
 
-进入 GitHub 仓库后：
+```bash
+cd "/Users/xiesonglun/Documents/New project 5"
+git status --short
+git add index.html assets personal-info.pdf README.md CLAUDE.md
+git commit -m "Update portfolio"
+git push origin main
+npx vercel --prod --yes
+```
 
-1. 点击 `Settings`
-2. 点击左侧 `Pages`
-3. 在 `Build and deployment` 里选择：
-   - `Source`: `Deploy from a branch`
-   - `Branch`: `main`
-   - Folder: `/root`
-4. 点击 `Save`
+本地预览：
 
-保存后等待 1-3 分钟，GitHub 会生成一个网址，通常类似：
+```bash
+cd "/Users/xiesonglun/Documents/New project 5"
+python3 -m http.server 4174
+```
 
-`https://Darren1119.github.io/my-zpj/`
-
+然后打开 `http://127.0.0.1:4174/`。
