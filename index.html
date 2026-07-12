@@ -134,12 +134,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .page-eyebrow::before{content:'✳';color:var(--accent)}
 .page-heading{font-family:var(--disp);font-weight:800;font-size:clamp(2.6rem,6vw,4.5rem);color:var(--ink);margin-bottom:0.8rem;text-transform:uppercase;letter-spacing:-0.02em}
 .page-sub{font-family:var(--disp);font-weight:600;font-size:clamp(1.1rem,2vw,1.5rem);color:var(--ink);margin-bottom:3.5rem;max-width:30em;line-height:1.4}
-.fit-panel{margin:-1.3rem 0 3rem;border:2.5px solid var(--ink);box-shadow:6px 6px 0 var(--ink);background:var(--paper);padding:1.2rem}
-.fit-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1rem}
-.fit-title{font-family:var(--disp);font-weight:800;font-size:1.2rem;line-height:1.25;color:var(--ink);letter-spacing:-0.01em}
-.fit-note{font-family:var(--sans);font-size:0.78rem;line-height:1.65;color:var(--mute);max-width:34rem}
-.fit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0.75rem}
-.fit-card{border:1.5px solid var(--faint);border-radius:6px;padding:0.9rem;background:color-mix(in srgb,var(--paper) 96%,#f7efe6)}
+.fit-panel{margin:-1.3rem 0 3.4rem;border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 7%,transparent),transparent 42%);padding:1.55rem 0 1.45rem}
+.fit-head{display:grid;grid-template-columns:minmax(220px,0.75fr) minmax(0,1.35fr);align-items:start;gap:1.4rem;margin-bottom:1.2rem}
+.fit-title{font-family:var(--disp);font-weight:800;font-size:1.15rem;line-height:1.25;color:var(--ink);letter-spacing:-0.01em}
+.fit-title::before{content:'Context';display:block;font-family:var(--sans);font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:0.45rem}
+.fit-note{font-family:var(--sans);font-size:0.78rem;line-height:1.7;color:var(--mute);max-width:43rem}
+.fit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.05rem;border-top:2px solid var(--faint)}
+.fit-card{padding:0.95rem 1rem 0.15rem 0;border-left:3px solid var(--accent);background:transparent}
 .fit-label{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:0.48rem}
 .fit-card-title{font-size:0.9rem;line-height:1.5;color:var(--ink);font-weight:800}
 .fit-card-text{font-size:0.74rem;line-height:1.68;color:var(--mute);margin-top:0.42rem}
