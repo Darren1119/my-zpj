@@ -647,6 +647,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     </div>
     <section class="mh-group mh-about">
       <p class="mh-label" data-zh="关于" data-en="About">关于</p>
+      <div class="mh-traits">
+        <div class="mh-trait"><span class="mh-tr-k" data-zh="好奇心" data-en="Curiosity">好奇心</span><span class="mh-tr-v" data-zh="新工具当月就进我的工作流。这个作品集从找参考到上线只花了两天，全程和 AI 一起做。" data-en="New tools enter my workflow the month they ship. This site went from references to live in two days, built with AI throughout.">新工具当月就进我的工作流。这个作品集从找参考到上线只花了两天，全程和 AI 一起做。</span></div>
+        <div class="mh-trait"><span class="mh-tr-k" data-zh="原型能力" data-en="Prototyping">原型能力</span><span class="mh-tr-v" data-zh="想法不过夜，先做成能跑的东西再拿去讨论。Paige 一路迭代了十八个版本，每一版都能用。" data-en="Ideas don't sit overnight; they become something runnable before we talk. Paige has been through eighteen working versions.">想法不过夜，先做成能跑的东西再拿去讨论。Paige 一路迭代了十八个版本，每一版都能用。</span></div>
+        <div class="mh-trait"><span class="mh-tr-k" data-zh="有观点" data-en="A Point of View">有观点</span><span class="mh-tr-v" data-zh="对产品该怎么做敢下判断，也敢公开写出来。写作夹里的六篇，每篇都落在一个结论上。" data-en="I make calls on how products should work and publish them. Each of the six essays lands on a conclusion.">对产品该怎么做敢下判断，也敢公开写出来。写作夹里的六篇，每篇都落在一个结论上。</span></div>
+        <div class="mh-trait"><span class="mh-tr-k" data-zh="系统思维" data-en="Systems Thinking">系统思维</span><span class="mh-tr-v" data-zh="不做一次性的方案。操作词表、评价器、失败日志，这些能互相组合的底层件让结论可以重跑、可以追溯。" data-en="No one-off solutions. Operation vocabularies, evaluators and failure logs compose, so conclusions can be re-run and traced.">不做一次性的方案。操作词表、评价器、失败日志，这些能互相组合的底层件让结论可以重跑、可以追溯。</span></div>
+      </div>
       <p class="mh-about-p" data-zh="10 年专注于桌面端企业级产品设计。曾主导滴滴国际、字节跳动火山引擎、快手等一线大厂的核心产品从 0 到 1 构建与重构，沉淀专利 15 项以上，含 2 项发明。" data-en="Ten years of desktop enterprise product design. Led core product builds and rebuilds at DiDi International, ByteDance Volcano Engine, and Kuaishou, with 15+ patents including 2 inventions.">10 年专注于桌面端企业级产品设计。曾主导滴滴国际、字节跳动火山引擎、快手等一线大厂的核心产品从 0 到 1 构建与重构，沉淀专利 15 项以上，含 2 项发明。</p>
       <div class="mh-exp">
       <div class="mh-exp-row"><span class="mh-exp-co">滴滴国际</span><span class="mh-exp-role" data-zh="产品设计师 · AI 探索 / 国际化产品设计" data-en="Product Designer · AI Exploration / International">产品设计师 · AI 探索 / 国际化产品设计</span><span class="mh-exp-time">2023.05 — 至今</span></div>
@@ -2234,6 +2240,11 @@ nav .lang-toggle:hover{transform:none;box-shadow:none;background:rgba(20,17,13,.
 .build-log>summary::after{font-weight:400;color:color-mix(in srgb,var(--ink) 40%,transparent);font-size:1.05rem}
 .build-log[open]>summary{border-bottom:1px solid var(--faint)}
 .mh-about{margin-top:88px}
+.mh-traits{border-top:1px solid var(--faint);margin:0 0 30px}
+.mh-trait{display:flex;align-items:baseline;gap:18px;padding:12px 0;border-bottom:1px solid var(--faint)}
+.mh-tr-k{font-size:14px;font-weight:600;color:var(--ink);flex:0 0 5em}
+.mh-tr-v{font-size:13.5px;line-height:1.85;color:color-mix(in srgb,var(--ink) 58%,transparent)}
+@media (max-width:560px){.mh-trait{flex-direction:column;gap:2px}}
 .mh-about-p{font-size:14.5px;line-height:1.9;color:color-mix(in srgb,var(--ink) 62%,transparent);max-width:36em;margin:0 0 22px}
 .mh-exp{border-top:1px solid var(--faint)}
 .mh-exp-row{display:flex;align-items:baseline;gap:16px;padding:11px 0;border-bottom:1px solid var(--faint)}
