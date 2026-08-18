@@ -2178,6 +2178,7 @@ nav .lang-toggle:hover{transform:none;box-shadow:none;background:rgba(20,17,13,.
 .st-card img{display:block;width:auto;height:auto;max-width:min(70vw,820px);max-height:64vh}
 .st-card.is-note{display:flex;align-items:center;justify-content:center;padding:6%;width:min(52vw,680px);aspect-ratio:16/10}
 .st-card.is-note .st-note-t{font-size:clamp(18px,2.6vw,30px);font-weight:650;line-height:1.5;text-align:center;font-family:var(--cn)}
+a.st-card{text-decoration:none;color:inherit}
 .st-card[data-pos="-1"]{transform:translate(-50%,-50%) translateX(-78%) scale(.56);opacity:.55;z-index:1}
 .st-card[data-pos="1"]{transform:translate(-50%,-50%) translateX(78%) scale(.56);opacity:.55;z-index:1}
 .st-card[data-pos="0"]{z-index:3}
@@ -2334,15 +2335,16 @@ window.mhGo = function(id){
   function buildStage(cards, startIdx){
     items = cards; cur = startIdx; track.innerHTML = '';
     cards.forEach(function(c, i){
-      var el = document.createElement('div');
+      var el = document.createElement(c.href ? 'a' : 'div');
       el.className = 'st-card' + (c.img ? '' : ' is-note');
       el.dataset.idx = i;
+      if (c.href) { el.href = c.href; el.target = '_blank'; el.rel = 'noopener'; }
       if (c.img) { var im = document.createElement('img'); im.src = c.img; im.alt = c.zh; el.appendChild(im); }
       else { var t = document.createElement('span'); t.className = 'st-note-t'; t.textContent = enMode() ? c.en : c.zh; el.appendChild(t); }
-      el.addEventListener('click', function(){
+      el.addEventListener('click', function(ev){
         var idx = parseInt(el.dataset.idx, 10);
-        if (idx === cur) { if (c.id) { closeStage(); location.hash = 'project/' + c.id; } else if (c.href) { window.open(c.href, '_blank', 'noopener'); } }
-        else { cur = idx; layout(); }
+        if (idx === cur) { if (c.id) { closeStage(); location.hash = 'project/' + c.id; } }
+        else { if (c.href) ev.preventDefault(); cur = idx; layout(); }
       });
       track.appendChild(el);
     });
