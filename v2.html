@@ -598,7 +598,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <li><a href="#" onclick="showPage('human');return false" data-page="human">Human</a></li>
   </ul>
   <div class="nav-right">
-    <div class="mh-navright"><a href="javascript:void(0)" onclick="mhGo('work')" data-zh="作品" data-en="Work">作品</a><a href="javascript:void(0)" onclick="mhGo('about')" data-zh="关于" data-en="About">关于</a><button class="lang-toggle" id="langBtn">EN</button></div>
+    <div class="mh-navright"><a href="javascript:void(0)" onclick="mhGo('work')" data-zh="作品" data-en="Work">作品</a><a href="javascript:void(0)" onclick="mhGo('about')" data-zh="关于" data-en="About">关于</a><a href="javascript:void(0)" onclick="mhGo('contact')" data-zh="联系" data-en="Contact">联系</a><button class="lang-toggle" id="langBtn">EN</button></div>
     <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
   </div>
 </nav>
@@ -663,13 +663,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       <div class="mh-exp-row"><span class="mh-exp-co">奥维云网</span><span class="mh-exp-role" data-zh="产品设计师 · 大数据" data-en="Product Designer · Big Data">产品设计师 · 大数据</span><span class="mh-exp-time">2015.06 — 2016.01</span></div>
       </div>
 </section>
-    <footer class="mh-foot" id="contact">
-      <a href="mailto:songlundesign@outlook.com">songlundesign@outlook.com</a>
-      <a href="tel:+8613683301659">+86 136 8330 1659</a>
-      <a href="javascript:void(0)" class="mh-copy" data-copy="opposite_way"><span data-zh="微信 opposite_way" data-en="WeChat opposite_way">微信 opposite_way</span></a>
-      <a href="javascript:void(0)" class="mh-copy" data-copy="388106808"><span data-zh="小红书 大菜包包" data-en="RED dacaibaobao">小红书 大菜包包</span></a>
-      <a href="https://github.com/Darren1119" target="_blank" rel="noopener">GitHub</a>
-    </footer>
+    <section class="mh-group mh-contact" id="contact">
+      <p class="mh-label" data-zh="联系" data-en="Contact">联系</p>
+      <div class="mh-ct">
+        <a class="mh-ct-row" href="mailto:songlundesign@outlook.com"><span class="mh-ct-k" data-zh="邮箱" data-en="Email">邮箱</span><span class="mh-ct-v">songlundesign@outlook.com</span></a>
+        <a class="mh-ct-row" href="tel:+8613683301659"><span class="mh-ct-k" data-zh="电话" data-en="Phone">电话</span><span class="mh-ct-v">+86 136 8330 1659</span></a>
+        <a class="mh-ct-row" href="javascript:void(0)" data-copy="opposite_way"><span class="mh-ct-k" data-zh="微信" data-en="WeChat">微信</span><span class="mh-ct-v">opposite_way</span><em class="mh-ct-hint" data-zh="点击复制" data-en="Click to copy">点击复制</em></a>
+        <a class="mh-ct-row" href="javascript:void(0)" data-copy="388106808"><span class="mh-ct-k" data-zh="小红书" data-en="RED">小红书</span><span class="mh-ct-v">大菜包包 · 388106808</span><em class="mh-ct-hint" data-zh="点击复制" data-en="Click to copy">点击复制</em></a>
+        <a class="mh-ct-row" href="https://github.com/Darren1119" target="_blank" rel="noopener"><span class="mh-ct-k">GitHub</span><span class="mh-ct-v">Darren1119</span></a>
+      </div>
+    </section>
   </div>
   <div id="stage" hidden>
     <button id="stageClose" aria-label="关闭">✕</button>
@@ -2112,7 +2115,14 @@ nav .lang-toggle:hover{transform:none;box-shadow:none;background:rgba(20,17,13,.
 .mh-foot{margin-top:84px;display:flex;gap:22px;font-size:13px;flex-wrap:wrap}
 .mh-foot a{color:color-mix(in srgb,var(--ink) 45%,transparent);text-decoration:none;border:0;box-shadow:none;background:none;padding:0}
 .mh-foot a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
-.mh-foot .mh-copy{cursor:copy}
+.mh-ct{border-top:1px solid var(--faint)}
+.mh-ct-row{display:flex;align-items:baseline;gap:18px;padding:13px 0;border-bottom:1px solid var(--faint);text-decoration:none;cursor:pointer}
+.mh-ct-row[data-copy]{cursor:copy}
+.mh-ct-k{font-size:12.5px;color:color-mix(in srgb,var(--ink) 42%,transparent);flex:0 0 5em}
+.mh-ct-v{font-size:14.5px;font-weight:500;color:var(--ink)}
+.mh-ct-row:hover .mh-ct-v{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.mh-ct-hint{margin-left:auto;font-style:normal;font-size:12px;color:color-mix(in srgb,var(--ink) 35%,transparent);white-space:nowrap}
+#contact{scroll-margin-top:72px}
 
 /* folders */
 .fd-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:56px 48px;margin-top:72px;max-width:760px}
@@ -2281,14 +2291,13 @@ nav .lang-toggle:hover{transform:none;box-shadow:none;background:rgba(20,17,13,.
 </style>
 <script>
 document.addEventListener('click', function(e){
-  var c = e.target.closest('.mh-copy');
+  var c = e.target.closest('.mh-ct-row[data-copy]');
   if (!c) return;
-  var val = c.getAttribute('data-copy');
-  var sp = c.querySelector('span');
-  var orig = sp.innerHTML;
-  navigator.clipboard.writeText(val).then(function(){
-    sp.textContent = (document.getElementById('langBtn').textContent.trim() === '中') ? 'Copied ' + val : '已复制 ' + val;
-    setTimeout(function(){ sp.innerHTML = orig; }, 1600);
+  var hint = c.querySelector('.mh-ct-hint');
+  var orig = hint.innerHTML;
+  navigator.clipboard.writeText(c.getAttribute('data-copy')).then(function(){
+    hint.textContent = (document.getElementById('langBtn').textContent.trim() === '中') ? 'Copied' : '已复制';
+    setTimeout(function(){ hint.innerHTML = orig; }, 1600);
   });
 });
 window.mhGo = function(id){
