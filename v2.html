@@ -598,7 +598,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <li><a href="#" onclick="showPage('human');return false" data-page="human">Human</a></li>
   </ul>
   <div class="nav-right">
-    <button class="lang-toggle" id="langBtn">EN</button>
+    <div class="mh-navright"><a href="javascript:void(0)" onclick="mhGo('work')" data-zh="作品" data-en="Work">作品</a><a href="javascript:void(0)" onclick="mhGo('about')" data-zh="关于" data-en="About">关于</a><button class="lang-toggle" id="langBtn">EN</button></div>
     <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
   </div>
 </nav>
@@ -611,7 +611,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       <p class="mh-id" data-zh="产品设计师。10 年 B 端复杂系统设计，长处在体验与应用。" data-en="Product designer. Ten years in complex B2B systems, strongest at experience and application.">产品设计师。10 年 B 端复杂系统设计，长处在体验与应用。</p>
       <p class="mh-bio" data-zh="现在做的事，是把 AI 放进真实的工作环境里解决具体问题。模型隔几个月就换一代，产品最后好不好用，差距都藏在体验细节里。我的时间大都花在这上面。" data-en="What I do now is put AI into real working environments to solve concrete problems. Models turn over every few months, and whether a product ends up usable is decided in the experience details. That is where most of my time goes.">现在做的事，是把 AI 放进真实的工作环境里解决具体问题。模型隔几个月就换一代，产品最后好不好用，差距都藏在体验细节里。我的时间大都花在这上面。</p>
     </header>
-    <div class="fd-grid">
+    <div class="fd-grid" id="work">
       <div class="fd">
         <div class="fd-box" role="button" tabindex="0" aria-label="现在 · AI">
           <div class="fd-back"></div>
@@ -645,7 +645,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
         <p class="fd-label"><span data-zh="生活" data-en="Life">生活</span><em>4 类</em></p>
       </div>
     </div>
-    <section class="mh-group mh-about">
+    <section class="mh-group mh-about" id="about">
       <p class="mh-label" data-zh="关于" data-en="About">关于</p>
       <p class="mh-about-p" data-zh="10 年专注于桌面端企业级产品设计。曾主导滴滴国际、字节跳动火山引擎、快手等一线大厂的核心产品从 0 到 1 构建与重构，沉淀专利 15 项以上，含 2 项发明。" data-en="Ten years of desktop enterprise product design. Led core product builds and rebuilds at DiDi International, ByteDance Volcano Engine, and Kuaishou, with 15+ patents including 2 inventions.">10 年专注于桌面端企业级产品设计。曾主导滴滴国际、字节跳动火山引擎、快手等一线大厂的核心产品从 0 到 1 构建与重构，沉淀专利 15 项以上，含 2 项发明。</p>
       <div class="mh-traits">
@@ -2097,6 +2097,10 @@ nav .nav-logo{font-family:var(--cn);font-weight:600;font-size:14px;letter-spacin
 nav .nav-logo:hover{opacity:.7}
 nav .lang-toggle{font-family:var(--cn);font-size:12px;font-weight:500;letter-spacing:.02em;text-transform:none;color:color-mix(in srgb,var(--ink) 55%,transparent);background:rgba(20,17,13,.05);border:0;border-radius:99px;padding:5px 13px;box-shadow:none;cursor:pointer;transition:background .2s ease,color .2s ease}
 nav .lang-toggle:hover{transform:none;box-shadow:none;background:rgba(20,17,13,.1);color:var(--ink)}
+.mh-navright{display:flex;align-items:center;gap:20px}
+.mh-navright a{font-family:var(--cn);font-size:13px;font-weight:500;color:color-mix(in srgb,var(--ink) 55%,transparent);text-decoration:none}
+.mh-navright a:hover{color:var(--ink)}
+#work,#about{scroll-margin-top:72px}
 .reveal{opacity:1 !important;transform:none !important;transition:none !important}
 .mh{max-width:880px;margin:0 auto;padding:92px 28px 72px;font-family:var(--cn)}
 .mh-name{font-size:17px;font-weight:650;margin:0 0 10px}
@@ -2272,6 +2276,15 @@ nav .lang-toggle:hover{transform:none;box-shadow:none;background:rgba(20,17,13,.
 
 </style>
 <script>
+window.mhGo = function(id){
+  var h = location.hash.replace(/^#/,'');
+  if (h && h !== 'home') {
+    showPage('home');
+    setTimeout(function(){ var el = document.getElementById(id); if (el) el.scrollIntoView({behavior:'instant', block:'start'}); }, 350);
+  } else {
+    var el = document.getElementById(id); if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+};
 (function(){
   var stage = document.getElementById('stage');
   var track = document.getElementById('stageTrack');
