@@ -663,8 +663,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
       <div class="mh-exp-row"><span class="mh-exp-co">奥维云网</span><span class="mh-exp-role" data-zh="产品设计师 · 大数据" data-en="Product Designer · Big Data">产品设计师 · 大数据</span><span class="mh-exp-time">2015.06 — 2016.01</span></div>
       </div>
 </section>
-    <footer class="mh-foot">
+    <footer class="mh-foot" id="contact">
       <a href="mailto:songlundesign@outlook.com">songlundesign@outlook.com</a>
+      <a href="tel:+8613683301659">+86 136 8330 1659</a>
+      <a href="javascript:void(0)" class="mh-copy" data-copy="opposite_way"><span data-zh="微信 opposite_way" data-en="WeChat opposite_way">微信 opposite_way</span></a>
+      <a href="javascript:void(0)" class="mh-copy" data-copy="388106808"><span data-zh="小红书 大菜包包" data-en="RED dacaibaobao">小红书 大菜包包</span></a>
       <a href="https://github.com/Darren1119" target="_blank" rel="noopener">GitHub</a>
     </footer>
   </div>
@@ -2109,6 +2112,7 @@ nav .lang-toggle:hover{transform:none;box-shadow:none;background:rgba(20,17,13,.
 .mh-foot{margin-top:84px;display:flex;gap:22px;font-size:13px;flex-wrap:wrap}
 .mh-foot a{color:color-mix(in srgb,var(--ink) 45%,transparent);text-decoration:none;border:0;box-shadow:none;background:none;padding:0}
 .mh-foot a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.mh-foot .mh-copy{cursor:copy}
 
 /* folders */
 .fd-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:56px 48px;margin-top:72px;max-width:760px}
@@ -2276,6 +2280,17 @@ nav .lang-toggle:hover{transform:none;box-shadow:none;background:rgba(20,17,13,.
 
 </style>
 <script>
+document.addEventListener('click', function(e){
+  var c = e.target.closest('.mh-copy');
+  if (!c) return;
+  var val = c.getAttribute('data-copy');
+  var sp = c.querySelector('span');
+  var orig = sp.innerHTML;
+  navigator.clipboard.writeText(val).then(function(){
+    sp.textContent = (document.getElementById('langBtn').textContent.trim() === '中') ? 'Copied ' + val : '已复制 ' + val;
+    setTimeout(function(){ sp.innerHTML = orig; }, 1600);
+  });
+});
 window.mhGo = function(id){
   var h = location.hash.replace(/^#/,'');
   if (h && h !== 'home') {
