@@ -4,18 +4,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>谢松伦 Xie Songlun · Product Designer / AI Explorer</title>
-<meta name="description" content="谢松伦 Xie Songlun — 产品设计师。10 年 B 端复杂系统设计经验，近期用 Paige 做 AI 页面生成与设计交付实验，记录需求到界面、评测、失败日志和人机边界。">
+<title>谢松伦 · 体验设计师</title>
+<meta name="description" content="产品设计师，长处在体验与应用。把 AI 放进真实的工作环境里解决具体问题，差距都藏在体验细节里。">
 <meta name="author" content="谢松伦 Xie Songlun">
 <!-- 社交分享卡片（部署到正式域名后，请把 og:image 换成完整 https 绝对地址才能在微信/X 等平台显示预览图） -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="谢松伦 Xie Songlun · Product Designer / AI Explorer">
-<meta property="og:description" content="10 年 B 端复杂系统设计经验，近期用 Paige 记录 AI 如何参与需求到界面的设计交付。">
-<meta property="og:image" content="assets/images/projects/paige/from-app/paige-editor-canvas.jpg">
+<meta property="og:title" content="谢松伦 · 体验设计师">
+<meta property="og:url" content="https://xiesonglun-portfolio.vercel.app/">
+<meta property="og:description" content="产品设计师，长处在体验与应用。把 AI 放进真实的工作环境里解决具体问题。">
+<meta property="og:image" content="https://xiesonglun-portfolio.vercel.app/assets/og-v2.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="谢松伦 Xie Songlun · Product Designer / AI Explorer">
-<meta name="twitter:description" content="10 年 B 端复杂系统设计经验，近期用 Paige 记录 AI 如何参与需求到界面的设计交付。">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0a'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%23c8b89a' text-anchor='middle'%3EX%3C/text%3E%3C/svg%3E">
+<meta name="twitter:title" content="谢松伦 · 体验设计师">
+<meta name="twitter:description" content="产品设计师，长处在体验与应用。把 AI 放进真实的工作环境里解决具体问题。">
+<link rel="icon" type="image/png" href="assets/favicon-v2.png">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -585,11 +586,214 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .ap-desc{font-family:var(--sans);font-size:0.83rem;color:var(--mute);line-height:1.5}
 .ap-arrow{font-family:var(--disp);font-weight:800;font-size:1.5rem;color:var(--accent);flex-shrink:0}
 </style>
+
+<style>
+/* ===== minimal + folders experiment ===== */
+:root{--accent:#14110d;--spring:cubic-bezier(.32,1.18,.42,1);--glide:cubic-bezier(.22,1,.36,1)}
+nav{height:48px;padding:0 20px;border-bottom:1px solid rgba(20,17,13,.07);background:rgba(255,255,255,.72);backdrop-filter:blur(20px) saturate(1.8);-webkit-backdrop-filter:blur(20px) saturate(1.8);box-shadow:none}
+nav .nav-links,#navToggle{display:none !important}
+nav .nav-logo{font-family:var(--cn);font-weight:600;font-size:14px;letter-spacing:.01em;color:var(--ink)}
+nav .nav-logo:hover{opacity:.7}
+nav .lang-toggle{font-family:var(--cn);font-size:12px;font-weight:500;letter-spacing:.02em;text-transform:none;color:color-mix(in srgb,var(--ink) 55%,transparent);background:rgba(20,17,13,.05);border:0;border-radius:99px;padding:5px 13px;box-shadow:none;cursor:pointer;transition:background .2s ease,color .2s ease}
+nav .lang-toggle:hover{transform:none;box-shadow:none;background:rgba(20,17,13,.1);color:var(--ink)}
+.mh-navright{display:flex;align-items:center;gap:20px}
+.mh-navright a{font-family:var(--cn);font-size:13px;font-weight:500;color:color-mix(in srgb,var(--ink) 55%,transparent);text-decoration:none}
+.mh-navright a:hover{color:var(--ink)}
+#work,#about{scroll-margin-top:72px}
+.reveal{opacity:1 !important;transform:none !important;transition:none !important}
+.mh{max-width:880px;margin:0 auto;padding:92px 28px 72px;font-family:var(--cn)}
+.mh-name{font-size:17px;font-weight:650;margin:0 0 10px}
+.mh-id{font-size:15px;color:color-mix(in srgb,var(--ink) 58%,transparent);margin:0 0 6px;line-height:1.8}
+.mh-bio{font-size:15px;color:color-mix(in srgb,var(--ink) 58%,transparent);margin:0;line-height:1.8;max-width:36em}
+.mh-foot{margin-top:84px;display:flex;gap:22px;font-size:13px;flex-wrap:wrap}
+.mh-foot a{color:color-mix(in srgb,var(--ink) 45%,transparent);text-decoration:none;border:0;box-shadow:none;background:none;padding:0}
+.mh-foot a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.mh-ct{border-top:1px solid var(--faint)}
+.mh-ct-row{display:flex;align-items:baseline;gap:18px;padding:13px 0;border-bottom:1px solid var(--faint);text-decoration:none;cursor:pointer}
+.mh-ct-row[data-copy]{cursor:copy}
+.mh-ct-k{font-size:12.5px;color:color-mix(in srgb,var(--ink) 42%,transparent);flex:0 0 5em}
+.mh-ct-v{font-size:14.5px;font-weight:500;color:var(--ink)}
+.mh-ct-row:hover .mh-ct-v{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.mh-ct-hint{margin-left:auto;font-style:normal;font-size:12px;color:color-mix(in srgb,var(--ink) 35%,transparent);white-space:nowrap}
+#contact{scroll-margin-top:72px}
+.mh-contact{margin-top:88px}
+
+/* folders */
+.fd-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:56px 48px;margin-top:72px;max-width:760px}
+.fd{min-width:0}
+.fd-box{position:relative;aspect-ratio:5/4;cursor:pointer;outline:none;border-radius:16px}
+.fd-box:focus-visible{box-shadow:0 0 0 2px #fff,0 0 0 4px color-mix(in srgb,var(--ink) 40%,transparent)}
+.fd-back{position:absolute;inset:12% 0 0 0;border-radius:14px;background:linear-gradient(180deg,#e9e5df,#d8d3ca);box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
+.fd-back::before{content:"";position:absolute;top:-16px;left:0;width:40%;height:24px;border-radius:12px 14px 0 0;background:#e9e5df}
+.fd-cards{position:absolute;inset:0;z-index:2}
+.fd-card{position:absolute;bottom:10%;left:50%;width:66%;aspect-ratio:16/10;margin-left:-33%;border:0;padding:0;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 24px -14px rgba(20,17,13,.5),0 0 0 1px rgba(20,17,13,.06);cursor:pointer;transition:transform .5s var(--spring);transform:translateY(2%) rotate(var(--r,0deg))}
+.fd-card img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.fd-card[data-img*="/human/"] img{object-position:center}
+.fd-card:nth-child(1){--r:-5deg;--fx:-30%;--fr:-11deg}
+.fd-card:nth-child(2){--r:-1.5deg;--fx:-10%;--fr:-4deg}
+.fd-card:nth-child(3){--r:2deg;--fx:10%;--fr:4deg}
+.fd-card:nth-child(4){--r:5.5deg;--fx:30%;--fr:11deg}
+.fd-card:nth-child(5){--r:-3deg;--fx:-20%;--fr:-8deg}
+.fd-card:nth-child(6){--r:4deg;--fx:20%;--fr:8deg}
+.fd-card:nth-child(n+7){--r:0deg;--fx:0%;--fr:0deg}
+@media (hover:hover){
+  .fd-box:hover .fd-card,.fd-box:focus-visible .fd-card{transform:translateY(-46%) translateX(var(--fx)) rotate(var(--fr)) scale(.94)}
+  .fd-box:hover .fd-card:hover{transform:translateY(-58%) translateX(var(--fx)) rotate(calc(var(--fr)*.35)) scale(1.02);z-index:6}
+}
+.fd-flap{position:absolute;left:0;right:0;bottom:0;height:52%;z-index:4;border-radius:12px 12px 14px 14px;background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(243,239,232,.82));backdrop-filter:blur(9px) saturate(1.3);-webkit-backdrop-filter:blur(9px) saturate(1.3);border-top:1px solid rgba(255,255,255,.75);box-shadow:0 -10px 24px -18px rgba(20,17,13,.4)}
+.fd-label{display:flex;align-items:baseline;gap:8px;justify-content:center;margin:14px 0 0;font-size:13.5px;color:color-mix(in srgb,var(--ink) 72%,transparent)}
+.fd-label em{font-style:normal;font-size:11.5px;color:color-mix(in srgb,var(--ink) 35%,transparent)}
+/* note cards */
+.fd-note{background:#fff;display:flex;flex-direction:column;gap:6px;padding:10px 12px;align-items:flex-start}
+.fd-note-t{font-size:11px;line-height:1.5;font-weight:600;color:var(--ink);text-align:left;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.fd-note-lines{width:100%;flex:1;background:repeating-linear-gradient(180deg,transparent 0 6px,rgba(20,17,13,.07) 6px 7px)}
+
+/* stage */
+#stage{position:fixed;inset:0;z-index:90;background:color-mix(in srgb,#fff 86%,transparent);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2)}
+#stage.on{display:block}
+#stageClose{position:absolute;top:20px;right:24px;z-index:5;border:0;background:rgba(20,17,13,.06);color:var(--ink);width:36px;height:36px;border-radius:50%;font-size:15px;cursor:pointer;box-shadow:none}
+#stageClose:hover{background:rgba(20,17,13,.12)}
+#stageTrack{position:absolute;inset:0}
+.st-card{position:absolute;top:50%;left:50%;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 40px 90px -30px rgba(20,17,13,.45),0 0 0 1px rgba(20,17,13,.05);transform:translate(-50%,-50%);transition:transform .48s var(--glide),opacity .48s var(--glide);will-change:transform;cursor:pointer}
+.st-card img{display:block;width:auto;height:auto;max-width:min(70vw,820px);max-height:64vh}
+.st-card.is-note{display:flex;align-items:center;justify-content:center;padding:6%;width:min(52vw,680px);aspect-ratio:16/10}
+.st-card.is-note .st-note-t{font-size:clamp(18px,2.6vw,30px);font-weight:650;line-height:1.5;text-align:center;font-family:var(--cn)}
+a.st-card{text-decoration:none;color:inherit}
+::selection{background:var(--ink);color:#fff}
+.imgfade{opacity:0}
+.imgfade.imgok{opacity:1;transition:opacity .5s ease}
+.st-card[data-pos="-1"]{transform:translate(-50%,-50%) translateX(-78%) scale(.56);opacity:.55;z-index:1}
+.st-card[data-pos="1"]{transform:translate(-50%,-50%) translateX(78%) scale(.56);opacity:.55;z-index:1}
+.st-card[data-pos="0"]{z-index:3}
+.st-card[data-pos="off"]{opacity:0;pointer-events:none;transform:translate(-50%,-50%) scale(.4)}
+#stageCap{position:absolute;left:50%;bottom:6vh;transform:translateX(-50%);text-align:center;font-family:var(--cn);font-size:14.5px;color:var(--ink);margin:0;max-width:80vw}
+#stageCap small{display:block;margin-top:6px;font-size:12px;color:color-mix(in srgb,var(--ink) 45%,transparent)}
+@media (prefers-reduced-motion:reduce){.fd-card,.st-card{transition:none}}
+@media (max-width:760px){.fd-grid{grid-template-columns:1fr 1fr;gap:32px 20px}.st-card img{max-width:84vw;max-height:58vh}.st-card.is-note{width:84vw}.st-card[data-pos="-1"]{transform:translate(-50%,-50%) translateX(-95%) scale(.5)}.st-card[data-pos="1"]{transform:translate(-50%,-50%) translateX(95%) scale(.5)}}
+@media (max-width:480px){.fd-grid{grid-template-columns:1fr;max-width:340px;margin-left:auto;margin-right:auto}}
+.fd-box:hover{z-index:9}
+.fd-note,.st-card.is-note{background-color:#fbf8f1;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.06'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:150px 150px}
+.fd-note-lines{background:repeating-linear-gradient(180deg,transparent 0 6px,rgba(96,74,44,.13) 6px 7px)}
+.st-card.is-note .st-note-t{color:#2b2418}
+.st-card.is-note{box-shadow:0 40px 90px -30px rgba(20,17,13,.3),0 0 0 1px rgba(20,17,13,.07)}
+
+/* ===== detail pages: minimal restyle ===== */
+.detail-wrap{max-width:720px;padding:4.2rem 1.5rem 6rem}
+.detail-back{border:0;background:none;box-shadow:none;padding:0;margin:0 0 2.4rem;font-family:var(--cn);font-size:13px;font-weight:500;letter-spacing:0;text-transform:none;color:color-mix(in srgb,var(--ink) 55%,transparent);transform:none}
+.detail-back:hover{background:none;box-shadow:none;transform:none;color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.detail-hero{border:0;border-radius:14px;background:#f2f0ec;box-shadow:0 28px 70px -34px rgba(20,17,13,.45);margin:0 0 2.8rem}
+.detail-tag{background:none;border:0;box-shadow:none;padding:0;margin:0 0 .8rem;font-family:var(--cn);font-weight:500;font-size:12.5px;letter-spacing:.02em;text-transform:none;color:color-mix(in srgb,var(--ink) 45%,transparent)}
+.detail-title{font-family:var(--cn);font-weight:650;font-size:clamp(1.65rem,3.6vw,2.3rem);line-height:1.4;letter-spacing:-.01em;margin-bottom:1.5rem}
+.detail-meta{border:0;gap:1.4rem 2.4rem;margin-bottom:2.8rem}
+.detail-meta-item{border:0 !important;padding:0;font-family:var(--cn);font-size:12px;letter-spacing:.01em;text-transform:none;color:color-mix(in srgb,var(--ink) 42%,transparent)}
+.detail-meta-item span{display:block;margin-top:3px;font-size:13.5px;font-weight:500;color:var(--ink);letter-spacing:0}
+.detail-toc{border:0;background:none;box-shadow:none;padding:0}
+.detail-toc-title{font-family:var(--cn);font-weight:600;font-size:11px;letter-spacing:.08em;color:color-mix(in srgb,var(--ink) 38%,transparent);text-transform:none}
+.detail-toc ul{list-style:none;margin:0;padding:0}
+.detail-toc a{font-family:var(--cn);font-size:12.5px;color:color-mix(in srgb,var(--ink) 42%,transparent);text-decoration:none;border:0;background:none;box-shadow:none}
+.detail-toc a:hover{color:var(--ink)}
+.detail-toc a.active{color:var(--ink);font-weight:600;background:none;box-shadow:none}
+.detail-toc-inline{border:1px solid var(--faint);border-radius:10px;box-shadow:none;background:#fbfaf8;overflow:hidden}
+.detail-toc-inline summary{font-family:var(--cn);font-weight:500;font-size:13px;color:color-mix(in srgb,var(--ink) 60%,transparent)}
+.detail-toc-inline a{font-family:var(--cn);color:color-mix(in srgb,var(--ink) 55%,transparent)}
+.detail-body{font-family:var(--cn);font-size:15.5px;line-height:1.95;color:color-mix(in srgb,var(--ink) 88%,transparent)}
+.detail-body a{color:var(--ink);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;text-decoration-color:color-mix(in srgb,var(--ink) 35%,transparent)}
+.detail-body strong{font-weight:650;color:var(--ink)}
+.lead{font-family:var(--cn);font-weight:500;font-size:17px;line-height:1.9;color:var(--ink)}
+.detail-body h3{font-family:var(--cn);font-weight:650;font-size:19px;line-height:1.5;margin:3.4rem 0 1rem;padding-top:0;border-top:0}
+.detail-body h3 i{font-family:var(--sans);font-weight:600;font-size:.62rem;letter-spacing:.16em;color:color-mix(in srgb,var(--ink) 35%,transparent)}
+.detail-body h3 i::after{height:1px;background:var(--faint)}
+.detail-img{border:0;background:none;overflow:visible;margin:2.4rem 0}
+.detail-img img{border-radius:12px;border:1px solid var(--faint);box-shadow:0 22px 55px -32px rgba(20,17,13,.4);display:block;width:100%}
+.detail-img figcaption{background:none;border:0;padding:.75rem .1rem 0;font-family:var(--cn);font-size:12.5px;color:color-mix(in srgb,var(--ink) 45%,transparent)}
+.detail-summary,.detail-example{border:1px solid var(--faint);border-radius:12px;background:#fbfaf8;box-shadow:none}
+.detail-summary-head{border-bottom:1px solid var(--faint);font-family:var(--cn)}
+.detail-summary-head b{font-weight:600;font-size:13.5px;color:var(--ink)}
+.detail-summary-tag{color:color-mix(in srgb,var(--ink) 38%,transparent);font-weight:600;letter-spacing:.1em}
+.summary-card,.summary-step{border:1px solid var(--faint);border-radius:8px;background:#fff}
+.summary-label{color:color-mix(in srgb,var(--ink) 42%,transparent);font-weight:600;letter-spacing:.08em}
+.summary-title{font-weight:650;font-size:13.5px;font-family:var(--cn)}
+.summary-text{font-size:12.5px;line-height:1.75;color:color-mix(in srgb,var(--ink) 55%,transparent);font-family:var(--cn)}
+.summary-caption{border-top:1px solid var(--faint);font-size:12.5px;color:color-mix(in srgb,var(--ink) 50%,transparent);font-family:var(--cn)}
+.summary-arrow{color:color-mix(in srgb,var(--ink) 30%,transparent);font-weight:400}
+.detail-example-head{border-bottom:1px solid var(--faint);font-family:var(--cn);font-size:12.5px}
+.detail-example-head b{font-weight:600;color:var(--ink)}
+.detail-example-cell,.detail-example-step{border-color:var(--faint)}
+.detail-example-label{color:color-mix(in srgb,var(--ink) 42%,transparent);font-weight:600;letter-spacing:.08em}
+.detail-example-line{font-weight:650;font-size:14px;font-family:var(--cn)}
+.detail-example-note{font-size:12.5px;color:color-mix(in srgb,var(--ink) 55%,transparent);font-family:var(--cn)}
+.detail-example-mark{background:color-mix(in srgb,var(--ink) 6%,transparent);color:var(--ink);font-weight:600}
+.detail-example-arrow{color:color-mix(in srgb,var(--ink) 30%,transparent);font-weight:400}
+.kd-grid{display:block;border:0;border-top:1px solid var(--faint);margin:1.4rem 0 2.6rem}
+.kd-item{border:0;border-bottom:1px solid var(--faint);padding:1.05rem .1rem;display:grid;grid-template-columns:52px 1fr;column-gap:14px;row-gap:4px}
+.kd-n{grid-row:1/3;font-family:var(--sans);font-weight:600;font-size:13px;color:color-mix(in srgb,var(--ink) 42%,transparent)}
+.kd-t{grid-column:2;font-weight:650;font-size:14.5px;margin:0;font-family:var(--cn)}
+.kd-x{grid-column:2;font-size:13.5px;line-height:1.8;color:color-mix(in srgb,var(--ink) 55%,transparent)}
+.pg-repo{border:1px solid var(--faint);border-radius:10px;background:#fbfaf8;font-size:13.5px;font-family:var(--cn)}
+.pg-repo a{color:var(--ink)}
+.detail-flow-section{font-family:var(--cn);font-weight:650;font-size:20px;border-bottom:1px solid var(--faint)}
+.detail-flow-section small{font-family:var(--cn);color:color-mix(in srgb,var(--ink) 40%,transparent);font-weight:500}
+.detail-flow-step{background:none;border:0;box-shadow:none;padding:0;font-family:var(--cn);font-weight:600;font-size:12.5px;letter-spacing:.02em;text-transform:none;color:color-mix(in srgb,var(--ink) 45%,transparent)}
+.detail-flow-cap{font-family:var(--cn);font-size:14px;line-height:1.85;color:color-mix(in srgb,var(--ink) 62%,transparent)}
+.detail-flow-img{border:1px solid var(--faint);border-radius:12px;box-shadow:0 22px 55px -32px rgba(20,17,13,.35)}
+.detail-gallery-slide{border:1px solid var(--faint);border-radius:12px}
+.detail-gallery-label{background:none;box-shadow:none;padding:0;font-family:var(--cn);font-weight:600;font-size:12.5px;letter-spacing:.02em;text-transform:none;color:color-mix(in srgb,var(--ink) 45%,transparent)}
+.detail-video,.detail-diagram{border:1px solid var(--faint);border-radius:12px;box-shadow:none}
+.detail-video-card{border:1px solid var(--faint);border-radius:10px;background:#fff}
+.detail-video-title{font-weight:650}
+
+/* footer, lead, build-log cleanup */
+.site-footer{border-top:1px solid rgba(20,17,13,.07);background:#fbfaf8;color:var(--ink);padding:2.2rem 1.5rem 2.6rem;margin-top:5rem}
+.footer-inner{max-width:880px;gap:.5rem 1.8rem}
+.footer-name{font-family:var(--cn);font-weight:600;color:var(--ink);font-size:13.5px;text-transform:none;letter-spacing:.01em}
+.footer-meta{font-family:var(--cn);font-size:12px;color:color-mix(in srgb,var(--ink) 45%,transparent);letter-spacing:.02em;text-transform:none}
+.footer-links a{font-family:var(--cn);color:color-mix(in srgb,var(--ink) 55%,transparent);font-size:12.5px;border-bottom:0;padding-bottom:0}
+.footer-links a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.footer-copy{font-family:var(--cn);font-size:12px;color:color-mix(in srgb,var(--ink) 38%,transparent);width:100%;margin-top:.4rem;letter-spacing:.01em;text-transform:none}
+.detail-body .lead{font-family:var(--cn);font-weight:500;font-size:17px;line-height:1.9;color:var(--ink)}
+.build-log{border:1px solid var(--faint);border-radius:12px;background:#fbfaf8;overflow:hidden}
+.build-log>summary{font-family:var(--cn);font-weight:600;font-size:14px;padding:1rem 1.2rem;letter-spacing:0}
+.build-log>summary .bl-hint{font-family:var(--cn);font-weight:500;font-size:11px;letter-spacing:.04em;text-transform:none;color:color-mix(in srgb,var(--ink) 40%,transparent)}
+.build-log>summary::after{font-weight:400;color:color-mix(in srgb,var(--ink) 40%,transparent);font-size:1.05rem}
+.build-log[open]>summary{border-bottom:1px solid var(--faint)}
+.mh-about{margin-top:88px}
+.mh-traits{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0 44px}
+.mh-trait{padding:18px 20px 16px;border:1px solid var(--faint);border-radius:12px;background:#fbfaf8}
+.mh-tr-k{display:block;font-size:14px;font-weight:650;color:var(--ink);margin-bottom:6px}
+.mh-tr-v{display:block;font-size:13px;line-height:1.85;color:color-mix(in srgb,var(--ink) 58%,transparent)}
+.mh-label-exp{margin-top:0}
+@media (max-width:560px){.mh-traits{grid-template-columns:1fr}}
+.mh-about-p{font-size:14.5px;line-height:1.9;color:color-mix(in srgb,var(--ink) 62%,transparent);max-width:42em;margin:0;text-wrap:pretty}
+.mh-about-p + .mh-about-p{margin-top:14px}
+.mh-about-p + .mh-traits{margin-top:34px}
+.mh-exp{border-top:1px solid var(--faint)}
+.mh-exp-row{display:flex;align-items:baseline;gap:16px;padding:11px 0;border-bottom:1px solid var(--faint)}
+.mh-exp-co{font-size:14px;font-weight:600;color:var(--ink);flex:0 0 5.5em}
+.mh-exp-role{font-size:13px;color:color-mix(in srgb,var(--ink) 52%,transparent);flex:1;min-width:0}
+.mh-exp-time{font-size:12px;color:color-mix(in srgb,var(--ink) 38%,transparent);white-space:nowrap;font-variant-numeric:tabular-nums}
+@media (max-width:560px){.mh-exp-role{display:none}}
+#album{position:fixed;inset:0;z-index:80;background:rgba(252,251,249,.94);backdrop-filter:blur(22px) saturate(1.3);-webkit-backdrop-filter:blur(22px) saturate(1.3);overflow-y:auto}
+#albumClose{position:fixed;top:16px;right:22px;z-index:85;border:0;background:rgba(20,17,13,.06);color:var(--ink);width:36px;height:36px;border-radius:50%;font-size:15px;cursor:pointer}
+#albumClose:hover{background:rgba(20,17,13,.12)}
+.al-scroll{max-width:980px;margin:0 auto;padding:76px 28px 110px;font-family:var(--cn)}
+.al-head{font-size:17px;font-weight:650}
+.al-head small{display:block;font-size:13px;font-weight:400;color:color-mix(in srgb,var(--ink) 52%,transparent);margin-top:4px}
+.al-sec{margin-top:56px}
+.al-sec h3{font-size:14.5px;font-weight:650;margin:0 0 16px}
+.al-grid{columns:280px 3;column-gap:18px}
+.al-ph{break-inside:avoid;margin:0 0 18px;cursor:zoom-in}
+.al-ph img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--faint);box-shadow:0 12px 34px -22px rgba(20,17,13,.35);transition:box-shadow .25s ease}
+.al-ph:hover img{box-shadow:0 18px 44px -20px rgba(20,17,13,.5)}
+.al-ph figcaption{font-size:12.5px;color:color-mix(in srgb,var(--ink) 48%,transparent);padding:7px 2px 0;line-height:1.65}
+.al-ph .al-quote{display:block;font-size:12px;color:color-mix(in srgb,var(--ink) 60%,transparent);margin-top:3px}
+@media (max-width:640px){.al-grid{columns:2;column-gap:12px}.al-ph{margin-bottom:12px}}
+
+</style>
 </head>
 <body>
 
 <nav>
-  <span class="nav-logo" onclick="showPage('home')">谢松伦 · XSL</span>
+  <span class="nav-logo" onclick="showPage('home')">谢松伦</span>
   <ul class="nav-links">
     <li><a href="#" onclick="showPage('home');return false" data-page="home" data-zh="简介" data-en="Info">简介</a></li>
     <li><a href="#" onclick="showPage('next');return false" data-page="next">Next</a></li>
@@ -598,233 +802,96 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <li><a href="#" onclick="showPage('human');return false" data-page="human">Human</a></li>
   </ul>
   <div class="nav-right">
-    <button class="lang-toggle" id="langBtn">EN</button>
+    <div class="mh-navright"><a href="javascript:void(0)" onclick="mhGo('work')" data-zh="作品" data-en="Work">作品</a><a href="javascript:void(0)" onclick="mhGo('about')" data-zh="关于" data-en="About">关于</a><a href="javascript:void(0)" onclick="mhGo('contact')" data-zh="联系" data-en="Contact">联系</a><button class="lang-toggle" id="langBtn">EN</button></div>
     <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
   </div>
 </nav>
 
 <!-- HOME = HERO + ABOUT merged -->
 <div id="page-home" class="page">
-  <div class="hero-strip">
-    <div class="hero-aurora" aria-hidden="true"><span></span><span></span><span></span></div>
-    <div class="hero-inner">
-
-      <!-- LEFT: identity + stats -->
-      <div class="hero-left">
-        <div class="hero-eyebrow reveal"><span><i>✳</i> Product Designer</span><span><i>✳</i> Agent Harness</span><span><i>✳</i> Est. 2014</span></div>
-        <h1 class="hero-name reveal">谢松伦<br><em>Xie Songlun</em></h1>
-        <p class="hero-desc reveal"
-           data-zh="10 年 B 端复杂系统设计，最近用 <mark>Paige 探索 AI 如何参与设计交付</mark>。"
-           data-en="10 years in complex B2B systems. Recently using <mark>Paige to explore AI-assisted design delivery</mark>.">
-          10 年 B 端复杂系统设计，最近用 <mark>Paige 探索 AI 如何参与设计交付</mark>。
-        </p>
-        <div class="hero-tags reveal">
-          <span class="tag">Agent Harness</span>
-          <span class="tag">Context Engineering</span>
-          <span class="tag">Evaluation</span>
-          <span class="tag">Tool Use</span>
-          <span class="tag">Enterprise B2B</span>
+  <div class="mh">
+    <header class="mh-head">
+      <h1 class="mh-name">谢松伦</h1>
+      <p class="mh-id" data-zh="产品设计师。10 年 B 端复杂系统设计，长处在体验与应用。" data-en="Product designer. Ten years in complex B2B systems, strongest at experience and application.">产品设计师。10 年 B 端复杂系统设计，长处在体验与应用。</p>
+      <p class="mh-bio" data-zh="现在做的事，是把 AI 放进真实的工作环境里解决具体问题。模型隔几个月就换一代，产品最后好不好用，差距都藏在体验细节里。我的时间大都花在这上面。" data-en="What I do now is put AI into real working environments to solve concrete problems. Models turn over every few months, and whether a product ends up usable is decided in the experience details. That is where most of my time goes.">现在做的事，是把 AI 放进真实的工作环境里解决具体问题。模型隔几个月就换一代，产品最后好不好用，差距都藏在体验细节里。我的时间大都花在这上面。</p>
+    </header>
+    <div class="fd-grid" id="work">
+      <div class="fd">
+        <div class="fd-box" role="button" tabindex="0" aria-label="现在 · AI">
+          <div class="fd-back"></div>
+          <div class="fd-cards"><button class="fd-card" data-id="harness" data-img="assets/images/projects/harness/entry.jpg" data-czh="AI 替你干活的时候，界面该说什么" data-cen="While AI Works for You, What Should the Screen Say" data-tzh="体验研究" data-ten="UX Study" aria-label="AI 替你干活的时候，界面该说什么"><img src="assets/images/projects/harness/entry.jpg" alt="AI 替你干活的时候，界面该说什么" loading="lazy"></button><button class="fd-card" data-id="paige" data-img="assets/images/projects/paige/from-app/paige-editor-canvas.jpg" data-czh="Paige —— 用一句话生成可编辑的 B 端页面" data-cen="Paige — Requirements into Editable Interfaces" data-tzh="自研工具" data-ten="Solo Build" aria-label="Paige —— 用一句话生成可编辑的 B 端页面"><img src="assets/images/projects/paige/from-app/paige-editor-canvas.jpg" alt="Paige —— 用一句话生成可编辑的 B 端页面" loading="lazy"></button><button class="fd-card" data-id="metrics" data-img="assets/images/projects/paige/from-app/paige-spec-view.jpg" data-czh="Paige 评测：0 产出也会骗过指标" data-cen="Paige Evals: When Zero Output Misleads Metrics" data-tzh="评测" data-ten="Evals" aria-label="Paige 评测：0 产出也会骗过指标"><img src="assets/images/projects/paige/from-app/paige-spec-view.jpg" alt="Paige 评测：0 产出也会骗过指标" loading="lazy"></button><button class="fd-card" data-id="evals" data-img="assets/images/projects/paige/from-app/paige-flow-view.jpg" data-czh="用考题集探索设计稿识别如何提升" data-cen="Using a Benchmark to Improve Design-file Recognition" data-tzh="评测" data-ten="Evals" aria-label="用考题集探索设计稿识别如何提升"><img src="assets/images/projects/paige/from-app/paige-flow-view.jpg" alt="用考题集探索设计稿识别如何提升" loading="lazy"></button></div>
+          <div class="fd-flap"></div>
         </div>
-        <div class="hero-cta reveal">
-          <a href="#" onclick="showPage('next');return false" class="btn-primary" data-zh="查看 AI 作品" data-en="View AI Work">查看 AI 作品</a>
-          <a href="mailto:songlundesign@outlook.com" class="btn-outline" data-zh="联系我" data-en="Contact">联系我</a>
-        </div>
-        <div class="hero-stats reveal">
-          <div>
-            <span class="stat-num">10</span>
-            <span class="stat-label" data-zh="年复杂系统设计" data-en="Years Systems Design">年复杂系统设计</span>
-          </div>
-          <div>
-            <span class="stat-num">3</span>
-            <span class="stat-label" data-zh="Paige 相关实验" data-en="Paige Studies">Paige 相关实验</span>
-          </div>
-          <div>
-            <span class="stat-num">15+</span>
-            <span class="stat-label" data-zh="专利 · 含 2 项发明" data-en="Patents · 2 Inventions">专利 · 含 2 项发明</span>
-          </div>
-        </div>
+        <p class="fd-label"><span data-zh="现在 · AI" data-en="Now · AI">现在 · AI</span><em>4</em></p>
       </div>
-
-      <!-- SECTION CARDS -->
-      <div class="section-cards">
-        <div class="section-card sc-featured reveal" onclick="showPage('next')">
-          <span class="sc-arrow">↗</span>
-          <div class="sc-map" aria-hidden="true">
-            <div class="sc-map-step"><div class="sc-map-k">Input</div><div class="sc-map-v" data-zh="业务需求" data-en="Requirement">业务需求</div></div>
-            <div class="sc-map-arrow">→</div>
-            <div class="sc-map-step"><div class="sc-map-k">Harness</div><div class="sc-map-v" data-zh="工具 · 评价器" data-en="Tools · Evals">工具 · 评价器</div></div>
-            <div class="sc-map-arrow">→</div>
-            <div class="sc-map-step"><div class="sc-map-k">Output</div><div class="sc-map-v" data-zh="可编辑页面" data-en="Editable UI">可编辑页面</div></div>
-          </div>
-          <div class="sc-featured-main">
-            <p class="sc-num">01</p>
-            <h2 class="sc-name">Next</h2>
-            <p class="sc-desc" data-zh="围绕 Paige 的实践：页面生成、工具约束、评价指标与失败日志。" data-en="Paige practice: page generation, tool constraints, evaluation metrics, and failure logs.">围绕 Paige 的实践：页面生成、工具约束、评价指标与失败日志。</p>
-            <span class="sc-label" data-zh="AI 作品" data-en="AI Work">AI 作品</span>
-          </div>
-          <div class="sc-proof">
-            <span data-zh="Paige：需求到界面" data-en="Paige: requirement to UI">Paige：需求到界面</span>
-            <span data-zh="Metrics：0 产出陷阱" data-en="Metrics: zero-output trap">Metrics：0 产出陷阱</span>
-            <span data-zh="Evals：失败如何暴露" data-en="Evals: exposing failures">Evals：失败如何暴露</span>
-          </div>
+      <div class="fd">
+        <div class="fd-box" role="button" tabindex="0" aria-label="早些年 · B 端">
+          <div class="fd-back"></div>
+          <div class="fd-cards"><button class="fd-card" data-id="onvideo" data-img="assets/images/projects/onvideo-card.jpg" data-czh="快手云剪 Onvideo — 从 0 到 1" data-cen="Kuaishou Onvideo — 0 to 1 Rebuild" data-tzh="快手" data-ten="Kuaishou" aria-label="快手云剪 Onvideo — 从 0 到 1"><img src="assets/images/projects/onvideo-card.jpg" alt="快手云剪 Onvideo — 从 0 到 1" loading="lazy"></button><button class="fd-card" data-id="babi" data-img="assets/images/projects/babi-card.jpg" data-czh="BABI 经营分析平台重构" data-cen="BABI Analytics Platform Rebuild" data-tzh="字节跳动" data-ten="ByteDance" aria-label="BABI 经营分析平台重构"><img src="assets/images/projects/babi-card.jpg" alt="BABI 经营分析平台重构" loading="lazy"></button><button class="fd-card" data-id="kslive" data-img="assets/images/projects/videocloud/06.jpg" data-czh="直播工作室与多媒体产品设计" data-cen="Live Studio &amp; Multimedia Product Design" data-tzh="快手" data-ten="Kuaishou" aria-label="直播工作室与多媒体产品设计"><img src="assets/images/projects/videocloud/06.jpg" alt="直播工作室与多媒体产品设计" loading="lazy"></button><button class="fd-card" data-id="material" data-img="assets/images/projects/material-card.jpg" data-czh="多媒体中台物料库建设" data-cen="Multimedia Component Library" data-tzh="火山引擎" data-ten="Volcano Engine" aria-label="多媒体中台物料库建设"><img src="assets/images/projects/material-card.jpg" alt="多媒体中台物料库建设" loading="lazy"></button><button class="fd-card fd-note" data-id="videocloud" data-czh="视频云基础体验优化" data-cen="Video Cloud UX Optimization" data-tzh="火山引擎" data-ten="Volcano Engine" aria-label="视频云基础体验优化"><span class="fd-note-t" data-zh="视频云基础体验优化 · 600+" data-en="Video Cloud UX · 600+ Issues">视频云基础体验优化 · 600+</span><span class="fd-note-lines"></span></button><button class="fd-card fd-note" data-href="https://www.yuque.com/dacaibao/zakds2?#" data-czh="旧版作品集" data-cen="Previous Portfolio" data-tzh="动效视频与更完整的项目细节" data-ten="Motion demos and fuller project details" aria-label="旧版作品集"><span class="fd-note-t" data-zh="旧版作品集 ↗" data-en="Previous Portfolio ↗">旧版作品集 ↗</span><span class="fd-note-lines"></span></button></div>
+          <div class="fd-flap"></div>
         </div>
-        <div class="section-card reveal" onclick="showPage('archive')">
-          <span class="sc-arrow">↗</span>
-          <p class="sc-num">02</p>
-          <h2 class="sc-name">Archive</h2>
-          <p class="sc-desc" data-zh="过去参与的企业级产品项目。" data-en="Past enterprise product work.">过去参与的企业级产品项目。</p>
-          <span class="sc-label" data-zh="历史作品" data-en="Past Work">历史作品</span>
-        </div>
-        <div class="section-card reveal" onclick="showPage('signal')">
-          <span class="sc-arrow">↗</span>
-          <p class="sc-num">03</p>
-          <h2 class="sc-name">Signal</h2>
-          <p class="sc-desc" data-zh="Paige 开发中留下的踩坑记录。" data-en="Notes from building Paige.">Paige 开发中留下的踩坑记录。</p>
-          <span class="sc-label" data-zh="文章" data-en="Writing">文章</span>
-        </div>
-        <div class="section-card reveal" onclick="showPage('human')">
-          <span class="sc-arrow">↗</span>
-          <p class="sc-num">04</p>
-          <h2 class="sc-name">Human</h2>
-          <p class="sc-desc" data-zh="工作之外的我。" data-en="Beyond the work.">工作之外的我。</p>
-          <span class="sc-label" data-zh="个人" data-en="Personal">个人</span>
-        </div>
+        <p class="fd-label"><span data-zh="早些年 · B 端" data-en="Earlier · B2B">早些年 · B 端</span><em>5 +</em></p>
       </div>
-
-      <!-- RIGHT: bio + contact + exp -->
-      <div class="hero-right">
-        <div class="about-bio reveal">
-          <p data-zh="10 年专注于桌面端企业级产品设计。曾主导滴滴国际、字节跳动火山引擎、快手等一线大厂的核心产品从 0 到 1 构建与重构。"
-             data-en="10 years of desktop enterprise product design. Led core product builds at DiDi International, ByteDance Volcano Engine, and Kuaishou from 0 to 1.">
-            10 年专注于桌面端企业级产品设计。曾主导滴滴国际、字节跳动火山引擎、快手等一线大厂的核心产品从 0 到 1 构建与重构。
-          </p>
-          <p data-zh="最近的重心放在 Paige 和 Agent Harness：用真实 PRD、操作词表、评价器和失败日志，验证 AI 能不能把需求推进成可编辑界面。"
-             data-en="Recently focused on Paige and Agent Harness: using real PRDs, operation vocabularies, evaluators, and failure logs to test whether AI can move requirements into editable interfaces.">
-            最近的重心放在 Paige 和 Agent Harness：用真实 PRD、操作词表、评价器和失败日志，验证 AI 能不能把需求推进成可编辑界面。
-          </p>
+      <div class="fd">
+        <div class="fd-box" role="button" tabindex="0" aria-label="写作">
+          <div class="fd-back"></div>
+          <div class="fd-cards"><button class="fd-card fd-note" data-id="signal-agents" data-czh="针对 CC 和 codex 的真实对比" data-cen="CC vs codex, for real" data-tzh="写作" data-ten="Writing" aria-label="针对 CC 和 codex 的真实对比"><span class="fd-note-t">针对 CC 和 codex 的真实对比</span><span class="fd-note-lines"></span></button><button class="fd-card fd-note" data-id="signal-audit" data-czh="通过不等于做对" data-cen="Passing Isn't Being Right" data-tzh="写作" data-ten="Writing" aria-label="通过不等于做对"><span class="fd-note-t">通过不等于做对</span><span class="fd-note-lines"></span></button><button class="fd-card fd-note" data-id="signal-reliability" data-czh="一个看不见的提交按钮" data-cen="The Invisible Submit Button" data-tzh="写作" data-ten="Writing" aria-label="一个看不见的提交按钮"><span class="fd-note-t">一个看不见的提交按钮</span><span class="fd-note-lines"></span></button><button class="fd-card fd-note" data-id="signal-reuse" data-czh="我为什么没自研 JSON 解析" data-cen="Why I Didn't Build JSON Parsing" data-tzh="写作" data-ten="Writing" aria-label="我为什么没自研 JSON 解析"><span class="fd-note-t">我为什么没自研 JSON 解析</span><span class="fd-note-lines"></span></button><button class="fd-card fd-note" data-id="signal-discipline" data-czh="我动了不该动的那层" data-cen="The Layer I Shouldn't Have Touched" data-tzh="写作" data-ten="Writing" aria-label="我动了不该动的那层"><span class="fd-note-t">我动了不该动的那层</span><span class="fd-note-lines"></span></button><button class="fd-card fd-note" data-id="signal-agent" data-czh="Paige 读 PRD 为什么要回路" data-cen="Why Paige Reads PRDs as a Loop" data-tzh="写作" data-ten="Writing" aria-label="Paige 读 PRD 为什么要回路"><span class="fd-note-t">Paige 读 PRD 为什么要回路</span><span class="fd-note-lines"></span></button></div>
+          <div class="fd-flap"></div>
         </div>
-        <div class="contact-list reveal">
-          <div class="contact-head"><span data-zh="联系" data-en="Contact">联系</span><span>Available</span></div>
-          <div class="contact-item"><i class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.5 6.5h15v11h-15z"/><path d="m5.2 7.2 6.8 5.3 6.8-5.3"/></svg></i><span class="contact-copy"><b>Email</b><a href="mailto:songlundesign@outlook.com">songlundesign@outlook.com</a></span></div>
-          <div class="contact-item"><i class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.3 5.2 5.7 6.7c-.9.9-.7 3.4 1.2 6.4 1.8 2.9 4.1 5.2 7 6.1 1.5.5 2.7.4 3.3-.2l1.6-1.6-3.1-3.1-1.8 1.5c-1.7-.7-3.4-2.4-4.6-4.5l1.5-1.8z"/></svg></i><span class="contact-copy"><b>Phone</b><a href="tel:+8613683301659">13683301659</a></span></div>
-          <div class="contact-item"><i class="contact-icon wechat" aria-hidden="true">We</i><span class="contact-copy"><b>Wechat</b><span>opposite_way</span></span></div>
-          <div class="contact-item"><i class="contact-icon xhs" aria-hidden="true">RED</i><span class="contact-copy"><b>Xiaohongshu</b><span>大菜包包 · ID 388106808</span></span></div>
-        </div>
-        <div class="right-divider"></div>
-        <p class="section-eyebrow reveal" data-zh="工作经历" data-en="Experience">工作经历</p>
-        <div class="exp-table reveal">
-          <div class="exp-row">
-            <p class="exp-col-period">2023.05<br>— Present</p>
-            <div class="exp-col-info">
-              <p class="exp-row-company">滴滴国际 · DiDi International</p>
-              <p class="exp-row-role" data-zh="产品设计师 · AI 探索 / 国际化产品设计" data-en="Product Designer · AI Exploration / International Product Design">产品设计师 · AI 探索 / 国际化产品设计</p>
-            </div>
-          </div>
-          <div class="exp-row">
-            <p class="exp-col-period">2021.07<br>— 2023.02</p>
-            <div class="exp-col-info">
-              <p class="exp-row-company">字节跳动 · ByteDance</p>
-              <p class="exp-row-role" data-zh="产品设计师 · 火山引擎视频云" data-en="Product Designer · Volcano Engine Video Cloud">产品设计师 · 火山引擎视频云</p>
-            </div>
-          </div>
-          <div class="exp-row">
-            <p class="exp-col-period">2020.03<br>— 2021.07</p>
-            <div class="exp-col-info">
-              <p class="exp-row-company">快手 · Kuaishou</p>
-              <p class="exp-row-role" data-zh="产品设计师 · 音视频" data-en="Product Designer · A/V Products">产品设计师 · 音视频</p>
-            </div>
-          </div>
-          <div class="exp-row">
-            <p class="exp-col-period">2017.03<br>— 2020.03</p>
-            <div class="exp-col-info">
-              <p class="exp-row-company">奇安信 · Qihoo 360</p>
-              <p class="exp-row-role" data-zh="产品设计师 · 企业安全" data-en="Product Designer · Enterprise Security">产品设计师 · 企业安全</p>
-            </div>
-          </div>
-          <div class="exp-row">
-            <p class="exp-col-period">2015.06<br>— 2016.01</p>
-            <div class="exp-col-info">
-              <p class="exp-row-company">奥维云网</p>
-              <p class="exp-row-role" data-zh="产品设计师 · 大数据" data-en="Product Designer · Big Data">产品设计师 · 大数据</p>
-            </div>
-          </div>
-        </div>
+        <p class="fd-label"><span data-zh="写作" data-en="Writing">写作</span><em>6</em></p>
       </div>
-
+      <div class="fd">
+        <div class="fd-box" role="button" tabindex="0" aria-label="生活" data-album="life">
+          <div class="fd-back"></div>
+          <div class="fd-cards"><button class="fd-card fd-note" data-czh="下厨" data-cen="Cooking" aria-label="下厨"><span class="fd-note-t" data-zh="下厨" data-en="Cooking">下厨</span><span class="fd-note-lines"></span></button><button class="fd-card" data-img="assets/images/human/meals.jpg" data-czh="一日三餐" data-cen="Three meals a day" data-tzh="下厨" data-ten="Cooking" aria-label="一日三餐"><img src="assets/images/human/meals.jpg" alt="一日三餐" loading="lazy"></button><button class="fd-card" data-img="assets/images/human/ribs.jpg" data-czh="超级好吃的手撕肋排" data-cen="Pull-apart ribs, seriously good" data-tzh="下厨" data-ten="Cooking" aria-label="超级好吃的手撕肋排"><img src="assets/images/human/ribs.jpg" alt="超级好吃的手撕肋排" loading="lazy"></button><button class="fd-card" data-img="assets/images/human/ciabatta.jpg" data-czh="有一阵很喜欢做恰巴塔" data-cen="The ciabatta phase" data-tzh="下厨" data-ten="Cooking" aria-label="有一阵很喜欢做恰巴塔"><img src="assets/images/human/ciabatta.jpg" alt="有一阵很喜欢做恰巴塔" loading="lazy"></button><button class="fd-card fd-note" data-czh="调酒与茶" data-cen="Drinks & Tea" aria-label="调酒与茶"><span class="fd-note-t" data-zh="调酒与茶" data-en="Drinks & Tea">调酒与茶</span><span class="fd-note-lines"></span></button><button class="fd-card" data-img="assets/images/human/gin-tonic.jpg" data-czh="最爱的 Gin Tonic" data-cen="The beloved gin and tonic" data-tzh="调酒与茶" data-ten="Drinks & Tea" aria-label="最爱的 Gin Tonic"><img src="assets/images/human/gin-tonic.jpg" alt="最爱的 Gin Tonic" loading="lazy"></button><button class="fd-card" data-img="assets/images/human/tea-dusk.jpg" data-czh="茶酒 · 东方暮色" data-cen="Tea cocktail · Oriental dusk" data-tzh="调酒与茶" data-ten="Drinks & Tea" aria-label="茶酒 · 东方暮色"><img src="assets/images/human/tea-dusk.jpg" alt="茶酒 · 东方暮色" loading="lazy"></button><button class="fd-card" data-img="assets/images/human/whisky-cert.jpg" data-czh="Whisky 课程证书" data-cen="Whisky course certificate" data-tzh="调酒与茶" data-ten="Drinks & Tea" aria-label="Whisky 课程证书"><img src="assets/images/human/whisky-cert.jpg" alt="Whisky 课程证书" loading="lazy"></button><button class="fd-card" data-img="assets/images/human/bartender-meet.jpg" data-czh="调酒师聚会" data-cen="Bartender meetup" data-tzh="调酒与茶" data-ten="Drinks & Tea" aria-label="调酒师聚会"><img src="assets/images/human/bartender-meet.jpg" alt="调酒师聚会" loading="lazy"></button><button class="fd-card fd-note" data-czh="旅行" data-cen="Travel" aria-label="旅行"><span class="fd-note-t" data-zh="旅行" data-en="Travel">旅行</span><span class="fd-note-lines"></span></button><button class="fd-card" data-img="assets/images/human/travel-jp-temple.jpg" data-czh="日本 · 寺庙" data-cen="Japan · Temple" data-tzh="旅行" data-ten="Travel" aria-label="日本 · 寺庙"><img src="assets/images/human/travel-jp-temple.jpg" alt="日本 · 寺庙" loading="lazy"></button><button class="fd-card" data-img="assets/images/human/travel-jp-nara.jpg" data-czh="奈良 · 小鹿" data-cen="Nara · Deer" data-tzh="旅行" data-ten="Travel" aria-label="奈良 · 小鹿"><img src="assets/images/human/travel-jp-nara.jpg" alt="奈良 · 小鹿" loading="lazy"></button><button class="fd-card" data-img="assets/images/human/travel-th-similan.jpg" data-czh="泰国 · 斯米兰群岛" data-cen="Thailand · Similan" data-tzh="旅行" data-ten="Travel" aria-label="泰国 · 斯米兰群岛"><img src="assets/images/human/travel-th-similan.jpg" alt="泰国 · 斯米兰群岛" loading="lazy"></button><button class="fd-card" data-img="assets/images/human/travel-sicily.jpg" data-czh="意大利 · 西西里" data-cen="Italy · Sicily" data-tzh="旅行" data-ten="Travel" aria-label="意大利 · 西西里"><img src="assets/images/human/travel-sicily.jpg" alt="意大利 · 西西里" loading="lazy"></button><button class="fd-card fd-note" data-czh="影视" data-cen="Film & TV" aria-label="影视"><span class="fd-note-t" data-zh="影视" data-en="Film & TV">影视</span><span class="fd-note-lines"></span></button><button class="fd-card" data-img="assets/images/human/soldiers-sortie.webp" data-czh="士兵突击" data-cen="Soldiers Sortie" data-tzh="影视" data-ten="Film & TV" aria-label="士兵突击"><img src="assets/images/human/soldiers-sortie.webp" alt="士兵突击" loading="lazy"></button><button class="fd-card" data-img="assets/images/human/forrest-gump.webp" data-czh="阿甘正传" data-cen="Forrest Gump" data-tzh="影视" data-ten="Film & TV" aria-label="阿甘正传"><img src="assets/images/human/forrest-gump.webp" alt="阿甘正传" loading="lazy"></button></div>
+          <div class="fd-flap"></div>
+        </div>
+        <p class="fd-label"><span data-zh="生活" data-en="Life">生活</span><em>4 类</em></p>
+      </div>
     </div>
-  </div>
-</div>
-
-<!-- NEXT -->
-<div id="page-next" class="page">
-  <div class="page-wrap">
-    <p class="page-eyebrow" data-zh="AI 作品" data-en="AI Work">AI 作品</p>
-    <h2 class="page-heading">Next</h2>
-    <p class="page-sub" data-zh="围绕 Paige 的个人实践：把自然语言需求拆成页面，并记录工具约束、评价指标和失败日志。" data-en="Personal practice around Paige: turning natural-language requirements into screens, while recording tool constraints, eval metrics, and failure logs.">围绕 Paige 的个人实践：把自然语言需求拆成页面，并记录工具约束、评价指标和失败日志。</p>
-    <section class="hn-intro reveal">
-      <p class="hn-kicker" data-zh="Agent Harness · 我的理解" data-en="Agent Harness · My Take">Agent Harness · 我的理解</p>
-      <h3 class="hn-thesis" data-zh="Harness 不是让模型更聪明，<em>是让失败可控</em>。" data-en="A harness doesn't make the model smarter — <em>it makes failure manageable</em>.">Harness 不是让模型更聪明，<em>是让失败可控</em>。</h3>
-      <p class="hn-sub" data-zh="Paige 是我围绕这件事的实践：不追求全自动，而是把模型放进一个有边界的任务回路——" data-en="Paige is my hands-on take: no chase for full autonomy, just a model inside a bounded task loop —">Paige 是我围绕这件事的实践：不追求全自动，而是把模型放进一个有边界的任务回路——</p>
-      <p class="hn-line" aria-label="Harness 回路">
-        <span data-zh="输入组织" data-en="organize input">输入组织</span><i>→</i>
-        <span class="hn-hot" data-zh="模型只在操作词表内出招" data-en="model moves only within the op vocabulary">模型只在操作词表内出招</span><i>→</i>
-        <span data-zh="执行校验" data-en="validate execution">执行校验</span><i>→</i>
-        <span data-zh="评价器打分" data-en="evals score it">评价器打分</span><i>→</i>
-        <span data-zh="失败归类进下一轮" data-en="classify failures into the next loop">失败归类进下一轮</span><i>↻</i>
-      </p>
+    <section class="mh-group mh-about" id="about">
+      <p class="mh-label" data-zh="关于" data-en="About">关于</p>
+      <p class="mh-about-p" data-zh="10 年专注于桌面端企业级产品设计。曾主导滴滴国际、字节跳动火山引擎、快手等一线大厂的核心产品从 0 到 1 构建与重构，沉淀专利 15 项以上，含 2 项发明。" data-en="Ten years of desktop enterprise product design. Led core product builds and rebuilds at DiDi International, ByteDance Volcano Engine, and Kuaishou, with 15+ patents including 2 inventions.">10 年专注于桌面端企业级产品设计。曾主导滴滴国际、字节跳动火山引擎、快手等一线大厂的核心产品从 0 到 1 构建与重构，沉淀专利 15 项以上，含 2 项发明。</p>
+      <p class="mh-about-p" data-zh="工作之外我喜欢下厨和调酒。最喜欢的片子是士兵突击和阿甘正传，这两部有些共同点，和我自己的人生也有点像。我本质上不算聪明的人，但希望自己能成为做事肯坚持的人，有韧性、不怕失败，这是我想成为的方向，也一直在朝着走。" data-en="Outside work I cook and mix drinks. My favorite films are Soldiers Sortie and Forrest Gump. They share something, and it feels close to my own life. I don't think of myself as a clever person. What I hope to be is someone who persists, who has resilience and is not afraid of failing. That is the direction I keep walking toward.">工作之外我喜欢下厨和调酒。最喜欢的片子是士兵突击和阿甘正传，这两部有些共同点，和我自己的人生也有点像。我本质上不算聪明的人，但希望自己能成为做事肯坚持的人，有韧性、不怕失败，这是我想成为的方向，也一直在朝着走。</p>
+      <p class="mh-about-p" data-zh="到了 AI 时代，过去十年的设计经验对我更像一笔无形的资产。我现在其实比以前更愿意做设计，开发成本降下来以后，创造这件事和我之间不再隔着一层，想到什么就能动手试什么，这也是我热衷 AI 的原因之一。" data-en="In the AI era, ten years of design experience feels like an intangible asset. I am actually more willing to design now than ever. With the cost of building falling, nothing sits between an idea and trying it anymore, and that is one big reason I am drawn to AI.">到了 AI 时代，过去十年的设计经验对我更像一笔无形的资产。我现在其实比以前更愿意做设计，开发成本降下来以后，创造这件事和我之间不再隔着一层，想到什么就能动手试什么，这也是我热衷 AI 的原因之一。</p>
+      <p class="mh-about-p" data-zh="往后不管技术怎么变，我认为体验仍然是非常重要的事。技术平权来临的时候，创造力和审美可能是更稀缺的能力。" data-en="However the technology shifts, I believe experience will remain one of the things that matter most. When technology is evenly distributed, creativity and taste may be the scarcer abilities.">往后不管技术怎么变，我认为体验仍然是非常重要的事。技术平权来临的时候，创造力和审美可能是更稀缺的能力。</p>
+      <div class="mh-traits">
+        <div class="mh-trait"><span class="mh-tr-k" data-zh="好奇心" data-en="Curiosity">好奇心</span><span class="mh-tr-v" data-zh="对什么都想亲手试一遍。在家蒸馏过金酒，手凿过冰球，自己写茶酒配方，新模型新工具出来也是同一个反应，先上手玩起来。" data-en="I want to try everything with my own hands. I have distilled gin at home, carved an ice ball, written my own tea-cocktail recipes. New models and tools get the same reflex. Get hands on first.">对什么都想亲手试一遍。在家蒸馏过金酒，手凿过冰球，自己写茶酒配方，新模型新工具出来也是同一个反应，先上手玩起来。</span></div>
+        <div class="mh-trait"><span class="mh-tr-k" data-zh="原型能力" data-en="Prototyping">原型能力</span><span class="mh-tr-v" data-zh="想法不过夜，先做成能跑的东西再拿去讨论。Paige 一路迭代了二十多个版本，每一版都能用。" data-en="Ideas don't sit overnight; they become something runnable before we talk. Paige has been through twenty-plus working versions.">想法不过夜，先做成能跑的东西再拿去讨论。Paige 一路迭代了二十多个版本，每一版都能用。</span></div>
+        <div class="mh-trait"><span class="mh-tr-k" data-zh="有观点" data-en="A Point of View">有观点</span><span class="mh-tr-v" data-zh="对产品该怎么做敢下判断，也敢公开写出来。写作夹里的六篇，每篇都落在一个结论上。" data-en="I make calls on how products should work and publish them. Each of the six essays lands on a conclusion.">对产品该怎么做敢下判断，也敢公开写出来。写作夹里的六篇，每篇都落在一个结论上。</span></div>
+        <div class="mh-trait"><span class="mh-tr-k" data-zh="系统思维" data-en="Systems Thinking">系统思维</span><span class="mh-tr-v" data-zh="不做一次性的方案。操作词表、评价器、失败日志，这些能互相组合的底层件让结论可以重跑、可以追溯。" data-en="No one-off solutions. Operation vocabularies, evaluators and failure logs compose, so conclusions can be re-run and traced.">不做一次性的方案。操作词表、评价器、失败日志，这些能互相组合的底层件让结论可以重跑、可以追溯。</span></div>
+      </div>
+      <p class="mh-label mh-label-exp" data-zh="经历" data-en="Experience">经历</p>
+      <div class="mh-exp">
+      <div class="mh-exp-row"><span class="mh-exp-co">滴滴国际</span><span class="mh-exp-role" data-zh="产品设计师 · AI 探索 / 国际化产品设计" data-en="Product Designer · AI Exploration / International">产品设计师 · AI 探索 / 国际化产品设计</span><span class="mh-exp-time">2023.05 — 至今</span></div>
+      <div class="mh-exp-row"><span class="mh-exp-co">字节跳动</span><span class="mh-exp-role" data-zh="产品设计师 · 火山引擎视频云" data-en="Product Designer · Volcano Engine Video Cloud">产品设计师 · 火山引擎视频云</span><span class="mh-exp-time">2021.07 — 2023.02</span></div>
+      <div class="mh-exp-row"><span class="mh-exp-co">快手</span><span class="mh-exp-role" data-zh="产品设计师 · 音视频" data-en="Product Designer · A/V Products">产品设计师 · 音视频</span><span class="mh-exp-time">2020.03 — 2021.07</span></div>
+      <div class="mh-exp-row"><span class="mh-exp-co">奇安信</span><span class="mh-exp-role" data-zh="产品设计师 · 企业安全" data-en="Product Designer · Enterprise Security">产品设计师 · 企业安全</span><span class="mh-exp-time">2017.03 — 2020.03</span></div>
+      <div class="mh-exp-row"><span class="mh-exp-co">奥维云网</span><span class="mh-exp-role" data-zh="产品设计师 · 大数据" data-en="Product Designer · Big Data">产品设计师 · 大数据</span><span class="mh-exp-time">2015.06 — 2016.01</span></div>
+      </div>
+</section>
+    <section class="mh-group mh-contact" id="contact">
+      <p class="mh-label" data-zh="联系" data-en="Contact">联系</p>
+      <div class="mh-ct">
+        <a class="mh-ct-row" href="mailto:songlundesign@outlook.com"><span class="mh-ct-k" data-zh="邮箱" data-en="Email">邮箱</span><span class="mh-ct-v">songlundesign@outlook.com</span></a>
+        <a class="mh-ct-row" href="tel:+8613683301659"><span class="mh-ct-k" data-zh="电话" data-en="Phone">电话</span><span class="mh-ct-v">+86 136 8330 1659</span></a>
+        <a class="mh-ct-row" href="javascript:void(0)" data-copy="opposite_way"><span class="mh-ct-k" data-zh="微信" data-en="WeChat">微信</span><span class="mh-ct-v">opposite_way</span><em class="mh-ct-hint" data-zh="点击复制" data-en="Click to copy">点击复制</em></a>
+        <a class="mh-ct-row" href="javascript:void(0)" data-copy="388106808"><span class="mh-ct-k" data-zh="小红书" data-en="RED">小红书</span><span class="mh-ct-v">大菜包包 · 388106808</span><em class="mh-ct-hint" data-zh="点击复制" data-en="Click to copy">点击复制</em></a>
+              </div>
     </section>
-    <div class="archive-grid">
-      <div class="project-card featured" onclick="showDetail('paige')">
-        <div class="project-img"><img src="assets/images/projects/paige/from-app/paige-editor-canvas.jpg" alt="Paige 正在生成多页 B 端后台"></div>
-        <span class="project-tag" data-zh="Agent Harness · 个人项目" data-en="Agent Harness · Solo Build">Agent Harness · 个人项目</span>
-        <h3 class="project-title" data-zh="Paige —— 用一句话生成可编辑的 B 端页面" data-en="Paige — Turning Requirements into Editable Interfaces">Paige —— 用一句话生成可编辑的 B 端页面</h3>
-        <p class="project-desc" data-zh="一个 AI 辅助的业务界面生成与编辑环境。它还不是完整自主 Agent，更接近 Agent Harness 的局部实验：围绕“需求到界面”这个任务，组织输入、约束工具、检查结果、记录失败，并让人继续校准。" data-en="An AI-assisted generation and editing environment for business interfaces. It is not a fully autonomous agent yet; it is closer to a focused Agent Harness experiment around requirement-to-interface: organizing input, constraining tools, checking outputs, logging failures, and keeping humans in the loop.">一个 AI 辅助的业务界面生成与编辑环境。它还不是完整自主 Agent，更接近 Agent Harness 的局部实验：围绕“需求到界面”这个任务，组织输入、约束工具、检查结果、记录失败，并让人继续校准。</p>
-        <div class="project-meta">
-          <span class="meta-item"><span class="meta-dot"></span><span data-zh="0→1 自研" data-en="0→1 Solo">0→1 自研</span></span>
-          <span class="meta-item"><span class="meta-dot"></span><span data-zh="PageModel" data-en="PageModel">PageModel</span></span>
-          <span class="meta-item"><span class="meta-dot"></span><span data-zh="Evaluator" data-en="Evaluator">Evaluator</span></span>
-        </div>
-        <span class="card-arrow">↗</span>
-      </div>
-      <div class="project-card" onclick="showDetail('metrics')">
-        <div class="project-img"><img src="assets/images/projects/paige/from-app/paige-spec-view.jpg" alt="Paige 规格视图"></div>
-        <span class="project-tag" data-zh="Agent 评测 · 指标陷阱" data-en="Agent Evals · Metric Trap">Agent 评测 · 指标陷阱</span>
-        <h3 class="project-title" data-zh="Paige 评测：0 产出也会骗过指标" data-en="Paige Evals: When Zero Output Misleads Metrics">Paige 评测：0 产出也会骗过指标</h3>
-        <p class="project-desc" data-zh="用 10 个 Paige 场景重跑规划器，发现“没有生成页面”反而让质量指标看起来很好，于是先补产出率和可用率，避免被代理指标误导。" data-en="Ten Paige scenarios exposed a metric trap: producing no pages could still make quality metrics look good, so I added output and usefulness checks before trusting proxy metrics.">用 10 个 Paige 场景重跑规划器，发现“没有生成页面”反而让质量指标看起来很好，于是先补产出率和可用率，避免被代理指标误导。</p>
-        <div class="project-meta">
-          <span class="meta-item"><span class="meta-dot"></span><span data-zh="10 场景语料" data-en="10 Scenarios">10 场景语料</span></span>
-          <span class="meta-item"><span class="meta-dot"></span><span data-zh="多维 A/B" data-en="Multi-metric A/B">多维 A/B</span></span>
-        </div>
-        <span class="card-arrow">↗</span>
-      </div>
-      <div class="project-card" onclick="showDetail('evals')">
-        <div class="project-img"><img src="assets/images/projects/paige/from-app/paige-flow-view.jpg" alt="Paige 流程视图"></div>
-        <span class="project-tag" data-zh="评测驱动 · 方法探索" data-en="Eval-driven · Method">评测驱动 · 方法探索</span>
-        <h3 class="project-title" data-zh="用考题集探索设计稿识别如何提升" data-en="Using a Benchmark to Improve Design-file Recognition">用考题集探索设计稿识别如何提升</h3>
-        <p class="project-desc" data-zh="12 张真实设计稿沉淀成可重跑考题。重点不是给结果贴金，而是用跑分、失败归类和全卷回归找到识别能力的改进路径。" data-en="Twelve real design files became a re-runnable benchmark. The point is not polishing the result, but using scoring, failure buckets, and regression runs to find an improvement path.">12 张真实设计稿沉淀成可重跑考题。重点不是给结果贴金，而是用跑分、失败归类和全卷回归找到识别能力的改进路径。</p>
-        <div class="project-meta">
-          <span class="meta-item"><span class="meta-dot"></span><span data-zh="从 70% 开始" data-en="From 70%">从 70% 开始</span></span>
-          <span class="meta-item"><span class="meta-dot"></span><span data-zh="12 张真实稿" data-en="12 Real Files">12 张真实稿</span></span>
-        </div>
-        <span class="card-arrow">↗</span>
-      </div>
-      <div class="project-card" onclick="showDetail('harness')">
-        <div class="project-img"><img src="assets/images/projects/harness/entry.jpg" alt="DeepSeek Harness 新会话入口"></div>
-        <span class="project-tag" data-zh="Agent 体验研究 · 独立评审" data-en="Agent UX Research · Independent Review">Agent 体验研究 · 独立评审</span>
-        <h3 class="project-title" data-zh="AI 替你干活的时候，界面该说什么" data-en="While AI Works for You, What Should the Screen Say">AI 替你干活的时候，界面该说什么</h3>
-        <p class="project-desc" data-zh="用一次 21 分钟的真实任务测 DeepSeek Harness 预览版，逐帧回看录屏，找出影响信任的体验断点，对照 Claude Code、Codex 给出改法和优先级。" data-en="A 21-minute real task run on the DeepSeek Harness preview, reviewed frame by frame to find the trust breakpoints, with fixes prioritized against Claude Code and Codex.">用一次 21 分钟的真实任务测 DeepSeek Harness 预览版，逐帧回看录屏，找出影响信任的体验断点，对照 Claude Code、Codex 给出改法和优先级。</p>
-        <div class="project-meta">
-          <span class="meta-item"><span class="meta-dot"></span><span data-zh="真实任务实测" data-en="Live-task Audit">真实任务实测</span></span>
-          <span class="meta-item"><span class="meta-dot"></span><span data-zh="10 关键帧" data-en="10 Keyframes">10 关键帧</span></span>
-          <span class="meta-item"><span class="meta-dot"></span><span data-zh="3 档优先级" data-en="3 Priority Tiers">3 档优先级</span></span>
-        </div>
-        <span class="card-arrow">↗</span>
-      </div>
-    </div>
+  </div>
+  <div id="stage" hidden>
+    <button id="stageClose" aria-label="关闭">✕</button>
+    <div id="stageTrack"></div>
+    <p id="stageCap"></p>
+  </div>
+  <div id="album" hidden>
+    <button id="albumClose" aria-label="关闭">✕</button>
+    <div class="al-scroll">
+      <div class="al-head"><span data-zh="生活" data-en="Life">生活</span><small data-zh="工作之外的我" data-en="Beyond the work">工作之外的我</small></div>
+<section class="al-sec" data-tzh="下厨" data-ten="Cooking"><h3 data-zh="下厨" data-en="Cooking">下厨</h3><div class="al-grid"><figure class="al-ph" data-img="assets/images/human/meals.jpg" data-czh="一日三餐" data-cen="Three meals a day"><img src="assets/images/human/meals.jpg" alt="一日三餐" loading="lazy"><figcaption><span data-zh="一日三餐" data-en="Three meals a day">一日三餐</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/ribs.jpg" data-czh="超级好吃的手撕肋排" data-cen="Pull-apart ribs, seriously good"><img src="assets/images/human/ribs.jpg" alt="超级好吃的手撕肋排" loading="lazy"><figcaption><span data-zh="超级好吃的手撕肋排" data-en="Pull-apart ribs, seriously good">超级好吃的手撕肋排</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/ciabatta.jpg" data-czh="有一阵很喜欢做恰巴塔" data-cen="The ciabatta phase"><img src="assets/images/human/ciabatta.jpg" alt="有一阵很喜欢做恰巴塔" loading="lazy"><figcaption><span data-zh="有一阵很喜欢做恰巴塔" data-en="The ciabatta phase">有一阵很喜欢做恰巴塔</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/boeuf.jpg" data-czh="勃艮第红酒炖牛肉，配莫吉托" data-cen="Boeuf bourguignon, with a mojito"><img src="assets/images/human/boeuf.jpg" alt="勃艮第红酒炖牛肉，配莫吉托" loading="lazy"><figcaption><span data-zh="勃艮第红酒炖牛肉，配莫吉托" data-en="Boeuf bourguignon, with a mojito">勃艮第红酒炖牛肉，配莫吉托</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/knife.jpg" data-czh="最喜欢的厨刀——日本 堺 · 实光" data-cen="Favorite knife — Jikko, Sakai, Japan"><img src="assets/images/human/knife.jpg" alt="最喜欢的厨刀——日本 堺 · 实光" loading="lazy"><figcaption><span data-zh="最喜欢的厨刀——日本 堺 · 实光" data-en="Favorite knife — Jikko, Sakai, Japan">最喜欢的厨刀——日本 堺 · 实光</span></figcaption></figure></div></section><section class="al-sec" data-tzh="调酒与茶" data-ten="Drinks &amp; Tea"><h3 data-zh="调酒与茶" data-en="Drinks &amp; Tea">调酒与茶</h3><div class="al-grid"><figure class="al-ph" data-img="assets/images/human/gin-tonic.jpg" data-czh="最爱的 Gin Tonic" data-cen="The beloved gin and tonic"><img src="assets/images/human/gin-tonic.jpg" alt="最爱的 Gin Tonic" loading="lazy"><figcaption><span data-zh="最爱的 Gin Tonic" data-en="The beloved gin and tonic">最爱的 Gin Tonic</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/whiskey-sour.jpg" data-czh="Whiskey Sour" data-cen="Whiskey sour"><img src="assets/images/human/whiskey-sour.jpg" alt="Whiskey Sour" loading="lazy"><figcaption><span data-zh="Whiskey Sour" data-en="Whiskey sour">Whiskey Sour</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/guava-sour.jpg" data-czh="Guava Sour" data-cen="Guava sour"><img src="assets/images/human/guava-sour.jpg" alt="Guava Sour" loading="lazy"><figcaption><span data-zh="Guava Sour" data-en="Guava sour">Guava Sour</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/mint-julep.jpg" data-czh="Mint Julep" data-cen="Mint julep"><img src="assets/images/human/mint-julep.jpg" alt="Mint Julep" loading="lazy"><figcaption><span data-zh="Mint Julep" data-en="Mint julep">Mint Julep</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/blue-lagoon.jpg" data-czh="Blue Lagoon" data-cen="Blue lagoon"><img src="assets/images/human/blue-lagoon.jpg" alt="Blue Lagoon" loading="lazy"><figcaption><span data-zh="Blue Lagoon" data-en="Blue lagoon">Blue Lagoon</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/pink-martini.jpg" data-czh="粉色马天尼，杯口是玫瑰花瓣" data-cen="Pink martini, rose-petal rim"><img src="assets/images/human/pink-martini.jpg" alt="粉色马天尼，杯口是玫瑰花瓣" loading="lazy"><figcaption><span data-zh="粉色马天尼，杯口是玫瑰花瓣" data-en="Pink martini, rose-petal rim">粉色马天尼，杯口是玫瑰花瓣</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/tea-dusk.jpg" data-czh="茶酒 · 东方暮色" data-cen="Tea cocktail · Oriental dusk"><img src="assets/images/human/tea-dusk.jpg" alt="茶酒 · 东方暮色" loading="lazy"><figcaption><span data-zh="茶酒 · 东方暮色" data-en="Tea cocktail · Oriental dusk">茶酒 · 东方暮色</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/tea-recipe.jpg" data-czh="自己写的茶酒配方" data-cen="My own tea-cocktail recipes"><img src="assets/images/human/tea-recipe.jpg" alt="自己写的茶酒配方" loading="lazy"><figcaption><span data-zh="自己写的茶酒配方" data-en="My own tea-cocktail recipes">自己写的茶酒配方</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/home-gin.jpg" data-czh="自制蒸馏金酒" data-cen="Gin, distilled at home"><img src="assets/images/human/home-gin.jpg" alt="自制蒸馏金酒" loading="lazy"><figcaption><span data-zh="自制蒸馏金酒" data-en="Gin, distilled at home">自制蒸馏金酒</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/ice-ball.jpg" data-czh="第一次手凿冰球" data-cen="First hand-carved ice ball"><img src="assets/images/human/ice-ball.jpg" alt="第一次手凿冰球" loading="lazy"><figcaption><span data-zh="第一次手凿冰球" data-en="First hand-carved ice ball">第一次手凿冰球</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/whisky-cert.jpg" data-czh="Whisky 课程证书" data-cen="Whisky course certificate"><img src="assets/images/human/whisky-cert.jpg" alt="Whisky 课程证书" loading="lazy"><figcaption><span data-zh="Whisky 课程证书" data-en="Whisky course certificate">Whisky 课程证书</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/tea-class.jpg" data-czh="茶酒课程" data-cen="Tea-cocktail class"><img src="assets/images/human/tea-class.jpg" alt="茶酒课程" loading="lazy"><figcaption><span data-zh="茶酒课程" data-en="Tea-cocktail class">茶酒课程</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/bartender-meet.jpg" data-czh="调酒师聚会" data-cen="Bartender meetup"><img src="assets/images/human/bartender-meet.jpg" alt="调酒师聚会" loading="lazy"><figcaption><span data-zh="调酒师聚会" data-en="Bartender meetup">调酒师聚会</span></figcaption></figure></div></section><section class="al-sec" data-tzh="旅行" data-ten="Travel"><h3 data-zh="旅行" data-en="Travel">旅行</h3><div class="al-grid"><figure class="al-ph" data-img="assets/images/human/travel-jp-temple.jpg" data-czh="日本 · 寺庙" data-cen="Japan · Temple"><img src="assets/images/human/travel-jp-temple.jpg" alt="日本 · 寺庙" loading="lazy"><figcaption><span data-zh="日本 · 寺庙" data-en="Japan · Temple">日本 · 寺庙</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/travel-jp-nara.jpg" data-czh="奈良 · 小鹿" data-cen="Nara · Deer"><img src="assets/images/human/travel-jp-nara.jpg" alt="奈良 · 小鹿" loading="lazy"><figcaption><span data-zh="奈良 · 小鹿" data-en="Nara · Deer">奈良 · 小鹿</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/travel-jp-usj.jpg" data-czh="日本 · 环球影城" data-cen="Japan · USJ"><img src="assets/images/human/travel-jp-usj.jpg" alt="日本 · 环球影城" loading="lazy"><figcaption><span data-zh="日本 · 环球影城" data-en="Japan · USJ">日本 · 环球影城</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/travel-th-arch1.jpg" data-czh="泰国 · 大皇宫" data-cen="Thailand · Grand Palace"><img src="assets/images/human/travel-th-arch1.jpg" alt="泰国 · 大皇宫" loading="lazy"><figcaption><span data-zh="泰国 · 大皇宫" data-en="Thailand · Grand Palace">泰国 · 大皇宫</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/travel-th-arch2.jpg" data-czh="泰国 · 寺庙" data-cen="Thailand · Temple"><img src="assets/images/human/travel-th-arch2.jpg" alt="泰国 · 寺庙" loading="lazy"><figcaption><span data-zh="泰国 · 寺庙" data-en="Thailand · Temple">泰国 · 寺庙</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/travel-th-similan.jpg" data-czh="泰国 · 斯米兰群岛" data-cen="Thailand · Similan"><img src="assets/images/human/travel-th-similan.jpg" alt="泰国 · 斯米兰群岛" loading="lazy"><figcaption><span data-zh="泰国 · 斯米兰群岛" data-en="Thailand · Similan">泰国 · 斯米兰群岛</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/travel-sicily.jpg" data-czh="意大利 · 西西里" data-cen="Italy · Sicily"><img src="assets/images/human/travel-sicily.jpg" alt="意大利 · 西西里" loading="lazy"><figcaption><span data-zh="意大利 · 西西里" data-en="Italy · Sicily">意大利 · 西西里</span></figcaption></figure></div></section><section class="al-sec" data-tzh="影视" data-ten="Film &amp; TV"><h3 data-zh="影视" data-en="Film &amp; TV">影视</h3><div class="al-grid"><figure class="al-ph" data-img="assets/images/human/soldiers-sortie.webp" data-czh="士兵突击 · 2006" data-cen="Soldiers Sortie · 2006"><img src="assets/images/human/soldiers-sortie.webp" alt="士兵突击 · 2006" loading="lazy"><figcaption><span data-zh="士兵突击 · 2006" data-en="Soldiers Sortie · 2006">士兵突击 · 2006</span><span class="al-quote" data-zh="不抛弃，不放弃。一个不聪明的人，把一件事做到底，做成了所有聪明人做不成的样子。" data-en="Never quit, never abandon. Someone unclever saw one thing through, further than all the clever ones.">不抛弃，不放弃。一个不聪明的人，把一件事做到底，做成了所有聪明人做不成的样子。</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/soldiers-cast.jpg" data-czh="钢七连" data-cen="Steel Seventh Company"><img src="assets/images/human/soldiers-cast.jpg" alt="钢七连" loading="lazy"><figcaption><span data-zh="钢七连" data-en="Steel Seventh Company">钢七连</span></figcaption></figure><figure class="al-ph" data-img="assets/images/human/forrest-gump.webp" data-czh="阿甘正传 · 1994" data-cen="Forrest Gump · 1994"><img src="assets/images/human/forrest-gump.webp" alt="阿甘正传 · 1994" loading="lazy"><figcaption><span data-zh="阿甘正传 · 1994" data-en="Forrest Gump · 1994">阿甘正传 · 1994</span><span class="al-quote" data-zh="Run, Forrest, run. 想不明白的时候，先跑起来，路会在跑的过程里出现。" data-en="Run, Forrest, run. When thinking stalls, start running; the road shows up on the way.">Run, Forrest, run. 想不明白的时候，先跑起来，路会在跑的过程里出现。</span></figcaption></figure></div></section>    </div>
   </div>
 </div>
-
-<!-- ARCHIVE -->
 <div id="page-archive" class="page">
   <div class="page-wrap">
     <p class="page-eyebrow" data-zh="历史作品" data-en="Past Work">历史作品</p>
@@ -858,18 +925,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
         <div class="project-meta">
           <span class="meta-item"><span class="meta-dot"></span><span data-zh="B 端中台" data-en="B2B Platform">B 端中台</span></span>
           <span class="meta-item"><span class="meta-dot"></span><span data-zh="0→1 重构" data-en="0→1 Rebuild">0→1 重构</span></span>
-        </div>
-        <span class="card-arrow">↗</span>
-      </div>
-      <div class="project-card" onclick="showDetail('kslive')">
-        <div class="project-img"><img src="assets/images/projects/videocloud/06.jpg" alt="云直播工作室"></div>
-        <span class="project-tag" data-zh="多媒体产品 · 快手" data-en="Multimedia · Kuaishou">多媒体产品 · 快手</span>
-        <h3 class="project-title" data-zh="直播工作室与多媒体产品设计" data-en="Live Studio &amp; Multimedia Product Design">直播工作室与多媒体产品设计</h3>
-        <p class="project-desc" data-zh="快手音视频时期的另一组产品：Web 直播伴侣、教育开播工具与云直播工作室，覆盖开播、培训与直播内容二次生产。" data-en="A family of Kuaishou multimedia products: Web Live Companion, an education broadcasting tool, and Cloud Live Studio, covering going live, training, and repurposing live content.">快手音视频时期的另一组产品：Web 直播伴侣、教育开播工具与云直播工作室，覆盖开播、培训与直播内容二次生产。</p>
-        <div class="project-meta">
-          <span class="meta-item"><span class="meta-dot"></span><span data-zh="直播伴侣" data-en="Live Companion">直播伴侣</span></span>
-          <span class="meta-item"><span class="meta-dot"></span><span data-zh="云直播工作室" data-en="Cloud Live Studio">云直播工作室</span></span>
-          <span class="meta-item"><span class="meta-dot"></span><span data-zh="15 项专利申请" data-en="15 Patents Filed">15 项专利申请</span></span>
         </div>
         <span class="card-arrow">↗</span>
       </div>
@@ -1757,13 +1812,14 @@ function renderDetail() {
   const p = projects[currentDetailId];
   if (!p) return;
   const lang = isEN ? 'en' : 'zh';
-  document.getElementById('detailBack').textContent = ['paige','metrics','evals','harness'].includes(currentDetailId) ? (isEN ? '← AI Work' : '← AI 作品') : (currentDetailId && currentDetailId.indexOf('signal-') === 0 ? (isEN ? '← Signal' : '← AI 思考') : '← Archive');
+  document.getElementById('detailBack').textContent = isEN ? '← Home' : '← 首页';
   const metaItems = p.meta.map(m => {
     const val = typeof m.value === 'object' ? m.value[lang] : m.value;
     return `<div class="detail-meta-item">${m.label[lang]}<span>${val}</span></div>`;
   }).join('');
   // 复用卡片封面图
-  const cardImg = document.querySelector(`[onclick="showDetail('${currentDetailId}')"] .project-img img`);
+  let cardImg = document.querySelector(`[onclick="showDetail('${currentDetailId}')"] .project-img img`);
+  if (!cardImg) { const fc = document.querySelector('.fd-card[data-img][data-id="' + currentDetailId + '"]'); if (fc) cardImg = { src: fc.getAttribute('data-img') }; }
   const heroHtml = cardImg ? `<div class="detail-hero"><img src="${cardImg.src}" alt="${p.title[lang]}"></div>` : '';
   // 图文交替：每张图配它那一页的说明，并为分节标题加锚点
   let secIdx = 0;
@@ -1841,7 +1897,7 @@ function setupDetailToc(){
   setTimeout(tocScrollHandler, 0);
 }
 
-document.getElementById('detailBack').onclick = () => showPage(['paige','metrics','evals','harness'].includes(currentDetailId) ? 'next' : (currentDetailId && currentDetailId.indexOf('signal-') === 0 ? 'signal' : 'archive'));
+document.getElementById('detailBack').onclick = () => showPage('home');
 
 document.getElementById('langBtn').addEventListener('click', function(){
   isEN = !isEN;
@@ -2257,6 +2313,176 @@ document.querySelectorAll('#page-archive .page-eyebrow, #page-archive .page-head
 
 // 初始路由：根据 URL hash 进入对应页面/项目（支持刷新、分享深链、前进后退）
 routeFromHash();
+</script>
+
+<script>
+document.addEventListener('click', function(e){
+  var c = e.target.closest('.mh-ct-row[data-copy]');
+  if (!c) return;
+  var hint = c.querySelector('.mh-ct-hint');
+  var orig = hint.innerHTML;
+  navigator.clipboard.writeText(c.getAttribute('data-copy')).then(function(){
+    hint.textContent = (document.getElementById('langBtn').textContent.trim() === '中') ? 'Copied' : '已复制';
+    setTimeout(function(){ hint.innerHTML = orig; }, 1600);
+  });
+});
+window.mhGo = function(id){
+  var h = location.hash.replace(/^#/,'');
+  if (h && h !== 'home') {
+    showPage('home');
+    setTimeout(function(){ var el = document.getElementById(id); if (el) el.scrollIntoView({behavior:'instant', block:'start'}); }, 350);
+  } else {
+    var el = document.getElementById(id); if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+};
+(function(){
+  var stage = document.getElementById('stage');
+  var track = document.getElementById('stageTrack');
+  var cap = document.getElementById('stageCap');
+  var closeBtn = document.getElementById('stageClose');
+  if (!stage) return;
+  var items = [], cur = 0, open = false;
+  function enMode(){ var b = document.getElementById('langBtn'); return b && b.textContent.trim() === '中'; }
+  function buildStage(cards, startIdx){
+    items = cards; cur = startIdx; track.innerHTML = '';
+    cards.forEach(function(c, i){
+      var el = document.createElement(c.href ? 'a' : 'div');
+      el.className = 'st-card' + (c.img ? '' : ' is-note');
+      el.dataset.idx = i;
+      if (c.href) { el.href = c.href; el.target = '_blank'; el.rel = 'noopener'; }
+      if (c.img) { var im = document.createElement('img'); im.className = 'imgfade'; im.addEventListener('load', function(){ im.classList.add('imgok'); }, {once:true}); im.src = c.img; im.alt = c.zh; if (im.complete && im.naturalWidth > 0) im.classList.add('imgok'); el.appendChild(im); }
+      else { var t = document.createElement('span'); t.className = 'st-note-t'; t.textContent = enMode() ? c.en : c.zh; el.appendChild(t); }
+      el.addEventListener('click', function(ev){
+        var idx = parseInt(el.dataset.idx, 10);
+        if (idx === cur) { if (c.id) { closeStage(); location.hash = 'project/' + c.id; } }
+        else { if (c.href) ev.preventDefault(); cur = idx; layout(); }
+      });
+      track.appendChild(el);
+    });
+    layout();
+  }
+  function layout(){
+    [].forEach.call(track.children, function(el, i){
+      var d = i - cur;
+      el.dataset.pos = d === 0 ? '0' : (d === -1 ? '-1' : (d === 1 ? '1' : 'off'));
+    });
+    var c = items[cur];
+    cap.innerHTML = '';
+    var title = document.createTextNode(enMode() ? c.en : c.zh);
+    cap.appendChild(title);
+    var pre = enMode() ? (c.ten || '') : (c.tzh || '');
+    var act = c.id ? (enMode() ? 'click to open' : '点击打开') : (c.href ? (enMode() ? 'opens on Yuque ↗' : '点击前往语雀 ↗') : '');
+    var joined = pre && act ? pre + ' · ' + act : (pre || act);
+    if (joined) { var hint = document.createElement('small'); hint.textContent = joined; cap.appendChild(hint); }
+  }
+  function openStage(cards, idx){ open = true; stage.hidden = false; document.body.style.overflow = 'hidden'; buildStage(cards, idx); }
+  function closeStage(){ open = false; stage.hidden = true; document.body.style.overflow = (album && !album.hidden) ? 'hidden' : ''; }
+  closeBtn.addEventListener('click', closeStage);
+  stage.addEventListener('click', function(e){ if (e.target === stage || e.target === track) closeStage(); });
+  document.addEventListener('keydown', function(e){
+    if (!open) {
+      if ((e.key === 'Escape' || e.key === 'Esc') && album && !album.hidden) closeAlbum();
+      return;
+    }
+    if (e.key === 'Escape' || e.key === 'Esc') closeStage();
+    if ((e.key === 'ArrowRight' || e.key === 'Right') && cur < items.length - 1) { cur++; layout(); }
+    if ((e.key === 'ArrowLeft' || e.key === 'Left') && cur > 0) { cur--; layout(); }
+  });
+  function collect(box){
+    return [].map.call(box.querySelectorAll('.fd-card'), function(b){
+      return { id: b.dataset.id, href: b.dataset.href || null, img: b.dataset.img || null, zh: b.dataset.czh, en: b.dataset.cen, tzh: b.dataset.tzh, ten: b.dataset.ten };
+    });
+  }
+  var album = document.getElementById('album');
+  function openAlbum(){ if (!album) return; album.hidden = false; document.body.style.overflow = 'hidden'; }
+  function closeAlbum(){ if (!album || album.hidden) return; album.hidden = true; document.body.style.overflow = ''; }
+  if (album) {
+    document.getElementById('albumClose').addEventListener('click', closeAlbum);
+    album.querySelectorAll('.al-sec').forEach(function(secEl){
+      var figs = [].slice.call(secEl.querySelectorAll('.al-ph'));
+      figs.forEach(function(f, i){
+        f.addEventListener('click', function(){
+          var items = figs.map(function(g){ return { img: g.dataset.img, zh: g.dataset.czh, en: g.dataset.cen, tzh: secEl.dataset.tzh, ten: secEl.dataset.ten }; });
+          openStage(items, i);
+        });
+      });
+    });
+  }
+  document.querySelectorAll('.fd-box').forEach(function(box){
+    box.addEventListener('click', function(e){
+      if (box.dataset.album) { openAlbum(); return; }
+      var cardEl = e.target.closest('.fd-card');
+      var cards = collect(box);
+      var idx = 0;
+      if (cardEl) { idx = [].indexOf.call(box.querySelectorAll('.fd-card'), cardEl); }
+      openStage(cards, idx);
+    });
+    box.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (box.dataset.album) { openAlbum(); } else { openStage(collect(box), 0); } } });
+  });
+})();
+
+/* refinements: fade, memory, titles, swipe */
+(function(){
+  document.querySelectorAll('.fd-card img, .al-ph img').forEach(function(img){
+    if (img.complete && img.naturalWidth > 0) return;
+    img.classList.add('imgfade');
+    img.addEventListener('load', function(){ img.classList.add('imgok'); }, {once:true});
+    if (img.complete && img.naturalWidth > 0) img.classList.add('imgok');
+  });
+  var btn = document.getElementById('langBtn');
+  try {
+    if (localStorage.getItem('xsl-lang') === 'en' && btn && btn.textContent.trim() === 'EN') btn.click();
+    if (btn) btn.addEventListener('click', function(){
+      try { localStorage.setItem('xsl-lang', btn.textContent.trim() === '中' ? 'en' : 'zh'); } catch(e){}
+    });
+  } catch(e){}
+  var baseTitle = document.title;
+  var homeY = 0;
+  window.addEventListener('scroll', function(){
+    var h = location.hash.replace(/^#/,'');
+    if (!h || h === 'home') homeY = window.scrollY;
+  }, {passive:true});
+  var _applyPage = applyPage;
+  applyPage = function(name){
+    _applyPage(name);
+    if (name === 'home') {
+      document.title = baseTitle;
+      if (homeY) window.scrollTo({top: homeY, behavior: 'instant'});
+    }
+  };
+  var _renderDetail = renderDetail;
+  renderDetail = function(){
+    _renderDetail();
+    var p = projects[currentDetailId];
+    if (!p) return;
+    var en = btn && btn.textContent.trim() === '中';
+    document.title = (en ? p.title.en : p.title.zh) + ' · 谢松伦';
+    var body = document.querySelector('#detail-content .detail-body');
+    var meta = document.querySelector('#detail-content .detail-meta');
+    if (body && meta) {
+      var chars = body.innerText.replace(/\s+/g,'').length;
+      var mins = Math.max(1, Math.round(chars / (en ? 1100 : 420)));
+      var item = document.createElement('div');
+      item.className = 'detail-meta-item';
+      item.innerHTML = (en ? 'Reading' : '阅读') + '<span>' + (en ? '~' + mins + ' min' : '约 ' + mins + ' 分钟') + '</span>';
+      meta.appendChild(item);
+    }
+  };
+  var stageEl = document.getElementById('stage');
+  if (stageEl) {
+    var sx = null, sy = null;
+    stageEl.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, {passive:true});
+    stageEl.addEventListener('touchend', function(e){
+      if (sx === null) return;
+      var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+      sx = null;
+      if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+        document.dispatchEvent(new KeyboardEvent('keydown', {key: dx < 0 ? 'ArrowRight' : 'ArrowLeft'}));
+      }
+    }, {passive:true});
+  }
+  try { console.log('%c你打开了轨迹页。%c\n这个站的每句话都能在案例里对上，包括这句。\n对话给用户，轨迹给你。', 'font-weight:600;color:#14110d', 'color:#8a857d'); } catch(e){}
+})();
 </script>
 </body>
 </html>
