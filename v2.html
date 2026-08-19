@@ -648,6 +648,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
     <section class="mh-group mh-about" id="about">
       <p class="mh-label" data-zh="关于" data-en="About">关于</p>
       <p class="mh-about-p" data-zh="10 年专注于桌面端企业级产品设计。曾主导滴滴国际、字节跳动火山引擎、快手等一线大厂的核心产品从 0 到 1 构建与重构，沉淀专利 15 项以上，含 2 项发明。" data-en="Ten years of desktop enterprise product design. Led core product builds and rebuilds at DiDi International, ByteDance Volcano Engine, and Kuaishou, with 15+ patents including 2 inventions.">10 年专注于桌面端企业级产品设计。曾主导滴滴国际、字节跳动火山引擎、快手等一线大厂的核心产品从 0 到 1 构建与重构，沉淀专利 15 项以上，含 2 项发明。</p>
+      <p class="mh-about-p" data-zh="我最喜欢的两部片子是士兵突击和阿甘正传，一部讲不聪明的人把一件事做到底，一部讲想不明白就先跑起来。我的工作方式基本就是这两句话，在火山引擎清掉 600 多个基础体验问题靠前一句，把 Paige 从第一版磨到二十多版靠后一句。" data-en="My two favorite pieces of film are Soldiers Sortie and Forrest Gump. One is about an unclever man seeing one thing through to the end; the other is about starting to run before you have it figured out. That is roughly how I work. Clearing 600-plus experience issues at Volcano Engine took the first; grinding Paige through twenty-plus versions took the second.">我最喜欢的两部片子是士兵突击和阿甘正传，一部讲不聪明的人把一件事做到底，一部讲想不明白就先跑起来。我的工作方式基本就是这两句话，在火山引擎清掉 600 多个基础体验问题靠前一句，把 Paige 从第一版磨到二十多版靠后一句。</p>
+      <p class="mh-about-p" data-zh="爱好里也是同一种劲。恰巴塔烤了一炉又一炉，茶酒配方自己动手写，冰球一刀刀凿到成形。愿意为一点点更好折腾很久，这就是我的内核，放到工作里，就是把时间花在体验细节上。" data-en="My hobbies carry the same streak. Batch after batch of ciabatta, tea-cocktail recipes written by hand, an ice ball carved cut by cut until it held its shape. Being willing to fuss for a long time over something slightly better is my core, and at work it means spending my hours on the details of experience.">爱好里也是同一种劲。恰巴塔烤了一炉又一炉，茶酒配方自己动手写，冰球一刀刀凿到成形。愿意为一点点更好折腾很久，这就是我的内核，放到工作里，就是把时间花在体验细节上。</p>
+      <p class="mh-about-p" data-zh="往后想成为什么样的人，我想一直做离用户最近的那个。模型会越来越聪明，总得有人盯着屏幕前那双眼睛。" data-en="As for who I want to become, I want to stay the person closest to the user. Models will keep getting smarter. Someone has to watch the eyes in front of the screen.">往后想成为什么样的人，我想一直做离用户最近的那个。模型会越来越聪明，总得有人盯着屏幕前那双眼睛。</p>
       <div class="mh-traits">
         <div class="mh-trait"><span class="mh-tr-k" data-zh="好奇心" data-en="Curiosity">好奇心</span><span class="mh-tr-v" data-zh="新工具当月就进我的工作流。这个作品集从找参考到上线只花了两天，全程和 AI 一起做。" data-en="New tools enter my workflow the month they ship. This site went from references to live in two days, built with AI throughout.">新工具当月就进我的工作流。这个作品集从找参考到上线只花了两天，全程和 AI 一起做。</span></div>
         <div class="mh-trait"><span class="mh-tr-k" data-zh="原型能力" data-en="Prototyping">原型能力</span><span class="mh-tr-v" data-zh="想法不过夜，先做成能跑的东西再拿去讨论。Paige 一路迭代了二十多个版本，每一版都能用。" data-en="Ideas don't sit overnight; they become something runnable before we talk. Paige has been through twenty-plus working versions.">想法不过夜，先做成能跑的东西再拿去讨论。Paige 一路迭代了二十多个版本，每一版都能用。</span></div>
@@ -2283,6 +2286,8 @@ a.st-card{text-decoration:none;color:inherit}
 .mh-label-exp{margin-top:0}
 @media (max-width:560px){.mh-traits{grid-template-columns:1fr}}
 .mh-about-p{font-size:14.5px;line-height:1.9;color:color-mix(in srgb,var(--ink) 62%,transparent);max-width:42em;margin:0;text-wrap:pretty}
+.mh-about-p + .mh-about-p{margin-top:14px}
+.mh-about-p + .mh-traits{margin-top:34px}
 .mh-exp{border-top:1px solid var(--faint)}
 .mh-exp-row{display:flex;align-items:baseline;gap:16px;padding:11px 0;border-bottom:1px solid var(--faint)}
 .mh-exp-co{font-size:14px;font-weight:600;color:var(--ink);flex:0 0 5.5em}
