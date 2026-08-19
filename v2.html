@@ -4,18 +4,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>谢松伦 Xie Songlun · Product Designer / AI Explorer</title>
-<meta name="description" content="谢松伦 Xie Songlun — 产品设计师。10 年 B 端复杂系统设计经验，近期用 Paige 做 AI 页面生成与设计交付实验，记录需求到界面、评测、失败日志和人机边界。">
+<title>谢松伦 · 体验设计师</title>
+<meta name="description" content="产品设计师，长处在体验与应用。把 AI 放进真实的工作环境里解决具体问题，差距都藏在体验细节里。">
 <meta name="author" content="谢松伦 Xie Songlun">
 <!-- 社交分享卡片（部署到正式域名后，请把 og:image 换成完整 https 绝对地址才能在微信/X 等平台显示预览图） -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="谢松伦 Xie Songlun · Product Designer / AI Explorer">
-<meta property="og:description" content="10 年 B 端复杂系统设计经验，近期用 Paige 记录 AI 如何参与需求到界面的设计交付。">
-<meta property="og:image" content="assets/images/projects/paige/from-app/paige-editor-canvas.jpg">
+<meta property="og:title" content="谢松伦 · 体验设计师">
+<meta property="og:url" content="https://xiesonglun-portfolio.vercel.app/v2.html">
+<meta property="og:description" content="产品设计师，长处在体验与应用。把 AI 放进真实的工作环境里解决具体问题。">
+<meta property="og:image" content="https://xiesonglun-portfolio.vercel.app/assets/og-v2.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="谢松伦 Xie Songlun · Product Designer / AI Explorer">
-<meta name="twitter:description" content="10 年 B 端复杂系统设计经验，近期用 Paige 记录 AI 如何参与需求到界面的设计交付。">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0a'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%23c8b89a' text-anchor='middle'%3EX%3C/text%3E%3C/svg%3E">
+<meta name="twitter:title" content="谢松伦 · 体验设计师">
+<meta name="twitter:description" content="产品设计师，长处在体验与应用。把 AI 放进真实的工作环境里解决具体问题。">
+<link rel="icon" type="image/png" href="assets/favicon-v2.png">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -658,6 +659,9 @@ nav .lang-toggle:hover{transform:none;box-shadow:none;background:rgba(20,17,13,.
 .st-card.is-note{display:flex;align-items:center;justify-content:center;padding:6%;width:min(52vw,680px);aspect-ratio:16/10}
 .st-card.is-note .st-note-t{font-size:clamp(18px,2.6vw,30px);font-weight:650;line-height:1.5;text-align:center;font-family:var(--cn)}
 a.st-card{text-decoration:none;color:inherit}
+::selection{background:var(--ink);color:#fff}
+.imgfade{opacity:0}
+.imgfade.imgok{opacity:1;transition:opacity .5s ease}
 .st-card[data-pos="-1"]{transform:translate(-50%,-50%) translateX(-78%) scale(.56);opacity:.55;z-index:1}
 .st-card[data-pos="1"]{transform:translate(-50%,-50%) translateX(78%) scale(.56);opacity:.55;z-index:1}
 .st-card[data-pos="0"]{z-index:3}
@@ -2347,7 +2351,7 @@ window.mhGo = function(id){
       el.className = 'st-card' + (c.img ? '' : ' is-note');
       el.dataset.idx = i;
       if (c.href) { el.href = c.href; el.target = '_blank'; el.rel = 'noopener'; }
-      if (c.img) { var im = document.createElement('img'); im.src = c.img; im.alt = c.zh; el.appendChild(im); }
+      if (c.img) { var im = document.createElement('img'); im.className = 'imgfade'; im.addEventListener('load', function(){ im.classList.add('imgok'); }, {once:true}); im.src = c.img; im.alt = c.zh; if (im.complete && im.naturalWidth > 0) im.classList.add('imgok'); el.appendChild(im); }
       else { var t = document.createElement('span'); t.className = 'st-note-t'; t.textContent = enMode() ? c.en : c.zh; el.appendChild(t); }
       el.addEventListener('click', function(ev){
         var idx = parseInt(el.dataset.idx, 10);
@@ -2416,6 +2420,69 @@ window.mhGo = function(id){
     });
     box.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (box.dataset.album) { openAlbum(); } else { openStage(collect(box), 0); } } });
   });
+})();
+
+/* refinements: fade, memory, titles, swipe */
+(function(){
+  document.querySelectorAll('.fd-card img, .al-ph img').forEach(function(img){
+    if (img.complete && img.naturalWidth > 0) return;
+    img.classList.add('imgfade');
+    img.addEventListener('load', function(){ img.classList.add('imgok'); }, {once:true});
+    if (img.complete && img.naturalWidth > 0) img.classList.add('imgok');
+  });
+  var btn = document.getElementById('langBtn');
+  try {
+    if (localStorage.getItem('xsl-lang') === 'en' && btn && btn.textContent.trim() === 'EN') btn.click();
+    if (btn) btn.addEventListener('click', function(){
+      try { localStorage.setItem('xsl-lang', btn.textContent.trim() === '中' ? 'en' : 'zh'); } catch(e){}
+    });
+  } catch(e){}
+  var baseTitle = document.title;
+  var homeY = 0;
+  window.addEventListener('scroll', function(){
+    var h = location.hash.replace(/^#/,'');
+    if (!h || h === 'home') homeY = window.scrollY;
+  }, {passive:true});
+  var _applyPage = applyPage;
+  applyPage = function(name){
+    _applyPage(name);
+    if (name === 'home') {
+      document.title = baseTitle;
+      if (homeY) window.scrollTo({top: homeY, behavior: 'instant'});
+    }
+  };
+  var _renderDetail = renderDetail;
+  renderDetail = function(){
+    _renderDetail();
+    var p = projects[currentDetailId];
+    if (!p) return;
+    var en = btn && btn.textContent.trim() === '中';
+    document.title = (en ? p.title.en : p.title.zh) + ' · 谢松伦';
+    var body = document.querySelector('#detail-content .detail-body');
+    var meta = document.querySelector('#detail-content .detail-meta');
+    if (body && meta) {
+      var chars = body.innerText.replace(/\s+/g,'').length;
+      var mins = Math.max(1, Math.round(chars / (en ? 1100 : 420)));
+      var item = document.createElement('div');
+      item.className = 'detail-meta-item';
+      item.innerHTML = (en ? 'Reading' : '阅读') + '<span>' + (en ? '~' + mins + ' min' : '约 ' + mins + ' 分钟') + '</span>';
+      meta.appendChild(item);
+    }
+  };
+  var stageEl = document.getElementById('stage');
+  if (stageEl) {
+    var sx = null, sy = null;
+    stageEl.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, {passive:true});
+    stageEl.addEventListener('touchend', function(e){
+      if (sx === null) return;
+      var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+      sx = null;
+      if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+        document.dispatchEvent(new KeyboardEvent('keydown', {key: dx < 0 ? 'ArrowRight' : 'ArrowLeft'}));
+      }
+    }, {passive:true});
+  }
+  try { console.log('%c你打开了轨迹页。%c\n这个站没有秘密，源码在 https://github.com/Darren1119/my-zpj\n对话给用户，轨迹给你。', 'font-weight:600;color:#14110d', 'color:#8a857d'); } catch(e){}
 })();
 </script>
 </body>

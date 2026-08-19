@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>找不到这一页 · 谢松伦</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{
+  background:#fff;
+  color:#14110d;
+  font-family:'PingFang SC','Hiragino Sans GB',-apple-system,sans-serif;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+.wrap{max-width:480px;width:100%;text-align:center}
+.folder{position:relative;width:200px;height:160px;margin:0 auto 32px}
+.back{
+  position:absolute;
+  top:22px;left:0;right:0;bottom:0;
+  border-radius:14px;
+  background:linear-gradient(160deg,#e9e5df,#d8d3ca);
+  box-shadow:0 24px 60px -28px rgba(20,17,13,.35);
+}
+.back::before{
+  content:"";
+  position:absolute;
+  top:-22px;left:0;
+  width:40%;height:22px;
+  border-radius:10px 10px 0 0;
+  background:#e9e5df;
+}
+.front{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:52%;
+  border-radius:12px;
+  background:rgba(243,239,232,.9);
+  border-top:1px solid rgba(255,255,255,.75);
+}
+h1{font-size:17px;font-weight:650;margin-bottom:12px}
+.desc{
+  font-size:14px;
+  color:rgba(20,17,13,.55);
+  line-height:1.7;
+  margin-bottom:22px;
+}
+.link{
+  display:inline-block;
+  font-size:14px;
+  color:#14110d;
+  text-decoration:none;
+  margin-bottom:44px;
+}
+.link:hover{text-decoration:underline;text-underline-offset:4px}
+.divider{
+  width:32px;
+  height:1px;
+  background:rgba(20,17,13,.13);
+  margin:0 auto 20px;
+}
+.sub{font-size:12px;color:rgba(20,17,13,.55)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="folder">
+    <div class="back"></div>
+    <div class="front"></div>
+  </div>
+  <h1>这页不存在</h1>
+  <p class="desc">可能是链接旧了，或者拼写差了一个字母。东西都还在首页的文件夹里。</p>
+  <a class="link" href="/v2.html">回首页 →</a>
+  <div class="divider"></div>
+  <p class="sub">Page not found · Everything lives in the folders at home</p>
+</div>
+</body>
+</html>
