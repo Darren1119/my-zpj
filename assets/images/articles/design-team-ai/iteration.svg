@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="harness-title harness-desc">
+<title id="harness-title">让项目依据参与每一轮修改</title>
+<desc id="harness-desc">项目需求、适用规范和已确认决定同时支持生成修改与检查反馈。检查后继续调整，关键问题无法确定时由人确认，最后验收交付。</desc>
+<rect width="1200" height="800" fill="#17191C"/>
+<defs>
+<marker id="harness-muted" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L6 4 L1 7" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="harness-orange" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L6 4 L1 7" fill="none" stroke="#FA8C5C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<text x="64" y="88" fill="#F4F3EF" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="40" font-weight="500" text-anchor="start">让项目依据参与每一轮修改</text>
+<text x="64" y="132" fill="#B4B5B7" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="start">Harness 将资料、执行与检查组织在一起</text>
+<path d="M64 170 H1136" fill="none" stroke="#44464A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="64" y="226" fill="#B4B5B7" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="start">项目依据</text>
+<text x="432" y="226" fill="#B4B5B7" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="start">执行循环</text>
+<text x="900" y="226" fill="#B4B5B7" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="start">人的判断</text>
+<text x="64" y="330" fill="#F4F3EF" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="28" font-weight="500" text-anchor="start">需求</text>
+<text x="64" y="368" fill="#B4B5B7" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="start">PRD 与业务规则</text>
+<text x="64" y="434" fill="#F4F3EF" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="28" font-weight="500" text-anchor="start">规范</text>
+<text x="64" y="472" fill="#B4B5B7" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="start">当前项目适用的版本</text>
+<text x="64" y="538" fill="#F4F3EF" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="28" font-weight="500" text-anchor="start">已确认决定</text>
+<text x="64" y="576" fill="#B4B5B7" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="start">背景与选择理由</text>
+<path d="M64 396 H312 M64 500 H312" fill="none" stroke="#44464A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M328 300 H344 V616 H328" fill="none" stroke="#44464A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M344 458 H384 M384 356 V560" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M384 356 H416" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#harness-muted)"/>
+<path d="M384 560 H416" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#harness-muted)"/>
+<rect x="432" y="300" width="304" height="112" rx="3" fill="#222427"/>
+<text x="460" y="345" fill="#F4F3EF" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="28" font-weight="500" text-anchor="start">生成与修改</text>
+<text x="460" y="382" fill="#B4B5B7" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="start">沿用已确认的要求</text>
+<rect x="432" y="504" width="304" height="112" rx="3" fill="#222427"/>
+<text x="460" y="549" fill="#F4F3EF" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="28" font-weight="500" text-anchor="start">检查与反馈</text>
+<text x="460" y="586" fill="#B4B5B7" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="start">核对需求与规范</text>
+<path d="M672 412 V488" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#harness-muted)"/>
+<text x="694" y="466" fill="#B4B5B7" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="start">检查</text>
+<path d="M496 504 V428" fill="none" stroke="#FA8C5C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#harness-orange)"/>
+<text x="440" y="466" fill="#FA8C5C" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="start">调整</text>
+<path d="M736 356 H884" fill="none" stroke="#FA8C5C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#harness-orange)"/>
+<text x="810" y="338" fill="#FA8C5C" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="middle">待确认</text>
+<path d="M1112 300 V268 H688 V284" fill="none" stroke="#FA8C5C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#harness-orange)"/>
+<text x="820" y="252" fill="#FA8C5C" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="middle">确认后继续</text>
+<rect x="900" y="300" width="236" height="112" rx="3" fill="#17191C" stroke="#44464A" stroke-width="1"/>
+<text x="924" y="345" fill="#F4F3EF" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="28" font-weight="500" text-anchor="start">确认关键问题</text>
+<text x="924" y="382" fill="#B4B5B7" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="start">补充判断依据</text>
+<path d="M736 560 H884" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#harness-muted)"/>
+<text x="810" y="542" fill="#B4B5B7" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="middle">通过</text>
+<rect x="900" y="504" width="236" height="112" rx="3" fill="#17191C" stroke="#44464A" stroke-width="1"/>
+<text x="924" y="549" fill="#F4F3EF" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="28" font-weight="500" text-anchor="start">交付验收</text>
+<text x="924" y="586" fill="#B4B5B7" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="start">确认最终结果</text>
+<path d="M64 678 H1136" fill="none" stroke="#44464A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="64" y="724" fill="#FA8C5C" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="start">关键问题</text>
+<text x="180" y="724" fill="#B4B5B7" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="start">先查依据，仍不明确再交人确认</text>
+<text x="704" y="724" fill="#F4F3EF" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="start">过程可控</text>
+<text x="820" y="724" fill="#B4B5B7" font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-size="22" font-weight="400" text-anchor="start">限定范围 · 版本回退</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+<title id="title">设计决定如何被后续成员复用</title>
+<desc id="desc">一份示意的设计决定记录，包含决定、理由、适用范围、版本和维护角色。后续成员查阅记录，判断当前任务是否适用：条件一致时沿用依据，条件变化时重新确认。示例不代表实际项目结果。</desc>
+<rect width="1200" height="800" fill="#17191C"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-kerning="normal">
+<text x="64" y="88" font-size="40" fill="#F4F3EF" font-weight="500" text-anchor="start">设计决定如何被后续成员复用</text>
+<text x="64" y="132" font-size="22" fill="#B4B5B7" font-weight="400" text-anchor="start">保留依据，先判断当前任务是否适用</text>
+<path d="M64 170 H1136" fill="none" stroke="#44464A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="64" y="240" font-size="28" fill="#F4F3EF" font-weight="500" text-anchor="start">设计决定记录</text>
+<text x="552" y="240" font-size="22" fill="#B4B5B7" font-weight="400" text-anchor="end">示意</text>
+<path d="M64 266 H552" fill="none" stroke="#44464A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="64" y="324" font-size="22" fill="#B4B5B7" font-weight="400" text-anchor="start">决定</text>
+<text x="184" y="324" font-size="28" fill="#F4F3EF" font-weight="400" text-anchor="start">异常申请单独复核</text>
+<path d="M64 350 H552" fill="none" stroke="#44464A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="64" y="404" font-size="22" fill="#B4B5B7" font-weight="400" text-anchor="start">理由</text>
+<text x="184" y="404" font-size="28" fill="#F4F3EF" font-weight="400" text-anchor="start">需要逐项核对补充材料</text>
+<path d="M64 430 H552" fill="none" stroke="#44464A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="64" y="484" font-size="22" fill="#B4B5B7" font-weight="400" text-anchor="start">适用</text>
+<text x="184" y="484" font-size="28" fill="#F4F3EF" font-weight="400" text-anchor="start">存在异常的申请</text>
+<path d="M64 510 H552" fill="none" stroke="#44464A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="64" y="574" font-size="22" fill="#B4B5B7" font-weight="400" text-anchor="start">版本</text>
+<text x="184" y="574" font-size="22" fill="#F4F3EF" font-weight="400" text-anchor="start">已确认版本</text>
+<text x="64" y="630" font-size="22" fill="#B4B5B7" font-weight="400" text-anchor="start">维护</text>
+<text x="184" y="630" font-size="22" fill="#F4F3EF" font-weight="400" text-anchor="start">产品与设计</text>
+<path d="M584 315 L684 315" fill="none" stroke="#FA8C5C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M677 310 L684 315 L677 320" fill="none" stroke="#FA8C5C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="704" y="240" font-size="22" fill="#B4B5B7" font-weight="400" text-anchor="start">后续成员 · 新任务</text>
+<text x="920" y="324" font-size="28" fill="#F4F3EF" font-weight="500" text-anchor="middle">查阅记录</text>
+<path d="M920 352 L920 394" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M915 387 L920 394 L925 387" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="920" y="438" font-size="28" fill="#F4F3EF" font-weight="500" text-anchor="middle">判断当前任务是否适用</text>
+<path d="M920 466 V508 M800 508 H1040" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M800 508 L800 538" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M795 531 L800 538 L805 531" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1040 508 L1040 538" fill="none" stroke="#FA8C5C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1035 531 L1040 538 L1045 531" fill="none" stroke="#FA8C5C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="800" y="580" font-size="22" fill="#B4B5B7" font-weight="400" text-anchor="middle">条件一致</text>
+<text x="1040" y="580" font-size="22" fill="#B4B5B7" font-weight="400" text-anchor="middle">条件变化</text>
+<text x="800" y="630" font-size="28" fill="#F4F3EF" font-weight="500" text-anchor="middle">沿用依据</text>
+<text x="1040" y="630" font-size="28" fill="#FA8C5C" font-weight="500" text-anchor="middle">重新确认</text>
+</g>
+</svg>
