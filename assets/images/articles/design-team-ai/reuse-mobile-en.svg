@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="1192" viewBox="0 0 640 1192" role="img" aria-labelledby="title desc">
+<title id="title">Make design decisions reusable</title>
+<desc id="desc">An example decision record with its rationale, scope, version and owner. Later contributors check whether it applies, reuse it when conditions match and reconfirm it when conditions change. This example does not represent an actual project result.</desc>
+<rect width="640" height="1192" fill="#17191C"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans SC, sans-serif" font-kerning="normal">
+<text x="40" y="78" font-size="40" fill="#F4F3EF" font-weight="500" text-anchor="start" font-family="Arial, Helvetica, sans-serif" data-fit-width="520">Design decisions</text>
+<text x="40" y="136" font-size="40" fill="#F4F3EF" font-weight="500" text-anchor="start" font-family="Arial, Helvetica, sans-serif" data-fit-width="520">others can reuse</text>
+<text x="40" y="190" font-size="28" fill="#B4B5B7" font-weight="400" text-anchor="start" font-family="Arial, Helvetica, sans-serif" data-fit-width="520">Keep the rationale; check its fit</text>
+<path d="M40 226 H600" fill="none" stroke="#44464A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="40" y="282" font-size="32" fill="#F4F3EF" font-weight="500" text-anchor="start" font-family="Arial, Helvetica, sans-serif" data-fit-width="520">Decision record</text>
+<text x="600" y="282" font-size="28" fill="#B4B5B7" font-weight="400" text-anchor="end" font-family="Arial, Helvetica, sans-serif" data-fit-width="130">Example</text>
+<path d="M40 308 H600" fill="none" stroke="#44464A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="40" y="364" font-size="28" fill="#B4B5B7" font-weight="400" text-anchor="start" font-family="Arial, Helvetica, sans-serif" data-fit-width="108">Decision</text>
+<text x="172" y="364" font-size="28" fill="#F4F3EF" font-weight="400" text-anchor="start" font-family="Arial, Helvetica, sans-serif" data-fit-width="428"><tspan x="172" y="349.3168">Review flagged requests </tspan><tspan x="172" y="381.2368">separately</tspan></text>
+<path d="M40 392 H600" fill="none" stroke="#44464A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="40" y="448" font-size="28" fill="#B4B5B7" font-weight="400" text-anchor="start" font-family="Arial, Helvetica, sans-serif" data-fit-width="108">Reason</text>
+<text x="172" y="448" font-size="28" fill="#F4F3EF" font-weight="400" text-anchor="start" font-family="Arial, Helvetica, sans-serif" data-fit-width="428"><tspan x="172" y="433.3168">Check supporting documents </tspan><tspan x="172" y="465.2368">individually</tspan></text>
+<path d="M40 476 H600" fill="none" stroke="#44464A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="40" y="532" font-size="28" fill="#B4B5B7" font-weight="400" text-anchor="start" font-family="Arial, Helvetica, sans-serif" data-fit-width="108">Scope</text>
+<text x="172" y="532" font-size="28" fill="#F4F3EF" font-weight="400" text-anchor="start" font-family="Arial, Helvetica, sans-serif" data-fit-width="428">Requests with exceptions</text>
+<path d="M40 560 H600" fill="none" stroke="#44464A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="40" y="616" font-size="28" fill="#B4B5B7" font-weight="400" text-anchor="start" font-family="Arial, Helvetica, sans-serif" data-fit-width="108">Version</text>
+<text x="172" y="616" font-size="28" fill="#F4F3EF" font-weight="400" text-anchor="start" font-family="Arial, Helvetica, sans-serif" data-fit-width="428">Approved version</text>
+<text x="40" y="672" font-size="28" fill="#B4B5B7" font-weight="400" text-anchor="start" font-family="Arial, Helvetica, sans-serif" data-fit-width="108">Owner</text>
+<text x="172" y="672" font-size="28" fill="#F4F3EF" font-weight="400" text-anchor="start" font-family="Arial, Helvetica, sans-serif" data-fit-width="428">Product and design</text>
+<path d="M40 716 H600" fill="none" stroke="#44464A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="40" y="774" font-size="28" fill="#B4B5B7" font-weight="400" text-anchor="start" font-family="Arial, Helvetica, sans-serif" data-fit-width="520">Next contributor · New task</text>
+<text x="320" y="838" font-size="32" fill="#F4F3EF" font-weight="500" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" data-fit-width="470">Read the record</text>
+<path d="M320 864 L320 902" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M315 895 L320 902 L325 895" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="320" y="946" font-size="32" fill="#F4F3EF" font-weight="500" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" data-fit-width="430">Does it apply to this task?</text>
+<path d="M320 974 V1000 M180 1000 H460" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M180 1000 L180 1028" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M175 1021 L180 1028 L185 1021" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M460 1000 L460 1028" fill="none" stroke="#FA8C5C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M455 1021 L460 1028 L465 1021" fill="none" stroke="#FA8C5C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="180" y="1070" font-size="28" fill="#B4B5B7" font-weight="400" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" data-fit-width="244">Same context</text>
+<text x="460" y="1070" font-size="28" fill="#B4B5B7" font-weight="400" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" data-fit-width="244">Context changed</text>
+<text x="180" y="1120" font-size="28" fill="#F4F3EF" font-weight="500" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" data-fit-width="244">Reuse reasoning</text>
+<text x="460" y="1120" font-size="32" fill="#FA8C5C" font-weight="500" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" data-fit-width="244">Check again</text>
+</g>
+</svg>

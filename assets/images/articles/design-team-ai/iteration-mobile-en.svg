@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="1380" viewBox="0 0 640 1380" role="img" aria-labelledby="harness-mobile-title harness-mobile-desc">
+<title id="harness-mobile-title">Project context in every revision</title>
+<desc id="harness-mobile-desc">Project requirements, applicable standards and confirmed decisions inform generation, revision and checks. Findings guide further changes; unresolved key questions go to a person before final delivery review.</desc>
+<rect width="640" height="1380" fill="#17191C"/>
+<defs>
+<marker id="harness-mobile-muted" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L6 4 L1 7" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="harness-mobile-orange" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L6 4 L1 7" fill="none" stroke="#FA8C5C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<text x="40" y="78" fill="#F4F3EF" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="500" text-anchor="start" data-fit-width="520">Project context</text>
+<text x="40" y="136" fill="#F4F3EF" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="500" text-anchor="start" data-fit-width="520">in every revision</text>
+<text x="40" y="190" fill="#B4B5B7" font-family="Arial, Helvetica, sans-serif" font-size="26.6" font-weight="400" text-anchor="start" data-fit-width="520">Harness connects context, tools and checks</text>
+<path d="M40 226 H600" fill="none" stroke="#44464A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="40" y="280" fill="#B4B5B7" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" text-anchor="start" data-fit-width="560">Confirmed project context</text>
+<text x="40" y="334" fill="#F4F3EF" font-family="Arial, Helvetica, sans-serif" font-size="26.9" font-weight="500" text-anchor="start" data-fit-width="168">Requirements</text>
+<text x="40" y="380" fill="#B4B5B7" font-family="Arial, Helvetica, sans-serif" font-size="25.8" font-weight="400" text-anchor="start" data-fit-width="168">Business rules</text>
+<text x="232" y="334" fill="#F4F3EF" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="500" text-anchor="start" data-fit-width="168">Standards</text>
+<text x="232" y="380" fill="#B4B5B7" font-family="Arial, Helvetica, sans-serif" font-size="25.4" font-weight="400" text-anchor="start" data-fit-width="168">Project version</text>
+<text x="424" y="334" fill="#F4F3EF" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="500" text-anchor="start" data-fit-width="168">Decision</text>
+<text x="424" y="380" fill="#B4B5B7" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" text-anchor="start" data-fit-width="168">Rationale</text>
+<path d="M40 410 H600 M320 410 V462" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#harness-mobile-muted)"/>
+<text x="40" y="510" fill="#B4B5B7" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" text-anchor="start" data-fit-width="520">Create, check and revise</text>
+<rect x="80" y="548" width="480" height="132" rx="3" fill="#222427"/>
+<text x="112" y="601" fill="#F4F3EF" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="500" text-anchor="start" data-fit-width="416">Create and revise</text>
+<text x="112" y="648" fill="#B4B5B7" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" text-anchor="start" data-fit-width="416">Keep confirmed requirements</text>
+<rect x="80" y="792" width="480" height="132" rx="3" fill="#222427"/>
+<text x="112" y="845" fill="#F4F3EF" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="500" text-anchor="start" data-fit-width="416">Check and respond</text>
+<text x="112" y="892" fill="#B4B5B7" font-family="Arial, Helvetica, sans-serif" font-size="26.7" font-weight="400" text-anchor="start" data-fit-width="416">Check requirements and standards</text>
+<path d="M436 680 V776" fill="none" stroke="#B4B5B7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#harness-mobile-muted)"/>
+<text x="462" y="744" fill="#B4B5B7" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" text-anchor="start" data-fit-width="146">Check</text>
+<path d="M200 792 V696" fill="none" stroke="#FA8C5C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#harness-mobile-orange)"/>
+<text x="112" y="744" fill="#FA8C5C" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" text-anchor="start" data-fit-width="416">Revise</text>
+<path d="M40 978 H600" fill="none" stroke="#44464A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="40" y="1032" fill="#F4F3EF" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="500" text-anchor="start" data-fit-width="520">People decide at key points</text>
+<text x="40" y="1096" fill="#FA8C5C" font-family="Arial, Helvetica, sans-serif" font-size="23.9" font-weight="400" text-anchor="start" data-fit-width="120">In progress</text>
+<text x="180" y="1084" fill="#F4F3EF" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" text-anchor="start" data-fit-width="410"><tspan x="180" y="1084.0">Resolve key questions; </tspan><tspan x="180" y="1116.2">take over if needed</tspan></text>
+<text x="180" y="1168" fill="#B4B5B7" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" text-anchor="start" data-fit-width="410">Carry decisions forward</text>
+<text x="40" y="1220" fill="#B4B5B7" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" text-anchor="start" data-fit-width="120">Delivery</text>
+<text x="180" y="1220" fill="#F4F3EF" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" text-anchor="start" data-fit-width="410">Review results and evidence</text>
+<path d="M592 1088 H614 V614 H576" fill="none" stroke="#FA8C5C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#harness-mobile-orange)"/>
+<text x="40" y="1318" fill="#B4B5B7" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" text-anchor="start" data-fit-width="520">Scope changes and keep version history</text>
+</svg>
