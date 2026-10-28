@@ -45,6 +45,7 @@
 
   function layout(focusCard = false) {
     const item = items[current];
+    const focused = document.activeElement;
     [...track.children].forEach((card, i) => {
       const distance = i - current;
       card.dataset.pos = Math.abs(distance) <= 1 ? String(distance) : 'off';
@@ -60,6 +61,8 @@
     position.textContent = `${current + 1} / ${items.length}`;
     previous.disabled = current === 0;
     next.disabled = current === items.length - 1;
+    if (focused === next && next.disabled) (previous.disabled ? document.getElementById('stageClose') : previous).focus();
+    if (focused === previous && previous.disabled) (next.disabled ? document.getElementById('stageClose') : next).focus();
     original.hidden = !!(item.id || item.href || !item.img);
     if (!original.hidden) original.href = item.img;
     if (focusCard) {
@@ -108,8 +111,9 @@
   }
   document.getElementById('stageClose').addEventListener('click', () => stage.close());
   stage.addEventListener('close', () => {
+    if (stage.open) return; // A queued close event must not clear a newly opened preview.
     lock(); track.replaceChildren();
-    if (stageTrigger?.isConnected) stageTrigger.focus({preventScroll:true});
+    if (stageTrigger?.isConnected && (document.activeElement === document.body || stage.contains(document.activeElement))) stageTrigger.focus({preventScroll:true});
   });
   stage.addEventListener('click', event => { if (event.target === stage || event.target === track) stage.close(); });
   previous.addEventListener('click', () => move(-1));
@@ -133,9 +137,10 @@
 
   document.getElementById('albumClose').addEventListener('click', () => album.close());
   album.addEventListener('close', () => {
+    if (album.open) return;
     if (stage.open) stage.close();
     lock();
-    if (albumTrigger?.isConnected) albumTrigger.focus({preventScroll:true});
+    if (albumTrigger?.isConnected && (document.activeElement === document.body || album.contains(document.activeElement))) albumTrigger.focus({preventScroll:true});
   });
   album.querySelectorAll('.al-sec').forEach(section => {
     const figures = [...section.querySelectorAll('.al-ph')];
