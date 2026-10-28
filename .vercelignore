@@ -2,6 +2,9 @@
 .github
 .impeccable.md
 .nojekyll
+CLAUDE.md
+QA.md
+scripts/
 .DS_Store
 Thumbs.db
 
