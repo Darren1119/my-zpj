@@ -31,6 +31,15 @@ function prepareMedia(root) {
   root.querySelectorAll('video[poster]').forEach(video => {
     const media = mediaEntry(video.getAttribute('poster'));
     if (media) video.poster = media.src;
+    if (!video.dataset.src) return;
+    const frame = document.createElement('div');
+    frame.className = 'detail-video-frame';
+    const button = document.createElement('button');
+    button.type = 'button'; button.className = 'detail-video-start'; button.dataset.videoPlay = '';
+    const caption = video.closest('figure').querySelector('.detail-video-title').textContent;
+    button.setAttribute('aria-label', (isEN ? 'Play video: ' : '播放视频：') + caption);
+    button.innerHTML = '<span aria-hidden="true">▶</span>';
+    video.replaceWith(frame); frame.append(video, button);
   });
   root.querySelectorAll('a[data-team-ai-zoom]').forEach(link => {
     // Let the visible zoom hint and image alt text provide the accessible name.
@@ -39,3 +48,26 @@ function prepareMedia(root) {
     link.removeAttribute('data-aria-label-en');
   });
 }
+
+// preload is only a browser hint. Assign the URL on an explicit play action instead.
+document.addEventListener('click', async event => {
+  const button = event.target.closest('button[data-video-play]');
+  if (!button) return;
+  const frame = button.closest('.detail-video-frame');
+  const video = frame.querySelector('video');
+  frame.querySelector('.detail-video-error')?.remove();
+  video.src = video.dataset.src;
+  video.controls = true;
+  button.hidden = true;
+  try { await video.play(); }
+  catch {
+    if (!video.isConnected || !video.closest('.page.active')) return;
+    button.hidden = false;
+    video.controls = false;
+    const message = document.createElement('p');
+    message.className = 'detail-video-error'; message.setAttribute('role','alert');
+    message.textContent = document.documentElement.lang === 'en' ? 'Video could not play. Please try again.' : '视频暂时无法播放，请重试。';
+    frame.append(message);
+    button.focus({preventScroll:true});
+  }
+});

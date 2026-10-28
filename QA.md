@@ -1,6 +1,6 @@
 # Portfolio release checks
 
-The deployed site is static. Critical scripts are embedded in HTML to avoid a separate download blocking project entry. Keep their editable sources in `assets/`, then regenerate the embedded copies before committing. Keep the folder design and test the critical paths below before promoting a deployment.
+The deployed site is static. Critical scripts and refinements CSS are embedded in HTML to avoid a separate download blocking project entry. Keep their editable sources in `assets/`, then regenerate the embedded copies before committing. Keep the folder design and test the critical paths below before promoting a deployment.
 
 ## Automated checks
 
@@ -46,7 +46,7 @@ Release targets: no confirmed axe violations in these representative pages; CLS 
 - In Resource Workshop and the AI-team article, use the contents on a cold load and after images finish loading. The chosen heading should settle about 84px below the viewport top. Zoom an illustration, close it and verify focus returns.
 - Scroll midway through a long detail; open Home with the fixed logo, then use browser Back. Reading position and expanded sections must restore. A new detail starts at the top.
 - While a detail illustration is enlarged, use browser Back, then close the restored folder. No stale illustration may remain. Change language after expanding Paige's build log, then change back: restore the expanded log and reading position. A first visit to the other language starts at its overview because its section structure differs.
-- Command/Ctrl-click a related article: a new tab opens and the original article stays in place. Confirm the initial Paige load fetches WebP posters but no MP4 data; each video must still play on request.
+- Command/Ctrl-click a related article: a new tab opens and the original article stays in place. Confirm the initial Paige load fetches WebP posters but no MP4 data; each video must still play on request. Video URLs are assigned only by the play button because preload hints vary across browsers. Leaving the article must pause playback.
 - Switch languages, refresh a deep link, visit all 18 detail routes and check titles, images and layouts. Confirm browser console has no new errors.
 - Test the contact copy buttons. Success requires a resolved clipboard write; on a blocked/unavailable clipboard, the manual-copy dialog must expose selectable text. No email or phone action is necessary to validate their hrefs.
 - Verify videos on an actual device, including audio/captions where applicable; check touch swipes, Safari/Firefox, a screen reader and the OS reduced-motion preference before claiming those environments passed.

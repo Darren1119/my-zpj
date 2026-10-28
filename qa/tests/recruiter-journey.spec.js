@@ -104,10 +104,10 @@ test('Paige starts with compressed posters and does not download video before pl
     expect(Math.abs(box.width / box.height - 1.6), 'Poster keeps the original video aspect ratio').toBeLessThan(.02);
   }
   await videos.first().scrollIntoViewIfNeeded();
-  await expect.poll(() => videos.first().evaluate(v => v.networkState)).toBe(1);
+  await expect(videos.first()).not.toHaveAttribute('src');
   expect(mediaRequests).toEqual([]);
   // Verify deferred media is still reachable and usable when playback is requested.
-  await videos.first().evaluate(v => v.play());
+  await page.locator('.detail-video-start').first().click();
   await expect.poll(() => videos.first().evaluate(v => v.readyState)).toBeGreaterThanOrEqual(2);
   expect(mediaRequests.length).toBeGreaterThan(0);
   await page.getByRole('link', { name: '谢松伦', exact: true }).click();
