@@ -35,6 +35,7 @@ for project, src in covers.items.items():
         preloads[project] = {'src': media['src'], 'srcset': ', '.join(f'{v["src"]} {v["width"]}w' for v in media.get('variants', []))}
 preload_script = '''(() => {
   if (!location.hash.startsWith('#project/')) return;
+  document.documentElement.classList.add('detail-entry');
   const covers = %s;
   const cover = covers[location.hash.replace(/^#project\\//, '')];
   if (!cover) return;

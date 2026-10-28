@@ -92,8 +92,11 @@ test('project entry works on the first click when separate JS requests are unava
 });
 
 test('Paige starts with compressed posters and does not download video before play', async ({ page }) => {
-  const mediaRequests = [];
-  page.on('request', request => { if (/\.mp4(?:\?|$)/.test(request.url())) mediaRequests.push(request.url()); });
+  const mediaRequests = [], unrelatedImages = [];
+  page.on('request', request => {
+    if (/\.mp4(?:\?|$)/.test(request.url())) mediaRequests.push(request.url());
+    if (request.url().includes('/optimized/images/human/')) unrelatedImages.push(request.url());
+  });
   await page.goto('/#project/paige');
   const videos = page.locator('#detail-content video');
   await expect(videos).toHaveCount(3);
@@ -106,6 +109,7 @@ test('Paige starts with compressed posters and does not download video before pl
   await videos.first().scrollIntoViewIfNeeded();
   await expect(videos.first()).not.toHaveAttribute('src');
   expect(mediaRequests).toEqual([]);
+  expect(unrelatedImages, 'Direct project entry must not fetch hidden homepage photos').toEqual([]);
   // Verify deferred media is still reachable and usable when playback is requested.
   await page.locator('.detail-video-start').first().click();
   await expect.poll(() => videos.first().evaluate(v => v.readyState)).toBeGreaterThanOrEqual(2);

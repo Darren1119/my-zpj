@@ -20,6 +20,7 @@
 <script data-source="route-preload">
 (() => {
   if (!location.hash.startsWith('#project/')) return;
+  document.documentElement.classList.add('detail-entry');
   const covers = {"harness":{"src":"assets/images/optimized/images/projects/harness/entry-1200.webp","srcset":"assets/images/optimized/images/projects/harness/entry-480.webp 480w, assets/images/optimized/images/projects/harness/entry-1200.webp 1200w, assets/images/optimized/images/projects/harness/entry-1726.webp 1726w"},"paige":{"src":"assets/images/optimized/images/projects/paige/from-app/paige-editor-canvas-1200.webp","srcset":"assets/images/optimized/images/projects/paige/from-app/paige-editor-canvas-480.webp 480w, assets/images/optimized/images/projects/paige/from-app/paige-editor-canvas-1200.webp 1200w, assets/images/optimized/images/projects/paige/from-app/paige-editor-canvas-1280.webp 1280w"},"metrics":{"src":"assets/images/optimized/images/projects/paige/from-app/paige-spec-view-1200.webp","srcset":"assets/images/optimized/images/projects/paige/from-app/paige-spec-view-480.webp 480w, assets/images/optimized/images/projects/paige/from-app/paige-spec-view-1200.webp 1200w, assets/images/optimized/images/projects/paige/from-app/paige-spec-view-1280.webp 1280w"},"evals":{"src":"assets/images/optimized/images/projects/paige/from-app/paige-flow-view-1200.webp","srcset":"assets/images/optimized/images/projects/paige/from-app/paige-flow-view-480.webp 480w, assets/images/optimized/images/projects/paige/from-app/paige-flow-view-1200.webp 1200w, assets/images/optimized/images/projects/paige/from-app/paige-flow-view-1280.webp 1280w"},"onvideo":{"src":"assets/images/optimized/images/projects/onvideo-card-1200.webp","srcset":"assets/images/optimized/images/projects/onvideo-card-480.webp 480w, assets/images/optimized/images/projects/onvideo-card-1200.webp 1200w, assets/images/optimized/images/projects/onvideo-card-1400.webp 1400w"},"babi":{"src":"assets/images/optimized/images/projects/babi-card-1200.webp","srcset":"assets/images/optimized/images/projects/babi-card-480.webp 480w, assets/images/optimized/images/projects/babi-card-1200.webp 1200w, assets/images/optimized/images/projects/babi-card-1400.webp 1400w"},"kslive":{"src":"assets/images/optimized/images/projects/videocloud/06-1200.webp","srcset":"assets/images/optimized/images/projects/videocloud/06-480.webp 480w, assets/images/optimized/images/projects/videocloud/06-1200.webp 1200w, assets/images/optimized/images/projects/videocloud/06-1400.webp 1400w"},"material":{"src":"assets/images/optimized/images/projects/material-card-1200.webp","srcset":"assets/images/optimized/images/projects/material-card-480.webp 480w, assets/images/optimized/images/projects/material-card-1200.webp 1200w, assets/images/optimized/images/projects/material-card-1400.webp 1400w"}};
   const cover = covers[location.hash.replace(/^#project\//, '')];
   if (!cover) return;
@@ -31,6 +32,7 @@
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+html.detail-entry #page-home{display:none}
 :root{
   --paper:#ffffff;--ink:#14110d;--accent:#ff3b16;--accent2:#1a22ff;
   --secondary:#625d56;
@@ -2085,6 +2087,7 @@ function applyPage(name) {
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
   const page = document.getElementById('page-' + name);
   if (page) { page.classList.add('active'); }
+  document.documentElement.classList.remove('detail-entry');
   const link = document.querySelector(`.nav-links a[data-page="${name}"]`);
   if (link) link.classList.add('active');
   // 切换后收起移动端菜单并复位图标
