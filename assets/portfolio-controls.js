@@ -95,7 +95,9 @@
       }
       card.addEventListener('click', event => {
         if (i !== current) { event.preventDefault(); current = i; layout(true); }
-        else if (item.id || item.href) stage.close();
+        else if (item.id && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+          event.preventDefault(); showDetail(item.id);
+        } else if (item.href) stage.close();
       });
       card.addEventListener('keydown', event => {
         if (event.key === ' ' && (item.id || item.href)) { event.preventDefault(); card.click(); }
@@ -113,7 +115,11 @@
   stage.addEventListener('close', () => {
     if (stage.open) return; // A queued close event must not clear a newly opened preview.
     lock(); track.replaceChildren();
-    if (stageTrigger?.isConnected && (document.activeElement === document.body || stage.contains(document.activeElement))) stageTrigger.focus({preventScroll:true});
+    // A deliberate close on the source page must not reopen on a later visit.
+    if (document.getElementById('page-home').classList.contains('active') && history.state?.portfolioView?.preview) {
+      history.replaceState({...history.state, portfolioView:{...history.state.portfolioView, preview:null}}, '');
+    }
+    if (stageTrigger?.isConnected && (document.getElementById('page-home').classList.contains('active') || album.open)) stageTrigger.focus({preventScroll:true});
   });
   stage.addEventListener('click', event => { if (event.target === stage || event.target === track) stage.close(); });
   previous.addEventListener('click', () => move(-1));
@@ -152,20 +158,36 @@
       })), index, button));
     });
   });
+  function openFolder(box, index = 0) {
+    const cards = [...box.querySelectorAll('.fd-card')];
+    if (!cards.length) return;
+    openStage(cards.map(card => ({
+      id:card.dataset.id, href:card.dataset.href, img:card.dataset.img,
+      zh:card.dataset.czh, en:card.dataset.cen, tzh:card.dataset.tzh, ten:card.dataset.ten
+    })), Math.max(0, Math.min(index, cards.length - 1)), box.querySelector('.fd-open'));
+  }
   document.querySelectorAll('.fd-box').forEach(box => {
-    function open(event) {
+    box.addEventListener('click', event => {
       if (box.dataset.album) { albumTrigger = box.querySelector('.fd-open'); album.showModal(); lock(); return; }
-      const cards = [...box.querySelectorAll('.fd-card')];
-      const clicked = event.target.closest('.fd-card');
-      openStage(cards.map(card => ({
-        id:card.dataset.id, href:card.dataset.href, img:card.dataset.img,
-        zh:card.dataset.czh, en:card.dataset.cen, tzh:card.dataset.tzh, ten:card.dataset.ten
-      })), Math.max(0, cards.indexOf(clicked)), box.querySelector('.fd-open'));
-    }
-    box.addEventListener('click', open);
+      openFolder(box, [...box.querySelectorAll('.fd-card')].indexOf(event.target.closest('.fd-card')));
+    });
   });
   document.addEventListener('localechange', () => { if (stage.open) { build(); layout(true); } });
-  window.addEventListener('hashchange', () => { if (stage.open) stage.close(); if (album.open) album.close(); });
+  window.portfolioPreview = {
+    snapshot() {
+      if (!stage.open || !stageTrigger?.matches('.fd-open')) return null;
+      return {folder:[...document.querySelectorAll('.fd-box')].indexOf(stageTrigger.closest('.fd-box')), index:current};
+    },
+    close() { if (stage.open) stage.close(); if (album.open) album.close(); },
+    restore(view) {
+      const box = document.querySelectorAll('.fd-box')[view.folder];
+      if (box && !box.dataset.album && Number.isInteger(view.index)) openFolder(box, view.index);
+    }
+  };
+  // The router runs before this deferred control script on an initial page load.
+  if (document.getElementById('page-home').classList.contains('active') && history.state?.portfolioView?.preview) {
+    window.portfolioPreview.restore(history.state.portfolioView.preview);
+  }
 })();
 
 /* Copy feedback never reports success until the clipboard promise resolves. */
