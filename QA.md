@@ -1,13 +1,29 @@
 # Portfolio release checks
 
-The site has no build step. Keep the folder design and test the critical paths below before promoting a deployment.
+The deployed site is static. Critical scripts are embedded in HTML to avoid a separate download blocking project entry. Keep their editable sources in `assets/`, then regenerate the embedded copies before committing. Keep the folder design and test the critical paths below before promoting a deployment.
 
 ## Automated checks
 
 ```sh
+python3 scripts/build_site.py
+python3 scripts/build_site.py --check
 python3 scripts/check_site.py
 python3 -m http.server 4175 --bind 127.0.0.1
 ```
+
+Repeatable recruiter-journey checks (Chromium, Firefox, WebKit and two mobile emulations):
+
+```sh
+cd qa
+npm ci
+npx playwright install chromium firefox webkit
+npm test
+npm run test:performance
+```
+
+GitHub Actions runs these checks on pushes and pull requests to main. Browser failures retain traces/screenshots; Lighthouse reports retain all three representative pages. The performance gate requires each page to remain under 3 MiB transfer and CLS 0.1, and accessibility/best-practices/SEO categories to remain at 100. LCP is recorded for diagnosis, not a flaky single-run CI gate. Use three runs of the same mobile profile on Vercel for release LCP comparisons. Automated browser emulation is not physical-device coverage, and Lighthouse does not establish field INP or guarantee accessibility.
+
+Set `PORTFOLIO_URL` to an accessible preview or production origin to run the same checks there. Do not include a trailing slash. CI runs the checked-out commit locally, not the current production deployment.
 
 Run Lighthouse against the **Vercel preview URL** for release measurements (the simple Python server does not compress HTML). Pin the audit version when comparing results:
 
@@ -29,6 +45,8 @@ Release targets: no confirmed axe violations in these representative pages; CLS 
 - Open Life using the keyboard, open a photo, then Escape twice. The first close restores the photo button and keeps the album scroll lock; the second restores the folder and unlocks the page. The original-photo link must use the original asset.
 - In Resource Workshop and the AI-team article, use the contents on a cold load and after images finish loading. The chosen heading should settle about 84px below the viewport top. Zoom an illustration, close it and verify focus returns.
 - Scroll midway through a long detail; open Home with the fixed logo, then use browser Back. Reading position and expanded sections must restore. A new detail starts at the top.
+- While a detail illustration is enlarged, use browser Back, then close the restored folder. No stale illustration may remain. Change language after expanding Paige's build log, then change back: restore the expanded log and reading position. A first visit to the other language starts at its overview because its section structure differs.
+- Command/Ctrl-click a related article: a new tab opens and the original article stays in place. Confirm the initial Paige load fetches WebP posters but no MP4 data; each video must still play on request.
 - Switch languages, refresh a deep link, visit all 18 detail routes and check titles, images and layouts. Confirm browser console has no new errors.
 - Test the contact copy buttons. Success requires a resolved clipboard write; on a blocked/unavailable clipboard, the manual-copy dialog must expose selectable text. No email or phone action is necessary to validate their hrefs.
 - Verify videos on an actual device, including audio/captions where applicable; check touch swipes, Safari/Firefox, a screen reader and the OS reduced-motion preference before claiming those environments passed.
@@ -39,6 +57,7 @@ Retain original files and references (`data-img` / zoom links). With Pillow 11.3
 
 ```sh
 python3 scripts/optimize_images.py
+python3 scripts/build_site.py
 python3 scripts/check_site.py
 ```
 

@@ -6,3 +6,6 @@ build/
 .env
 
 .vercel
+qa/test-results/
+qa/playwright-report/
+qa/performance-report/

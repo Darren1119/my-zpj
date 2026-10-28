@@ -1,0 +1,43 @@
+name: Portfolio quality
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  recruiter-journey:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: qa/package-lock.json
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Verify static page and generated scripts
+        run: |
+          python3 scripts/build_site.py --check
+          python3 scripts/check_site.py
+      - run: npm ci
+        working-directory: qa
+      - run: npx playwright install --with-deps chromium firefox webkit
+        working-directory: qa
+      - run: npm test
+        working-directory: qa
+      - run: npm run test:performance
+        working-directory: qa
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: portfolio-browser-report
+          path: |
+            qa/playwright-report/
+            qa/performance-report/
+          retention-days: 14

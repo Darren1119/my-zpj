@@ -28,6 +28,10 @@ function prepareMedia(root) {
     img.src = media.src;
     if (!img.closest('.detail-hero')) img.loading = 'lazy';
   });
+  root.querySelectorAll('video[poster]').forEach(video => {
+    const media = mediaEntry(video.getAttribute('poster'));
+    if (media) video.poster = media.src;
+  });
   root.querySelectorAll('a[data-team-ai-zoom]').forEach(link => {
     // Let the visible zoom hint and image alt text provide the accessible name.
     link.removeAttribute('aria-label');
