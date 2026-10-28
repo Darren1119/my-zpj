@@ -16,7 +16,7 @@ module.exports = defineConfig({
     screenshot: 'only-on-failure',
   },
   webServer: process.env.PORTFOLIO_URL ? undefined : {
-    command: 'python3 -m http.server 4177 --bind 127.0.0.1 --directory ..',
+    command: 'python3 serve.py',
     url: 'http://127.0.0.1:4177',
     reuseExistingServer: false,
     stderr: 'ignore',

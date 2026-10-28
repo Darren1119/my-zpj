@@ -11,6 +11,8 @@ python3 scripts/check_site.py
 python3 -m http.server 4175 --bind 127.0.0.1
 ```
 
+The browser test origin supports HTTP byte ranges for MP4 files, matching production media delivery.
+
 Repeatable recruiter-journey checks (Chromium, Firefox, WebKit and two mobile emulations):
 
 ```sh

@@ -9,3 +9,4 @@ build/
 qa/test-results/
 qa/playwright-report/
 qa/performance-report/
+__pycache__/
