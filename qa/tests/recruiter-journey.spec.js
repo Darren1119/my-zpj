@@ -134,3 +134,84 @@ test('keyboard preview closes with Escape and pages fit their viewport', async (
     expect(await page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(1);
   }
 });
+
+test('phone and tablet enlarge case images and keep Close reachable after panning', async ({ page }) => {
+  const dialog = page.locator('#teamAiZoom');
+  const viewer = dialog.locator('.zoom-viewport');
+  const close = dialog.getByRole('button');
+  for (const width of [390, 768]) {
+    await page.setViewportSize({ width, height: 844 });
+    for (const [id, index] of [['paige', 3], ['resource-workshop', 8]]) {
+      await page.goto('/#project/' + id);
+      const link = page.locator('.case-figure a').nth(index);
+      const inline = await link.locator('img').boundingBox();
+      await link.click();
+      const image = viewer.locator('img');
+      await image.evaluate(img => img.decode());
+      expect((await image.boundingBox()).width).toBeGreaterThan(inline.width);
+      expect(await viewer.evaluate(el => el.scrollLeft)).toBe(0);
+      await viewer.evaluate(el => el.scrollTo(el.scrollWidth, el.scrollHeight));
+      await expect.poll(() => viewer.evaluate(el => el.scrollLeft)).toBeGreaterThan(0);
+      expect(await close.evaluate(btn => {
+        const rect = btn.getBoundingClientRect();
+        return document.elementFromPoint(rect.x + rect.width / 2, rect.y + rect.height / 2) === btn;
+      })).toBe(true);
+      await close.click();
+      await expect(dialog).not.toBeVisible();
+      await expect(link).toBeFocused();
+    }
+  }
+});
+
+async function expectChapter(page, id) {
+  const heading = page.locator('#detail-content h2[id="' + id + '"]');
+  await expect(heading).toBeFocused();
+  await expect.poll(() => heading.evaluate(el => Math.abs(el.getBoundingClientRect().top - 84))).toBeLessThan(4);
+}
+
+test('a contents link can be shared, opened in a new tab and reloaded without losing its chapter', async ({ page, context }) => {
+  await openResource(page);
+  await page.locator('.detail-toc-inline > summary').click();
+  const chapter = 'resource-workshop-20261104-03';
+  const link = page.locator('.detail-toc-inline a').nth(2);
+  await expect(link).toHaveAttribute('href', '#project/resource-workshop/' + chapter);
+  const popup = context.waitForEvent('page');
+  await link.click({ modifiers: ['ControlOrMeta'] });
+  const shared = await popup;
+  await expectChapter(shared, chapter);
+  await shared.reload();
+  await expectChapter(shared, chapter);
+  await shared.close();
+  await expect(page).toHaveURL(/#project\/resource-workshop$/);
+  await link.click();
+  await expect(page).toHaveURL(new RegExp('/' + chapter + '$'));
+  await expectChapter(page, chapter);
+  await page.locator('#detailBack').click();
+  await expect(page.locator('#stage')).toBeVisible();
+  await expect(page.locator('#stagePosition')).toHaveText('2 / 6');
+});
+
+test('previously copied chapter IDs work in either language', async ({ page }) => {
+  await page.goto('/#paige-20261104-03');
+  await expectChapter(page, 'paige-20261104-03');
+  await page.goto('/#mx-en-02');
+  await expect(page).toHaveURL(/#project\/metrics\/mx-02$/);
+  await expectChapter(page, 'mx-02');
+  await page.locator('#langBtn').click();
+  await expectChapter(page, 'mx-en-02');
+  await page.reload();
+  await expectChapter(page, 'mx-en-02');
+  await page.goto('/#flowsec-2');
+  await expect(page).toHaveURL(/#project\/babi\/flowsec-2$/);
+  await expectChapter(page, 'flowsec-2');
+});
+
+test('retired and invalid project URLs land on the work list', async ({ page }) => {
+  for (const hash of ['next', 'project/missing', 'project/constructor', 'project/__proto__', 'project/%E0%A4']) {
+    await page.goto('/#' + hash);
+    await expect(page).toHaveURL(/#work$/);
+    await expect(page.locator('#page-home')).toHaveClass(/active/);
+    await expect(page.locator('#work')).toBeInViewport();
+    await expect(page.locator('#work')).toBeFocused();
+  }
+});

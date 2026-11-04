@@ -37,8 +37,9 @@ preload_script = '''(() => {
   if (!location.hash.startsWith('#project/')) return;
   document.documentElement.classList.add('detail-entry');
   const covers = %s;
-  const cover = covers[location.hash.replace(/^#project\\//, '')];
-  if (!cover) return;
+  const project = location.hash.split('/')[1];
+  if (!Object.hasOwn(covers, project)) return;
+  const cover = covers[project];
   const link = document.createElement('link');
   link.rel = 'preload'; link.as = 'image'; link.href = cover.src;
   if (cover.srcset) { link.imageSrcset = cover.srcset; link.imageSizes = '(max-width:760px) 94vw, 960px'; }

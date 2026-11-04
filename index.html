@@ -22,8 +22,9 @@
   if (!location.hash.startsWith('#project/')) return;
   document.documentElement.classList.add('detail-entry');
   const covers = {"harness":{"src":"assets/images/optimized/images/projects/harness/entry-1200.webp","srcset":"assets/images/optimized/images/projects/harness/entry-480.webp 480w, assets/images/optimized/images/projects/harness/entry-1200.webp 1200w, assets/images/optimized/images/projects/harness/entry-1726.webp 1726w"},"paige":{"src":"assets/images/optimized/images/articles/paige-20261104/00_cover_5x4-1200.webp","srcset":"assets/images/optimized/images/articles/paige-20261104/00_cover_5x4-480.webp 480w, assets/images/optimized/images/articles/paige-20261104/00_cover_5x4-1200.webp 1200w, assets/images/optimized/images/articles/paige-20261104/00_cover_5x4-1250.webp 1250w"},"metrics":{"src":"assets/images/optimized/images/projects/paige/from-app/paige-spec-view-1200.webp","srcset":"assets/images/optimized/images/projects/paige/from-app/paige-spec-view-480.webp 480w, assets/images/optimized/images/projects/paige/from-app/paige-spec-view-1200.webp 1200w, assets/images/optimized/images/projects/paige/from-app/paige-spec-view-1280.webp 1280w"},"evals":{"src":"assets/images/optimized/images/projects/paige/from-app/paige-flow-view-1200.webp","srcset":"assets/images/optimized/images/projects/paige/from-app/paige-flow-view-480.webp 480w, assets/images/optimized/images/projects/paige/from-app/paige-flow-view-1200.webp 1200w, assets/images/optimized/images/projects/paige/from-app/paige-flow-view-1280.webp 1280w"},"onvideo":{"src":"assets/images/optimized/images/projects/onvideo-card-1200.webp","srcset":"assets/images/optimized/images/projects/onvideo-card-480.webp 480w, assets/images/optimized/images/projects/onvideo-card-1200.webp 1200w, assets/images/optimized/images/projects/onvideo-card-1400.webp 1400w"},"babi":{"src":"assets/images/optimized/images/projects/babi-card-1200.webp","srcset":"assets/images/optimized/images/projects/babi-card-480.webp 480w, assets/images/optimized/images/projects/babi-card-1200.webp 1200w, assets/images/optimized/images/projects/babi-card-1400.webp 1400w"},"kslive":{"src":"assets/images/optimized/images/projects/videocloud/06-1200.webp","srcset":"assets/images/optimized/images/projects/videocloud/06-480.webp 480w, assets/images/optimized/images/projects/videocloud/06-1200.webp 1200w, assets/images/optimized/images/projects/videocloud/06-1400.webp 1400w"},"material":{"src":"assets/images/optimized/images/projects/material-card-1200.webp","srcset":"assets/images/optimized/images/projects/material-card-480.webp 480w, assets/images/optimized/images/projects/material-card-1200.webp 1200w, assets/images/optimized/images/projects/material-card-1400.webp 1400w"}};
-  const cover = covers[location.hash.replace(/^#project\//, '')];
-  if (!cover) return;
+  const project = location.hash.split('/')[1];
+  if (!Object.hasOwn(covers, project)) return;
+  const cover = covers[project];
   const link = document.createElement('link');
   link.rel = 'preload'; link.as = 'image'; link.href = cover.src;
   if (cover.srcset) { link.imageSrcset = cover.srcset; link.imageSizes = '(max-width:760px) 94vw, 960px'; }
@@ -609,7 +610,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .team-ai-detail .detail-body{font-size:18px;line-height:1.95;font-weight:400}
 .team-ai-detail .detail-body p{margin:0 0 1.4em}
 .team-ai-detail .detail-body strong{font-weight:600}
-.team-ai-detail .detail-body h2{font-size:26px;font-weight:600;line-height:1.5;margin:3em 0 1em;scroll-margin-top:90px}
+#detail-content h2[id]{scroll-margin-top:84px}
+.team-ai-detail .detail-body h2{font-size:26px;font-weight:600;line-height:1.5;margin:3em 0 1em}
 .team-ai-detail .detail-meta{display:flex;flex-direction:row;gap:24px;flex-wrap:wrap}.team-ai-detail .detail-meta-item{margin:0}.team-ai-detail .detail-toc{display:none}
 .team-ai-detail .detail-toc-inline{display:block;margin:2rem 0}
 .team-ai-detail .team-ai-subtitle{font-size:20px;color:var(--mute);margin-bottom:2em}
@@ -625,12 +627,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .team-ai-table thead{background:rgba(0,0,0,.035)}
 .team-ai-table th{font-weight:600}
 .team-ai-table th:first-child{width:20%}
-#teamAiZoom{width:calc(100vw - 32px);max-width:1440px;max-height:calc(100dvh - 32px);padding:48px 16px 16px;border:0;border-radius:12px;background:#17191c;color:#f4f3ef;overflow:auto}
+#teamAiZoom{width:max-content;max-width:min(1664px,calc(100% - 24px));max-height:calc(100dvh - 24px);margin:auto;padding:0 12px 12px;border:0;border-radius:12px;background:#17191c;color:#f4f3ef;overflow:hidden}
+#teamAiZoom[open]{display:flex;flex-direction:column}
 #teamAiZoom::backdrop{background:rgba(0,0,0,.8)}
-#teamAiZoom img{display:block;width:100%;height:auto}
-#teamAiZoom button{position:sticky;top:0;display:block;margin:-36px 0 12px auto;border:1px solid #686a6d;border-radius:6px;padding:6px 12px;background:#17191c;color:#f4f3ef;cursor:pointer;font:14px Arial,"PingFang SC",sans-serif}
+#teamAiZoom .zoom-viewport{min-width:0;min-height:0;overflow:auto;overscroll-behavior:contain}
+#teamAiZoom img{display:block;max-width:none;height:auto;margin-inline:auto}
+#teamAiZoom button{align-self:flex-end;flex:none;min-height:44px;margin:6px 0;border:1px solid #686a6d;border-radius:6px;padding:6px 14px;background:#17191c;color:#f4f3ef;cursor:pointer;font:14px Arial,"PingFang SC",sans-serif}
+#teamAiZoom :focus-visible{outline:2px solid #fff;outline-offset:-2px}
 @media(max-width:900px){.team-ai-detail .team-ai-figure{width:min(540px,calc(100vw - 40px))}.team-ai-detail .team-ai-figure figcaption{padding:0 8px}}
-@media(max-width:600px){.team-ai-detail .detail-wrap{padding-left:24px;padding-right:24px}.team-ai-detail .detail-body{font-size:17px;line-height:1.9}.team-ai-detail .detail-body h2{font-size:23px}.team-ai-detail .team-ai-figure{width:calc(100vw - 24px);margin-top:2rem;margin-bottom:2rem}.team-ai-table table{font-size:13px}.team-ai-table th,.team-ai-table td{padding:12px 8px}#teamAiZoom img{width:1100px;max-width:none}}
+@media(max-width:600px){.team-ai-detail .detail-wrap{padding-left:24px;padding-right:24px}.team-ai-detail .detail-body{font-size:17px;line-height:1.9}.team-ai-detail .detail-body h2{font-size:23px}.team-ai-detail .team-ai-figure{width:calc(100vw - 24px);margin-top:2rem;margin-bottom:2rem}.team-ai-table table{font-size:13px}.team-ai-table th,.team-ai-table td{padding:12px 8px}}
 
 
 /* Resource Workshop: preserve the approved dark Figma article and illustrations. */
@@ -655,7 +660,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .resource-zoom-hint{display:block;position:absolute;bottom:3%;right:4%;background:var(--resource-bg);border:1px solid var(--resource-rule);color:var(--resource-ink);padding:10px 14px;font-size:13px;line-height:1.5}
 .resource-workshop-detail .resource-figure figcaption{font-size:14px;line-height:1.7;color:var(--resource-muted);margin:14px auto 0;max-width:776px;padding:0 12px}
 .resource-keep-term{white-space:nowrap}.resource-figure a:focus-visible{outline:2px solid var(--resource-ink);outline-offset:5px}
-#teamAiZoom.resource-zoom img{width:1600px;max-width:none}#teamAiZoom.resource-zoom{max-width:1664px}
 @media(max-width:768px){.resource-workshop-detail .detail-wrap{padding-top:3rem}.resource-workshop-detail .detail-body h2{font-size:25px;margin-top:72px}.resource-workshop-detail .detail-body .resource-lead{font-size:18px}.resource-workshop-detail .resource-subtitle{font-size:25px}.resource-workshop-detail .detail-body p,.resource-workshop-detail .detail-body li{font-size:17px;line-height:1.95}.resource-figure{width:calc(100vw - 24px);margin-top:28px;margin-bottom:28px}.resource-zoom-hint{bottom:0;right:0;font-size:12px;padding:8px 12px}.resource-workshop-detail .resource-figure figcaption{padding-top:8px}.resource-workshop-detail .detail-body :is(h3.detail-subheading,h4){font-size:21px}}
 
 
@@ -1981,7 +1985,32 @@ const projects = {
 let isEN = false;
 let currentDetailId = null;
 
-const PAGES = ['home','next','archive','signal','human'];
+const PAGES = ['home','archive','signal','human'];
+const HOME_SECTIONS = ['work','about','contact'];
+
+// Older bilingual articles use mx-02 in Chinese and mx-en-02 in English.
+function sectionKey(id) { return id.replace(/-en-(\d+)$/, '-$1'); }
+
+function canonicalRoute(hash) {
+  if (hash === 'next') return 'work';
+  const [kind, id, section, extra] = hash.split('/');
+  if (kind === 'project') {
+    if (!Object.hasOwn(projects, id)) return 'work';
+    if (extra === undefined && section && /^[\w-]+$/.test(section)) {
+      return 'project/' + id + '/' + sectionKey(section);
+    }
+    return 'project/' + id;
+  }
+  // Older copied contents links contain only the heading ID. Resolve an unambiguous owner.
+  if (!/^[\w]+(?:-[\w]+)+$/.test(hash)) return hash;
+  const flowSection = /^flowsec-([1-9]\d*)$/.exec(hash);
+  const owners = Object.entries(projects).filter(([, project]) => {
+    if (flowSection) return (project.flow || []).filter(step => step.section).length >= Number(flowSection[1]);
+    return Object.values(project.body).some(body => body.includes('<h3 id="' + hash + '"'));
+  });
+  if (owners.length === 1) return 'project/' + owners[0][0] + '/' + sectionKey(hash);
+  return flowSection ? 'work' : hash;
+}
 
 // 实际切换页面（纯 DOM），由路由调用
 function applyPage(name) {
@@ -2027,15 +2056,17 @@ function showPage(name) {
   else navigateTo(name);
 }
 function showDetail(id) {
-  if (projects[id]) navigateTo('project/' + id, true);
+  if (Object.hasOwn(projects, id)) navigateTo('project/' + id, true);
+}
+function isPlainClick(event) {
+  return event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
 }
 // Ordinary links retain their new-tab behavior; same-tab project links remember their source.
 document.addEventListener('click', event => {
   const link = event.target.closest('a[href^="#project/"]');
-  if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || link.target === '_blank') return;
-  const id = link.getAttribute('href').slice(9);
-  if (!projects[id]) return;
-  event.preventDefault(); showDetail(id);
+  if (!link || event.defaultPrevented || !isPlainClick(event) || link.target === '_blank') return;
+  if (!Object.hasOwn(projects, link.hash.split('/')[1])) return;
+  event.preventDefault(); navigateTo(link.hash.slice(1), true);
 });
 const readingPositions = new Map();
 const languageReadingPositions = new Map();
@@ -2071,17 +2102,43 @@ function saveReadingPosition(){
   if (inDetail) languageReadingPositions.set(languageReadingKey(), saved);
   if (document.getElementById('page-home').classList.contains('active')) lastHomePosition = window.scrollY;
 }
-function scrollToSection(id){
+function scrollToSection(id, behavior = preferredScrollBehavior()){
   const target = document.getElementById(id);
   if (!target) return;
   target.tabIndex = -1; target.focus({preventScroll:true});
-  target.scrollIntoView({behavior:preferredScrollBehavior(), block:'start'});
+  target.scrollIntoView({behavior, block:'start'});
+}
+function goToArticleSection(id, behavior = 'instant') {
+  if (!id) return false;
+  const heading = [...document.querySelectorAll('#detail-content h2[id]')].find(el => sectionKey(el.id) === sectionKey(id));
+  if (!heading) return false;
+  for (let parent = heading.closest('details'); parent; parent = parent.parentElement.closest('details')) parent.open = true;
+  heading.tabIndex = -1;
+  heading.focus({preventScroll:true});
+  heading.scrollIntoView({block:'start', behavior});
+  if (document.readyState === 'loading') {
+    // A new mobile tab can acquire its final viewport after the initial layout.
+    // Keep the shared heading aligned until the reader takes control.
+    const alignment = new AbortController();
+    const options = {signal:alignment.signal};
+    const align = () => heading.scrollIntoView({block:'start', behavior:'instant'});
+    window.addEventListener('pageshow', align, {...options, once:true});
+    window.addEventListener('resize', align, options);
+    const release = () => alignment.abort();
+    heading.addEventListener('blur', release, options);
+    for (const type of ['pointerdown', 'touchstart', 'wheel', 'keydown', 'hashchange']) {
+      window.addEventListener(type, release, {...options, capture:true, passive:true});
+    }
+  }
+  return true;
 }
 function routeFromHash(event) {
   saveReadingPosition();
-  let h;
-  try { h = decodeURIComponent(location.hash.replace(/^#/,'')); } catch { h = 'home'; }
-  if (h.startsWith('flowsec-')) return;
+  const raw = location.hash.slice(1);
+  let decoded;
+  try { decoded = decodeURIComponent(raw); } catch { decoded = 'work'; }
+  const h = canonicalRoute(decoded);
+  if (h !== raw) history.replaceState(history.state, '', '#' + encodeURI(h));
   const key = history.state?.portfolioKey || Date.now().toString(36) + Math.random().toString(36).slice(2);
   if (!history.state?.portfolioKey) history.replaceState({
     ...history.state, portfolioKey:key,
@@ -2092,22 +2149,27 @@ function routeFromHash(event) {
   let saved = readingPositions.get(key) || history.state?.portfolioView;
   closeTransientViews();
   let pageName = PAGES.includes(h) ? h : 'home';
+  const [, projectId, section] = h.split('/');
   if (h.startsWith('project/')) {
-    const id = h.slice(8);
-    if (projects[id]) { currentDetailId = id; renderDetail(); pageName = 'detail'; }
+    currentDetailId = projectId;
+    renderDetail();
+    pageName = 'detail';
   }
   applyPage(pageName);
   if (pageName === 'detail') {
     saved = languageReadingPositions.get(languageReadingKey()) || (saved?.lang === (isEN ? 'en' : 'zh') ? saved : null);
   }
   if (pendingSection) { const target=pendingSection; pendingSection=null; scrollToSection(target); }
+  else if (HOME_SECTIONS.includes(h) && (!event || !saved)) scrollToSection(h, 'instant');
   else {
     if (event) {
       const heading = document.querySelector('.page.active h1');
       if (heading) { heading.tabIndex=-1; heading.focus({preventScroll:true}); }
     }
-    if (pageName === 'detail') restoreDetailReading(saved);
-    else window.scrollTo({top:saved?.y ?? (pageName==='home'?lastHomePosition:0), behavior:'instant'});
+    if (pageName === 'detail') {
+      if (event && saved) restoreDetailReading(saved);
+      else if (!goToArticleSection(section)) restoreDetailReading(saved);
+    } else window.scrollTo({top:saved?.y ?? (pageName==='home'?lastHomePosition:0), behavior:'instant'});
   }
   if (pageName === 'home' && history.state?.portfolioView?.preview) {
     window.portfolioPreview?.restore(history.state.portfolioView.preview);
@@ -2161,7 +2223,7 @@ function renderDetail() {
        <div class="detail-gallery">${p.images.map((src,i)=>`<div class="detail-gallery-slide"><img src="${src}"${imgAttr(src)} loading="lazy" alt="${p.title[lang]} ${i+1}"></div>`).join('')}</div>`
     : '';
   // 快捷目录（仅当存在 2 个以上分节时）
-  const tocLinks = sections.map(s=>`<li><a href="#${s.id}" data-target="${s.id}">${s.label}</a></li>`).join('');
+  const tocLinks = sections.map(s=>`<li><a href="#project/${currentDetailId}/${sectionKey(s.id)}" data-target="${s.id}">${s.label}</a></li>`).join('');
   const tocHtml = sections.length >= 2
     ? `<nav class="detail-toc" id="detailToc"><p class="detail-toc-title">${lang==='zh'?'目录':'Contents'}</p><ul>${tocLinks}</ul></nav>`
     : '';
@@ -2194,24 +2256,20 @@ function setupDetailToc(){
   if (tocScrollHandler){ window.removeEventListener('scroll', tocScrollHandler); tocScrollHandler = null; }
   const links = [...document.querySelectorAll('#detail-content .detail-toc a, #detail-content .detail-toc-inline a')];
   if (!links.length) return;
-  const OFFSET = 84;
   links.forEach(a=>a.addEventListener('click', e=>{
+    if (!isPlainClick(e)) return;
     e.preventDefault();
-    const el = document.getElementById(a.dataset.target);
-    if (!el) return;
-    const dt = el.closest('details'); if (dt && !dt.open) dt.open = true;
-    el.tabIndex = -1;
-    el.focus({preventScroll:true});
-    const y = el.getBoundingClientRect().top + window.scrollY - OFFSET;
-    window.scrollTo({top:y, behavior:preferredScrollBehavior()});
+    if (goToArticleSection(a.dataset.target, preferredScrollBehavior())) history.replaceState(history.state, '', a.hash);
   }));
   const secEls = links.map(a=>document.getElementById(a.dataset.target)).filter(Boolean);
   const uniqueSecs = [...new Set(secEls)];
+  if (!uniqueSecs.length) return;
+  const offset = parseFloat(getComputedStyle(uniqueSecs[0]).scrollMarginTop);
   tocScrollHandler = () => {
     let activeId = uniqueSecs[0] && uniqueSecs[0].id;
     for (const el of uniqueSecs){
       if (!el.offsetParent) continue;
-      if (el.getBoundingClientRect().top - OFFSET - 20 <= 0) activeId = el.id;
+      if (el.getBoundingClientRect().top - offset - 20 <= 0) activeId = el.id;
     }
     document.querySelectorAll('#detailToc a').forEach(a=>a.classList.toggle('active', a.dataset.target===activeId));
   };
@@ -2259,9 +2317,8 @@ document.getElementById('langBtn').addEventListener('click', function(){
   });
   if (inDetail) {
     renderDetail();
-    // Translations may have different structures. Restore each language independently;
-    // a first visit starts at the overview instead of reusing an unrelated pixel offset.
-    restoreDetailReading(languageReadingPositions.get(languageReadingKey()));
+    const saved = languageReadingPositions.get(languageReadingKey());
+    if (saved || !goToArticleSection(location.hash.split('/')[2])) restoreDetailReading(saved);
   }
   applyLocaleAttributes();
   updateLocaleMetadata();
@@ -2684,8 +2741,6 @@ document.getElementById('footerTop').addEventListener('click', () => {
 });
 document.querySelectorAll('#page-archive .page-eyebrow, #page-archive .page-heading, #page-archive .page-sub, #page-archive .project-card').forEach(el => el.classList.add('reveal'));
 
-// 初始路由：根据 URL hash 进入对应页面/项目（支持刷新、分享深链、前进后退）
-routeFromHash();
 </script>
 
 <script>
@@ -2729,15 +2784,35 @@ window.mhGo = function(id){
       meta.appendChild(item);
     }
   };
-  if (typeof currentDetailId !== 'undefined' && currentDetailId && projects[currentDetailId]) renderDetail();
+  // Resolve a shared chapter after restoring the reader's language and installing the renderer.
+  routeFromHash();
   try { console.log('%c你打开了轨迹页。%c\n这个站的每句话都能在案例里对上，包括这句。\n对话给用户，轨迹给你。', 'font-weight:600;color:#14110d', 'color:#8a857d'); } catch(e){}
 })();
 </script>
-<dialog id="teamAiZoom" aria-label="配图放大查看" data-aria-label-zh="配图放大查看" data-aria-label-en="Enlarged illustration"><button type="button" autofocus data-zh="关闭 ×" data-en="Close ×">关闭 ×</button><img alt=""></dialog>
+<dialog id="teamAiZoom" aria-label="配图放大查看" data-aria-label-zh="配图放大查看" data-aria-label-en="Enlarged illustration">
+  <button type="button" autofocus data-zh="关闭 ×" data-en="Close ×">关闭 ×</button>
+  <div class="zoom-viewport" tabindex="0" role="region" aria-label="放大图片，可滚动查看" data-aria-label-zh="放大图片，可滚动查看" data-aria-label-en="Enlarged image, scroll to explore"><img alt=""></div>
+</dialog>
 <script>
-(()=>{const dialog=document.getElementById('teamAiZoom');const img=dialog.querySelector('img');let trigger=null;
+(()=>{
+ const dialog = document.getElementById('teamAiZoom');
+ const viewport = dialog.querySelector('.zoom-viewport');
+ const img = viewport.querySelector('img');
+ let trigger = null;
  applyLocaleAttributes();dialog.querySelector('button').textContent=isEN?'Close ×':'关闭 ×';
- document.addEventListener('click',e=>{const a=e.target.closest('a[data-team-ai-zoom]');if(!a)return;e.preventDefault();trigger=a;dialog.classList.toggle('resource-zoom',!!a.closest('.resource-figure,.resource-product-shot'));img.src=a.href;img.alt=a.querySelector('img').alt;dialog.showModal();});
+ document.addEventListener('click', event => {
+   const link = event.target.closest('a[data-team-ai-zoom]');
+   if (!link || !isPlainClick(event)) return;
+   event.preventDefault();
+   trigger = link;
+   const preview = link.querySelector('img');
+   const originalWidth = mediaEntry(link.getAttribute('href'))?.width || preview.naturalWidth;
+   img.style.width = Math.ceil(Math.max(originalWidth, preview.getBoundingClientRect().width * 1.5)) + 'px';
+   img.alt = preview.alt;
+   img.src = link.href;
+   dialog.showModal();
+   viewport.scrollTo(0, 0);
+ });
  dialog.querySelector('button').addEventListener('click',()=>dialog.close());
  dialog.addEventListener('close',()=>{
    if(dialog.open)return;
