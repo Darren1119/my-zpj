@@ -57,6 +57,27 @@ test('related article back restores the previous article rather than home', asyn
   await expect.poll(async () => Math.abs(await link.evaluate(el => el.getBoundingClientRect().top) - before)).toBeLessThan(4);
 });
 
+test('a returning English reader can manually copy WeChat when clipboard access is blocked', async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, 'clipboard', {
+      configurable: true,
+      value: { writeText: async () => { throw new Error('Clipboard blocked by browser'); } }
+    });
+  });
+  await page.goto('/');
+  await page.locator('#langBtn').click();
+  await page.reload();
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  const trigger = page.locator('#page-home button.mh-quick-link');
+  await trigger.click();
+  const dialog = page.getByRole('dialog', { name: 'Copy manually' });
+  await expect(dialog.getByText('Automatic copying is unavailable. Copy the text below.')).toBeVisible();
+  await expect(dialog.getByRole('textbox', { name: 'Text to copy' })).toHaveValue('opposite_way');
+  await dialog.getByRole('button', { name: 'Close' }).click();
+  await expect(dialog).toHaveCount(0);
+  await expect(trigger).toBeFocused();
+});
+
 test('related links support a modified click and a real new tab', async ({ page, context }) => {
   await page.goto('/#project/paige');
   const link = page.getByRole('link', { name: '指标篇', exact: true });

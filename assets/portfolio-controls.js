@@ -206,6 +206,7 @@ document.addEventListener('click', async event => {
     const fallback = document.getElementById('copyFallback');
     const input = fallback.querySelector('input');
     input.value = control.dataset.copy;
+    fallback.onclose = () => control.focus({ preventScroll: true });
     fallback.showModal(); input.focus(); input.select();
   } finally {
     control.disabled = false;
