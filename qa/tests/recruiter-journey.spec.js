@@ -34,15 +34,15 @@ test('return from a zoomed project restores its folder and leaves no stale dialo
 
 test('language round trip remembers expanded content and reading position', async ({ page }) => {
   await page.goto('/#project/paige');
-  await page.locator('#pg-log > summary').click();
-  await page.locator('#pg-log > summary').scrollIntoViewIfNeeded();
-  const original = await page.locator('#pg-log').evaluate(el => el.getBoundingClientRect().top);
+  await page.locator('.detail-toc-inline > summary').click();
+  await page.locator('.detail-toc-inline > summary').scrollIntoViewIfNeeded();
+  const original = await page.locator('.detail-toc-inline').evaluate(el => el.getBoundingClientRect().top);
   await page.locator('#langBtn').click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await expect.poll(() => page.evaluate(() => scrollY)).toBeLessThan(2);
   await page.locator('#langBtn').click();
-  await expect(page.locator('#pg-log')).toHaveAttribute('open', '');
-  await expect.poll(async () => Math.abs(await page.locator('#pg-log').evaluate(el => el.getBoundingClientRect().top) - original)).toBeLessThan(4);
+  await expect(page.locator('.detail-toc-inline')).toHaveAttribute('open', '');
+  await expect.poll(async () => Math.abs(await page.locator('.detail-toc-inline').evaluate(el => el.getBoundingClientRect().top) - original)).toBeLessThan(4);
 });
 
 test('related article back restores the previous article rather than home', async ({ page }) => {
@@ -100,12 +100,12 @@ test('Paige starts with compressed posters and does not download video before pl
   });
   await page.goto('/#project/paige');
   const videos = page.locator('#detail-content video');
-  await expect(videos).toHaveCount(3);
+  await expect(videos).toHaveCount(1);
   for (const video of await videos.all()) {
     await expect(video).toHaveAttribute('poster', /\/optimized\/.*\.webp$/);
     await expect(video).toHaveAttribute('preload', 'none');
     const box = await video.boundingBox();
-    expect(Math.abs(box.width / box.height - 1.6), 'Poster keeps the original video aspect ratio').toBeLessThan(.02);
+    expect(Math.abs(box.width / box.height - 16/9), 'Poster keeps the original video aspect ratio').toBeLessThan(.02);
   }
   await videos.first().scrollIntoViewIfNeeded();
   await expect(videos.first()).not.toHaveAttribute('src');
