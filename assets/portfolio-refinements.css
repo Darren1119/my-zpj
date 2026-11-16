@@ -185,7 +185,8 @@ html.from-stage #page-detail.active .detail-wrap{animation:readingIn .35s ease}
   .fd,.fd-now,.fd-b2b,.fd-write,.fd-life{display:flex;grid-column:auto;width:100%;margin:0;padding:0;column-gap:0}
   .fd-now .fd-label,.fd-now .fd-box,.fd-life .fd-label,.fd-life .fd-box{grid-column:auto;width:100%}
   .fd-name,.fd-now .fd-name{font-size:32px}
-  .fd-now .fd-face img,.fd-life .fd-face img{aspect-ratio:4/3}
+  .fd-now .fd-face img{aspect-ratio:5/4}
+  .fd-life .fd-face img{aspect-ratio:4/3}
   .mh-about{display:block;margin-top:72px}
   .mh-traits{display:block;grid-column:auto;grid-row:auto;margin-top:28px}
   .mh-trait{margin-bottom:8px}
