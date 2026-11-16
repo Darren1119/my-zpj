@@ -54,10 +54,21 @@
       card.setAttribute('aria-hidden', i === current ? 'false' : 'true');
       if (Math.abs(distance) <= 1) loadImage(card, items[i]);
     });
-    cap.replaceChildren(document.createTextNode(title(item)));
+    cap.replaceChildren();
+    if (item.img) cap.append(document.createTextNode(title(item)));
+    else {
+      const live = document.createElement('span');
+      live.className = 'sr-only';
+      live.textContent = title(item);
+      cap.append(live);
+    }
     const hint = document.createElement('small');
-    hint.textContent = item.id ? (en() ? 'Open project' : '打开作品') : item.href ? (en() ? 'Opens on Yuque ↗' : '前往语雀 ↗') : (en() ? item.ten : item.tzh) || '';
-    cap.appendChild(hint);
+    if (item.id) {
+      hint.className = 'st-action';
+      hint.textContent = en() ? 'Expand' : '展开';
+    } else hint.textContent = item.href ? (en() ? 'Opens on Yuque ↗' : '前往语雀 ↗') : (en() ? item.ten : item.tzh) || '';
+    cap.append(hint);
+    stage.classList.toggle('is-note', !item.img);
     position.textContent = `${current + 1} / ${items.length}`;
     previous.disabled = current === 0;
     next.disabled = current === items.length - 1;
@@ -96,7 +107,9 @@
       card.addEventListener('click', event => {
         if (i !== current) { event.preventDefault(); current = i; layout(true); }
         else if (item.id && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
-          event.preventDefault(); showDetail(item.id);
+          event.preventDefault();
+          document.documentElement.classList.add('from-stage');
+          showDetail(item.id);
         } else if (item.href) stage.close();
       });
       card.addEventListener('keydown', event => {
@@ -188,6 +201,9 @@
   if (document.getElementById('page-home').classList.contains('active') && history.state?.portfolioView?.preview) {
     window.portfolioPreview.restore(history.state.portfolioView.preview);
   }
+  window.addEventListener('hashchange', () => {
+    if (!location.hash.startsWith('#project/')) document.documentElement.classList.remove('from-stage');
+  });
 })();
 
 /* Copy feedback never reports success until the clipboard promise resolves. */
