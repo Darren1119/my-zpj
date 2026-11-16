@@ -98,18 +98,12 @@ def save_master(im, path, kind='png'):
 
 
 def paige():
-    canvas = radial((2000, 1600), (38, 40, 44), (8, 9, 11), (1180, 620), 1.35).convert('RGBA')
-    prd = load('assets/images/articles/paige-20261104/04_input_prd.png', 1400)
-    bench = load('assets/images/articles/paige-20261104/03_new_paige_workbench.png', 1700)
-    result = load('assets/images/articles/paige-20261104/05_result_strategy_exec_detail.png', 1600)
-    place(canvas, prd, [(40, 150), (690, 70), (760, 1040), (-10, 1120)], 0.78, 22)
-    place(canvas, bench, [(620, 30), (2140, 90), (2060, 900), (560, 790)], 1.0, 26)
-    place(canvas, result, [(160, 860), (2140, 760), (2080, 1640), (80, 1560)], 0.92, 20)
-    vignette = radial((2000, 1600), (255, 255, 255), (0, 0, 0), (1180, 640), 0.7).convert('L')
-    edge = Image.new('RGBA', (2000, 1600), (0, 0, 0, 0))
-    edge.putalpha(vignette.point(lambda p: 0 if p > 90 else int((90 - p) * 1.1)))
-    canvas.alpha_composite(edge)
-    return save_master(canvas, OUT / 'paige/covers/paige-cover-depth-v2.png')
+    """The confirmed master is the supplied PNG. Do not regenerate it."""
+    path = OUT / 'paige/covers/paige-cover-depth-v2.png'
+    if not path.is_file():
+        raise SystemExit('Missing confirmed Paige master: ' + str(path))
+    print(path.relative_to(ROOT), Image.open(path).size, path.stat().st_size // 1024, 'KB (supplied master, not regenerated)')
+    return path
 
 
 def workshop():
